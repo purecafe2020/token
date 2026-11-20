@@ -82,7 +82,7 @@ Get-Content logs\publish.log -Tail 30                     # 看发布日志
 3. 是今天 → `git add/commit/push`，失败自动重试 3 次（间隔 60 秒）；
 4. Cloudflare 检测到新提交，自动重建。
 
-## 六、第 6 步（可选）：自定义域名与访问控制
+## 六、第 5 步（可选）：自定义域名与访问控制
 
 - **绑域名**：Pages 项目 → **Custom domains** → 添加域名（域名需已托管在 Cloudflare），按提示加 CNAME。绑好后国内访问通常比 `pages.dev` 稳一些，但仍不保证。
 - **加密码**：Cloudflare Zero Trust → Access → Applications，为域名加一条 Email/OTP 策略（免费版支持 50 用户）。注意：纯前端密码不算安全，别用它保护敏感内容。
