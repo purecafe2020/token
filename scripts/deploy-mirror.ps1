@@ -39,8 +39,10 @@ try {
         exit 1
     }
 
-    $targets = @('index.html', 'og-image.png', 'sitemap.xml', 'robots.txt') |
-        Where-Object { Test-Path (Join-Path $Root $_) }
+    $targets = @(
+        'index.html', 'og-image.png', 'sitemap.xml', 'robots.txt',
+        'favicon.svg', 'favicon-32.png', 'favicon-192.png', 'apple-touch-icon.png'
+    ) | Where-Object { Test-Path (Join-Path $Root $_) }
 
     $failed = @()
     foreach ($file in $targets) {
