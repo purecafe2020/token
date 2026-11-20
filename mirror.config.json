@@ -1,5 +1,6 @@
 {
   "enabled": true,
   "provider": "cloudbase",
-  "envId": "dizzy-roadrunner-d4ecxir07e8ea5d"
+  "envId": "dizzy-roadrunner-d4ecxir07e8ea5d",
+  "domain": "https://dizzy-roadrunner-d4ecxir07e8ea5d-1251001596.tcloudbaseapp.com/"
 }
