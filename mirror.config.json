@@ -1,5 +1,5 @@
 {
-  "enabled": false,
+  "enabled": true,
   "provider": "cloudbase",
-  "envId": ""
+  "envId": "dizzy-roadrunner-d4ecxir07e8ea5d"
 }
