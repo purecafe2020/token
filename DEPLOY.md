@@ -86,7 +86,7 @@ Get-Content logs\publish.log -Tail 30                     # 看发布日志
 
 - **绑域名**：Pages 项目 → **Custom domains** → 添加域名（域名需已托管在 Cloudflare），按提示加 CNAME。绑好后国内访问通常比 `pages.dev` 稳一些，但仍不保证。
 - **加密码**：Cloudflare Zero Trust → Access → Applications，为域名加一条 Email/OTP 策略（免费版支持 50 用户）。注意：纯前端密码不算安全，别用它保护敏感内容。
-- **不想被搜索引擎收录**：`_headers` 已带 `X-Robots-Tag: noindex`，删掉这一行即可放开。
+- **收录控制**：当前已开放收录（`_headers` 不设 noindex，页面含 canonical / sitemap / JSON-LD）。若要禁止收录，加回 `X-Robots-Tag: noindex`，并把页面 `<meta name="robots">` 改为 `noindex,nofollow`。
 
 ## 七、国内访问的现实情况
 

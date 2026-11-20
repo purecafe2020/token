@@ -11,6 +11,8 @@
 | `DEPLOY.md` | Cloudflare Pages 部署、每日自动发布、排错 |
 | `ACCESS.md` | 用 Cloudflare Access 给页面加邮箱验证码登录 |
 | `MIRROR.md` | 国内镜像方案（腾讯云 CloudBase，免备案默认域名） |
+| `COUNTER.md` | 访问计数器（Cloudflare Worker + KV）部署说明 |
+| `counter/` | 计数器 Worker 源码与 wrangler 配置 |
 | `mirror.config.json` | 国内镜像开关与环境 ID（默认关闭） |
 
 看板能力：按类型（白嫖 / 限时 / 试用金 / 避坑）、地区（国内 / 海外）筛选，关键词搜索，按截止时间 / 力度 / 平台名排序，剩余天数实时计算（7 天内标红）。

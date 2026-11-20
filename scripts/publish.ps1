@@ -57,6 +57,19 @@ try {
         exit 0
     }
 
+    # 发布前刷新静态 SEO 内容（JSON-LD / noscript / sitemap），失败不阻断发布
+    $seoScript = Join-Path $Root 'scripts\build-seo.js'
+    if ((Test-Path $seoScript) -and (Get-Command node -ErrorAction SilentlyContinue)) {
+        $prevEap = $ErrorActionPreference
+        $ErrorActionPreference = 'Continue'
+        $seoOut = & node $seoScript 2>&1
+        $seoCode = $LASTEXITCODE
+        $ErrorActionPreference = $prevEap
+        $seoText = (($seoOut | ForEach-Object { "$_" }) -join ' ').Trim()
+        if ($seoCode -eq 0) { Write-Log ('SEO：' + $seoText) }
+        else { Write-Log ('SEO 生成失败（不影响发布）：' + $seoText) }
+    }
+
     (Invoke-Git 'add', '-A') | Out-Null
     $statusText = (Invoke-Git 'status', '--porcelain').Output
     $changes = @($statusText -split "`n" | Where-Object { $_.Trim() -ne '' })

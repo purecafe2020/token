@@ -108,5 +108,5 @@ CloudBase 自定义域名需要 **ICP 备案**（腾讯云可代办，一般 1~2
 ## 八、注意事项
 
 - 两个站点内容一致，但**统计不了访问量**（页面没有埋点，也没有 Cookie），这是刻意保持的轻量设计。
-- CloudBase 不支持 Cloudflare 的 `_headers` 文件，`noindex` 与缓存策略需要在上面的控制台设置里单独处理。
+- CloudBase 不支持 Cloudflare 的 `_headers` 文件，缓存策略需要在控制台单独配置；页面级的 canonical 与 robots meta 写在 HTML 里，不受影响。
 - 如果以后内容量变大（比如加图片），注意 1GB 存储与 5GB 流量的免费额度；纯 HTML 站点可以忽略。
