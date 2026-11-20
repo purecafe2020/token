@@ -7,7 +7,7 @@
 | 环节 | 谁做 | 说明 |
 |---|---|---|
 | 每天检索 + 核实 + 改数据 | Agent（会话中） | 说一句「更新今日看板」即可，零人工整理 |
-| 提交 + 推送 | 本机计划任务（`scripts/publish.ps1`） | 每天 09:00 自动跑，**当天没更新就跳过，不会伪造时间** |
+| 提交 + 推送 | 本机计划任务（`scripts/publish.ps1`） | 每天 09/12/15/18/21 点自动检查，**当天没更新就跳过，不会伪造时间** |
 | 构建 + 托管 | Cloudflare Pages | 监听 `main` 分支，push 后 30~60 秒自动重建 |
 
 本机环境已就绪：git 2.56、Node 22、仓库已初始化（`main` 分支），发布脚本已实跑通过。
@@ -60,12 +60,15 @@ git push -u origin main
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File scripts\register-task.ps1
-# 自定义时间：... -File scripts\register-task.ps1 -At 08:30
+# 自定义起始时间 / 间隔：... -File scripts\register-task.ps1 -At 08:30 -EveryHours 2 -Times 6
 ```
+
+默认会在每天 **09:00 / 12:00 / 15:00 / 18:00 / 21:00** 各检查一次。脚本是幂等的：没更新就退出，不会产生多余提交与构建。
 
 常用命令：
 
 ```powershell
+powershell -ExecutionPolicy Bypass -File scripts\publish.ps1  # 立即手动发布一次
 Get-ScheduledTaskInfo -TaskName AI-Token-Daily-Publish   # 上次运行结果 / 下次运行时间
 Start-ScheduledTask    -TaskName AI-Token-Daily-Publish   # 立刻测试一次
 Unregister-ScheduledTask -TaskName AI-Token-Daily-Publish -Confirm:$false  # 取消
