@@ -1,0 +1,105 @@
+{
+  "updated": "2026-11-20",
+  "note": "每日检索的固定来源清单。商业站只作线索，任何额度/价格结论都必须回到官方文档核实后才可入库。",
+  "sources": [
+    {
+      "name": "Ai1号站",
+      "url": "https://aibotone.com/",
+      "type": "commercial",
+      "trust": "low",
+      "focus": ["免费算力活动", "会员月卡比价", "AI Skill 榜"],
+      "note": "商家实名入驻、竞价上榜；适合发现新活动，额度与价格需回官方核实"
+    },
+    {
+      "name": "OpenRouter 免费模型",
+      "url": "https://openrouter.ai/collections/free-models",
+      "type": "official",
+      "trust": "high",
+      "focus": ["免费模型名单", "限速变化"]
+    },
+    {
+      "name": "OpenRouter 限速文档",
+      "url": "https://openrouter.ai/docs/api_reference/limits",
+      "type": "official",
+      "trust": "high",
+      "focus": ["20 RPM / 50~1000 RPD 规则"]
+    },
+    {
+      "name": "Google Gemini 定价",
+      "url": "https://ai.google.dev/gemini-api/docs/pricing",
+      "type": "official",
+      "trust": "high",
+      "focus": ["免费档模型", "涨价时间点"]
+    },
+    {
+      "name": "Google Gemini 限速",
+      "url": "https://ai.google.dev/gemini-api/docs/rate-limits",
+      "type": "official",
+      "trust": "high",
+      "focus": ["各模型 RPD 调整"]
+    },
+    {
+      "name": "Groq 限速",
+      "url": "https://console.groq.com/docs/rate-limits",
+      "type": "official",
+      "trust": "high",
+      "focus": ["免费层 RPM/RPD"]
+    },
+    {
+      "name": "Cloudflare Workers AI 定价",
+      "url": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
+      "type": "official",
+      "trust": "high",
+      "focus": ["每日 Neurons 免费额度"]
+    },
+    {
+      "name": "阿里云百炼新人额度",
+      "url": "https://help.aliyun.com/zh/model-studio/new-free-quota",
+      "type": "official",
+      "trust": "high",
+      "focus": ["每模型 100 万 Token", "90 天有效期"]
+    },
+    {
+      "name": "火山方舟",
+      "url": "https://ai.volcengine.com/",
+      "type": "official",
+      "trust": "high",
+      "focus": ["豆包每模型 50 万 Token"]
+    },
+    {
+      "name": "腾讯混元计费",
+      "url": "https://cloud.tencent.com/document/product/1729/97731",
+      "type": "official",
+      "trust": "high",
+      "focus": ["100 万 Token / 1 年"]
+    },
+    {
+      "name": "智谱 BigModel 免费模型",
+      "url": "https://docs.bigmodel.cn/cn/guide/models/free/glm-4.7-flash",
+      "type": "official",
+      "trust": "high",
+      "focus": ["GLM-4.7-Flash 永久免费"]
+    },
+    {
+      "name": "百度千帆新人额度",
+      "url": "https://cloud.baidu.com/doc/qianfan/s/Imi2rpirg",
+      "type": "official",
+      "trust": "high",
+      "focus": ["每模型 100 万 Token", "普惠活动"]
+    },
+    {
+      "name": "魔搭 ModelScope",
+      "url": "https://www.modelscope.cn/posts/1409",
+      "type": "official",
+      "trust": "high",
+      "focus": ["每日 2000 次免费推理"]
+    },
+    {
+      "name": "DeepSeek 定价",
+      "url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+      "type": "official",
+      "trust": "high",
+      "focus": ["限时折扣", "缓存命中价"]
+    }
+  ]
+}
