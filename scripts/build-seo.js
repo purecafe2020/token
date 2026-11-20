@@ -16,7 +16,7 @@ const DEALS = eval(dm[1]);
 const um = html.match(/const UPDATED = "(\d{4}-\d{2}-\d{2})/);
 const updated = um ? um[1] : new Date().toISOString().slice(0, 10);
 
-const strip = (s) => String(s).replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+const strip = (s) => String(s).replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
 const esc = (s) =>
   String(s)
     .replace(/&/g, "&amp;")

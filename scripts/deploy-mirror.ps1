@@ -39,21 +39,31 @@ try {
         exit 1
     }
 
-    $prev = $ErrorActionPreference
-    $ErrorActionPreference = 'Continue'
-    $output = & tcb hosting deploy index.html -e $config.envId 2>&1
-    $code = $LASTEXITCODE
-    $ErrorActionPreference = $prev
+    $targets = @('index.html', 'og-image.png', 'sitemap.xml', 'robots.txt') |
+        Where-Object { Test-Path (Join-Path $Root $_) }
 
-    $text = (($output | ForEach-Object { "$_" }) -join "`n").Trim()
-    if ($text) { Write-Log $text }
+    $failed = @()
+    foreach ($file in $targets) {
+        $prev = $ErrorActionPreference
+        $ErrorActionPreference = 'Continue'
+        $output = & tcb hosting deploy $file -e $config.envId 2>&1
+        $code = $LASTEXITCODE
+        $ErrorActionPreference = $prev
 
-    if ($code -ne 0) {
-        Write-Log "镜像部署失败（退出码 $code）。"
-        exit $code
+        $text = (($output | ForEach-Object { "$_" }) -join "`n").Trim()
+        if ($text) { Write-Log ("[$file] " + $text) }
+        if ($code -ne 0) {
+            $failed += $file
+            Write-Log "[$file] 部署失败（退出码 $code）。"
+        }
     }
 
-    Write-Log '镜像部署成功。'
+    if ($failed.Count -gt 0) {
+        Write-Log ('以下文件部署失败：' + ($failed -join '、'))
+        exit 1
+    }
+
+    Write-Log ('镜像部署成功（' + ($targets -join '、') + '）。')
     exit 0
 }
 catch {
