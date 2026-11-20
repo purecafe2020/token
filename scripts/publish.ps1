@@ -70,6 +70,18 @@ try {
         else { Write-Log ('SEO 生成失败（不影响发布）：' + $seoText) }
     }
 
+    # 刷新分享图（统计数字与日期跟随数据，失败不阻断）
+    $ogScript = Join-Path $Root 'scripts\make-og-image.ps1'
+    if (Test-Path $ogScript) {
+        try {
+            & $ogScript | Out-Null
+            Write-Log '分享图已刷新：og-image.png'
+        }
+        catch {
+            Write-Log ('分享图生成失败（不影响发布）：' + $_.Exception.Message)
+        }
+    }
+
     (Invoke-Git 'add', '-A') | Out-Null
     $statusText = (Invoke-Git 'status', '--porcelain').Output
     $changes = @($statusText -split "`n" | Where-Object { $_.Trim() -ne '' })

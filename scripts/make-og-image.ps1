@@ -4,7 +4,27 @@ Add-Type -AssemblyName System.Drawing
 
 $W = 1200
 $H = 630
-$OUT = Join-Path (Split-Path -Parent $PSScriptRoot) 'og-image.png'
+$Root = Split-Path -Parent $PSScriptRoot
+$OUT = Join-Path $Root 'og-image.png'
+
+# 统计数字从 deals.json 读取，避免图文不一致
+$total = 24; $free = 11; $limit = 4; $trap = 5
+$dealsPath = Join-Path $Root 'data\deals.json'
+if (Test-Path $dealsPath) {
+    $deals = Get-Content -Path $dealsPath -Raw -Encoding UTF8 | ConvertFrom-Json
+    $total = @($deals).Count
+    $free  = @($deals | Where-Object { $_.type -eq 'free' }).Count
+    $limit = @($deals | Where-Object { $_.type -eq 'limit' }).Count
+    $trap  = @($deals | Where-Object { $_.type -eq 'trap' }).Count
+}
+
+$dateText = Get-Date -Format 'yyyy-MM-dd'
+$htmlPath = Join-Path $Root 'index.html'
+if (Test-Path $htmlPath) {
+    $html = Get-Content -Path $htmlPath -Raw -Encoding UTF8
+    $m = [regex]::Match($html, 'const UPDATED = "(\d{4}-\d{2}-\d{2})')
+    if ($m.Success) { $dateText = $m.Groups[1].Value }
+}
 
 $bmp = New-Object System.Drawing.Bitmap($W, $H)
 $g = [System.Drawing.Graphics]::FromImage($bmp)
@@ -54,10 +74,10 @@ $linePen.Dispose()
 
 # 四个统计块
 $stats = @(
-    @{ X = 80;  Num = '24'; Tag = '已核实条目' },
-    @{ X = 340; Num = '11'; Tag = '长期白嫖' },
-    @{ X = 600; Num = '4';  Tag = '限时活动' },
-    @{ X = 860; Num = '5';  Tag = '避坑提醒' }
+    @{ X = 80;  Num = "$total"; Tag = '已核实条目' },
+    @{ X = 340; Num = "$free";  Tag = '长期白嫖' },
+    @{ X = 600; Num = "$limit"; Tag = '限时活动' },
+    @{ X = 860; Num = "$trap";  Tag = '避坑提醒' }
 )
 foreach ($s in $stats) {
     $g.DrawString($s.Num, $fNum, $white, [float]$s.X, 356)
@@ -67,7 +87,6 @@ foreach ($s in $stats) {
 # 底部
 $g.DrawString('token.879879.xyz', $fSmall, $soft, 80, 546)
 
-$dateText = '2026-11-20'
 $dateSize = $g.MeasureString($dateText, $fSmall)
 $g.DrawString($dateText, $fSmall, $faint, [float](1120 - $dateSize.Width), 546)
 
