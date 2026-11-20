@@ -167,6 +167,7 @@
     transition:box-shadow .15s,border-color .15s;
   }
   .deal:hover{box-shadow:0 4px 16px rgba(0,0,0,.08);border-color:#e2e5e9}
+  .deal.focus{box-shadow:0 0 0 3px #ffd6bd;border-color:#ffb98a}
   .deal .tagcol{
     display:flex;flex-direction:column;align-items:center;justify-content:center;
     gap:4px;padding:12px 6px;background:#fafbfc;border-right:1px solid var(--line);
@@ -221,6 +222,20 @@
   .verify.official{color:#067647;background:#e7f6ee}
   .verify.partial{color:#9a6700;background:#fff4d6}
   .verify.todo{color:#8a8f99;background:#f0f1f3}
+  .share{
+    margin-top:6px;border:1px solid #dbe5fb;background:#f5f8ff;color:var(--blue);
+    border-radius:6px;padding:3px 10px;font-size:11.5px;cursor:pointer;width:fit-content;
+    font-family:inherit;transition:.15s;
+  }
+  .share:hover{background:#e8f0ff;border-color:#b9cdf7}
+  .share:active{transform:scale(.97)}
+  .toast{
+    position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(8px);
+    background:rgba(31,35,41,.94);color:#fff;padding:9px 16px;border-radius:8px;
+    font-size:13px;opacity:0;transition:.2s;pointer-events:none;z-index:99;
+    max-width:80vw;text-align:center;
+  }
+  .toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
 
   /* ---------- 图例说明 ---------- */
   .legend{
@@ -749,6 +764,7 @@ function dealCard(d){
         <a class="src" href="${d.link}" target="_blank" rel="noopener">${d.linkText} ↗</a>
         <span class="verify ${d.verify}">${VERIFY_TXT[d.verify]}</span>
       </div>
+      <button class="share" data-id="${d.id}" type="button">分享这条</button>
     </div>
   </article>`;
 }
@@ -802,10 +818,65 @@ document.getElementById("sort").addEventListener("change", e=>{
   renderList();
 });
 
+/* ---- 分享单条 ---- */
+function toast(msg){
+  let t = document.getElementById("toast");
+  if(!t){
+    t = document.createElement("div");
+    t.id = "toast"; t.className = "toast";
+    document.body.appendChild(t);
+  }
+  t.textContent = msg;
+  t.classList.add("on");
+  clearTimeout(t._timer);
+  t._timer = setTimeout(()=>t.classList.remove("on"), 2200);
+}
+function plain(s){ return String(s).replace(/<[^>]+>/g,"").replace(/\s+/g," ").trim(); }
+async function shareDeal(d){
+  const url = location.origin + "/#" + d.id;
+  const text = [
+    `【${d.platform}】${plain(d.title)}`,
+    `力度：${d.value}`,
+    `时间：${d.deadline ? "截止 " + d.deadline : d.deadlineNote}`,
+    `详情：${url}`,
+    `来源：${d.link}`
+  ].join("\n");
+
+  if (navigator.share){
+    try { await navigator.share({ title: plain(d.title), text, url }); return; }
+    catch(e){ if (e && e.name === "AbortError") return; }
+  }
+  try {
+    await navigator.clipboard.writeText(text);
+    toast("分享文案已复制，粘贴给朋友即可");
+  } catch(e){
+    window.prompt("复制下面这段发给朋友：", text);
+  }
+}
+document.addEventListener("click", e=>{
+  const btn = e.target.closest(".share");
+  if(!btn) return;
+  const d = DEALS.find(x=>x.id === btn.dataset.id);
+  if(d) shareDeal(d);
+});
+
 /* ---- 初始化 ---- */
 renderStats();
 renderPicks();
 renderList();
+
+/* 深链定位：从分享链接打开时滚到对应条目并高亮 */
+function focusHash(){
+  const id = decodeURIComponent((location.hash || "").replace(/^#/, ""));
+  if(!id) return;
+  const el = document.getElementById(id);
+  if(!el) return;
+  el.scrollIntoView({ behavior:"smooth", block:"center" });
+  el.classList.add("focus");
+  setTimeout(()=>el.classList.remove("focus"), 2600);
+}
+focusHash();
+window.addEventListener("hashchange", focusHash);
 document.querySelector("footer").insertAdjacentHTML("afterbegin",
   `<div style="color:#5f6672;margin-bottom:4px">最后更新：${UPDATED} · 共 ${DEALS.length} 条 · 每日重新检索后覆盖本文件</div>`);
 </script>
