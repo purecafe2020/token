@@ -2,9 +2,25 @@
 
 页脚会显示「今日 N 次访问 · 累计 M 次」。纯静态站自己存不了数，所以用一个很小的独立 Worker 计数，数据放在 KV 里。
 
-代码已经在 `counter/worker.js`，下面是部署方法（二选一）。
+代码已经在 `counter/worker.js`，下面是部署方法（三选一）。
 
-## 方式 A：后台粘贴（不用装任何工具，推荐）
+## 方式 0：一键脚本（最快，推荐）
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\setup-counter.ps1
+```
+
+脚本会依次：检查 Cloudflare 登录（未登录会弹浏览器）→ 复用或创建 KV → 写入 `counter/wrangler.toml` → 部署 → 自动绑定 `counter.879879.xyz`。
+
+成功后验证：
+
+```powershell
+curl.exe https://counter.879879.xyz/stats
+```
+
+返回 `{"today":0,"total":0,...}` 即通。自动绑域名失败时，加 `-NoDomain` 只部署 Worker，再到后台手动绑。
+
+## 方式 A：后台粘贴（不用装任何工具）
 
 **1. 建 KV**
 
