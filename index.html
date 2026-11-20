@@ -622,12 +622,14 @@ function renderStats(){
   const limits = DEALS.filter(d=>d.type==="limit").length;
   const frees  = DEALS.filter(d=>d.type==="free").length;
   const soon   = DEALS.filter(d=>{const n=daysLeft(d.deadline); return n!==null && n>=0 && n<=45;}).length;
+  const official = DEALS.filter(d=>d.verify==="official").length;
   const box = document.getElementById("stats");
   box.innerHTML = `
     <div class="stat"><b>${DEALS.length}</b><span>今日收录</span></div>
     <div class="stat"><b>${frees}</b><span>长期白嫖</span></div>
     <div class="stat"><b>${limits}</b><span>限时活动</span></div>
-    <div class="stat"><b>${soon}</b><span>30 天内到期</span></div>`;
+    <div class="stat"><b>${official}</b><span>官方来源核实</span></div>
+    <div class="stat"><b>${soon}</b><span>45 天内到期</span></div>`;
 }
 
 /* ---- 今日精选 ---- */
