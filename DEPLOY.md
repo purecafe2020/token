@@ -27,7 +27,7 @@
 git remote add origin https://github.com/<你的用户名>/token-daily.git
 # 本地已有初始提交，可直接推送；若此时提示有未提交改动，再执行下面的 add/commit
 git add -A
-git commit -m "init: AI Token 羊毛日报看板"
+git commit -m "init: Token 日报看板"
 git push -u origin main
 ```
 

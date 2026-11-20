@@ -52,20 +52,20 @@ $soft = New-Object System.Drawing.SolidBrush([System.Drawing.Color]::FromArgb(22
 $faint = New-Object System.Drawing.SolidBrush([System.Drawing.Color]::FromArgb(170, 255, 255, 255))
 
 $fLabel = New-Object System.Drawing.Font('Microsoft YaHei', 26, [System.Drawing.FontStyle]::Regular, [System.Drawing.GraphicsUnit]::Pixel)
-$fTitle = New-Object System.Drawing.Font('Microsoft YaHei', 66, [System.Drawing.FontStyle]::Bold, [System.Drawing.GraphicsUnit]::Pixel)
+$fTitle = New-Object System.Drawing.Font('Microsoft YaHei', 76, [System.Drawing.FontStyle]::Bold, [System.Drawing.GraphicsUnit]::Pixel)
 $fSub = New-Object System.Drawing.Font('Microsoft YaHei', 32, [System.Drawing.FontStyle]::Regular, [System.Drawing.GraphicsUnit]::Pixel)
 $fNum = New-Object System.Drawing.Font('Segoe UI', 58, [System.Drawing.FontStyle]::Bold, [System.Drawing.GraphicsUnit]::Pixel)
 $fTag = New-Object System.Drawing.Font('Microsoft YaHei', 22, [System.Drawing.FontStyle]::Regular, [System.Drawing.GraphicsUnit]::Pixel)
 $fSmall = New-Object System.Drawing.Font('Consolas', 24, [System.Drawing.FontStyle]::Regular, [System.Drawing.GraphicsUnit]::Pixel)
 
 # 顶部标签
-$g.DrawString('每日核实 · 什么值得买风格', $fLabel, $soft, 80, 86)
+$g.DrawString('免费 AI 额度情报 · 每日核实', $fLabel, $soft, 80, 86)
 
 # 主标题
-$g.DrawString('AI Token 羊毛日报', $fTitle, $white, 74, 138)
+$g.DrawString('Token 日报', $fTitle, $white, 74, 134)
 
 # 副标题
-$g.DrawString('免费大模型 API 额度 / 限时优惠 / 新用户试用金', $fSub, $soft, 80, 236)
+$g.DrawString('免费大模型 API 额度 / 限时优惠 / 新用户试用金', $fSub, $soft, 80, 244)
 
 # 分隔线
 $linePen = New-Object System.Drawing.Pen([System.Drawing.Color]::FromArgb(90, 255, 255, 255), 2)

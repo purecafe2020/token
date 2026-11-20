@@ -27,7 +27,7 @@ const esc = (s) =>
 const ld = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  name: "AI Token 羊毛日报",
+  name: "Token 日报",
   description: "已核实的免费大模型 API 额度与限时优惠清单",
   url: ORIGIN + "/",
   numberOfItems: DEALS.length,
