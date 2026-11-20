@@ -19,7 +19,8 @@
 
 | 线路 | 地址 | 说明 |
 |---|---|---|
-| 主站 | <https://token.weidongpei.workers.dev> | Cloudflare Workers，海外/代理线路 |
+| **主站** | <https://token.879879.xyz> | Cloudflare Worker 自定义域名，推荐入口 |
+| 备用 | <https://token.weidongpei.workers.dev> | 原始 workers.dev 地址，域名异常时可用 |
 | 国内镜像 | <https://dizzy-roadrunner-d4ecxir07e8ea5d-1251001596.tcloudbaseapp.com/> | 腾讯云 CloudBase，免备案、国内直连 |
 
 国内朋友优先用镜像；主站打不开时页脚也有入口。
