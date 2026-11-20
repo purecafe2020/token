@@ -1,14 +1,10 @@
-# 计数器 Worker（可选，用 wrangler 部署时使用）
-# 后台粘贴代码部署则不需要本文件
 name = "token-counter"
 main = "worker.js"
 compatibility_date = "2026-11-01"
 
 [[kv_namespaces]]
 binding = "COUNTER"
-id = "<在这里填 KV 命名空间的 ID>"
-
-# 绑定自定义域名（先在 Cloudflare 后台加 Custom Domain，再取消注释）
-# routes = [
-#   { pattern = "counter.879879.xyz/*", custom_domain = true }
-# ]
+id = "0ea12f23fee24302b7e1a291a2c358d4"
+routes = [
+  { pattern = "counter.879879.xyz", custom_domain = true }
+]
