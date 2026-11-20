@@ -57,6 +57,19 @@ try {
         exit 0
     }
 
+    # 先同步结构化数据（分享图与外部工具依赖 deals.json）
+    $exportScript = Join-Path $Root 'scripts\export-data.js'
+    if ((Test-Path $exportScript) -and (Get-Command node -ErrorAction SilentlyContinue)) {
+        $prevEap = $ErrorActionPreference
+        $ErrorActionPreference = 'Continue'
+        $dataOut = & node $exportScript 2>&1
+        $dataCode = $LASTEXITCODE
+        $ErrorActionPreference = $prevEap
+        $dataText = (($dataOut | ForEach-Object { "$_" }) -join ' ').Trim()
+        if ($dataCode -eq 0) { Write-Log ('DATA：' + $dataText) }
+        else { Write-Log ('DATA 导出失败（不影响发布）：' + $dataText) }
+    }
+
     # 发布前刷新静态 SEO 内容（JSON-LD / noscript / sitemap），失败不阻断发布
     $seoScript = Join-Path $Root 'scripts\build-seo.js'
     if ((Test-Path $seoScript) -and (Get-Command node -ErrorAction SilentlyContinue)) {

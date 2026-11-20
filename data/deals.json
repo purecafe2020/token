@@ -1,6 +1,7 @@
 [
   {
     "id": "zhipu-glm47-flash",
+    "use": "coding",
     "type": "free",
     "region": "cn",
     "hot": 5,
@@ -23,6 +24,7 @@
   },
   {
     "id": "openmodel-bf",
+    "use": "deal",
     "type": "limit",
     "region": "global",
     "hot": 5,
@@ -45,6 +47,7 @@
   },
   {
     "id": "gemini-lock",
+    "use": "deal",
     "type": "limit",
     "region": "global",
     "hot": 4,
@@ -67,6 +70,7 @@
   },
   {
     "id": "aliyun-bailian",
+    "use": "general",
     "type": "free",
     "region": "cn",
     "hot": 5,
@@ -89,6 +93,7 @@
   },
   {
     "id": "volc-ark",
+    "use": "general",
     "type": "free",
     "region": "cn",
     "hot": 4,
@@ -111,6 +116,7 @@
   },
   {
     "id": "tencent-hunyuan",
+    "use": "general",
     "type": "free",
     "region": "cn",
     "hot": 4,
@@ -133,6 +139,7 @@
   },
   {
     "id": "tencent-tokenhub",
+    "use": "multimodal",
     "type": "credit",
     "region": "cn",
     "hot": 3,
@@ -155,6 +162,7 @@
   },
   {
     "id": "baidu-qianfan",
+    "use": "general",
     "type": "free",
     "region": "cn",
     "hot": 4,
@@ -177,6 +185,7 @@
   },
   {
     "id": "baidu-benefit",
+    "use": "general",
     "type": "limit",
     "region": "cn",
     "hot": 3,
@@ -199,6 +208,7 @@
   },
   {
     "id": "modelscope",
+    "use": "multimodal",
     "type": "free",
     "region": "cn",
     "hot": 4,
@@ -221,6 +231,7 @@
   },
   {
     "id": "siliconflow",
+    "use": "deal",
     "type": "credit",
     "region": "cn",
     "hot": 3,
@@ -243,6 +254,7 @@
   },
   {
     "id": "openrouter-free",
+    "use": "coding",
     "type": "free",
     "region": "global",
     "hot": 5,
@@ -265,6 +277,7 @@
   },
   {
     "id": "groq",
+    "use": "general",
     "type": "free",
     "region": "global",
     "hot": 4,
@@ -287,6 +300,7 @@
   },
   {
     "id": "cloudflare",
+    "use": "multimodal",
     "type": "free",
     "region": "global",
     "hot": 3,
@@ -309,6 +323,7 @@
   },
   {
     "id": "nvidia-nim",
+    "use": "coding",
     "type": "free",
     "region": "global",
     "hot": 3,
@@ -331,6 +346,7 @@
   },
   {
     "id": "mistral",
+    "use": "coding",
     "type": "free",
     "region": "global",
     "hot": 3,
@@ -353,6 +369,7 @@
   },
   {
     "id": "gcp-300",
+    "use": "general",
     "type": "credit",
     "region": "global",
     "hot": 4,
@@ -375,6 +392,7 @@
   },
   {
     "id": "azure-200",
+    "use": "general",
     "type": "credit",
     "region": "global",
     "hot": 3,
@@ -397,6 +415,7 @@
   },
   {
     "id": "deepseek-promo",
+    "use": "deal",
     "type": "limit",
     "region": "cn",
     "hot": 3,
@@ -419,6 +438,7 @@
   },
   {
     "id": "cerebras-trap",
+    "use": "general",
     "type": "trap",
     "region": "global",
     "hot": 2,
@@ -441,6 +461,7 @@
   },
   {
     "id": "github-models-trap",
+    "use": "general",
     "type": "trap",
     "region": "global",
     "hot": 2,
@@ -463,6 +484,7 @@
   },
   {
     "id": "openrouter-gone-trap",
+    "use": "general",
     "type": "trap",
     "region": "global",
     "hot": 2,
@@ -485,6 +507,7 @@
   },
   {
     "id": "hf-trap",
+    "use": "general",
     "type": "trap",
     "region": "global",
     "hot": 1,
@@ -507,6 +530,7 @@
   },
   {
     "id": "gemini-rpd-trap",
+    "use": "general",
     "type": "trap",
     "region": "global",
     "hot": 3,
@@ -526,5 +550,28 @@
       "需实测"
     ],
     "tip": "做容量规划时<b>不要把免费档算进 SLA</b>；同一项目换模型就会换一套限额，先在小号上试一天再决定。"
+  },
+  {
+    "id": "aibotone-hub",
+    "use": "general",
+    "type": "credit",
+    "region": "cn",
+    "hot": 2,
+    "platform": "Ai1号站",
+    "title": "新手算力入口汇总，页面声称<span class='hl'>可领 1.3 亿 Token</span>",
+    "desc": "聚合多个平台的免费额度活动、AI 工具安装包与入门教程，按「领算力 → 装工具 → 做作品」组织；1.3 亿是多平台叠加口径，未逐项核实。",
+    "value": "声称 1.3 亿 Token",
+    "valueNote": "聚合口径，非单一平台额度",
+    "deadline": null,
+    "deadlineNote": "活动期未公示",
+    "link": "https://aibotone.com/",
+    "linkText": "来源页（线索）",
+    "verify": "todo",
+    "tags": [
+      "线索来源",
+      "需拆分核实",
+      "新手向"
+    ],
+    "tip": "这是<b>线索页而不是官方额度页</b>：1.3 亿由多家平台叠加，实际到手取决于各家规则与限速；领取前回到对应平台官方文档确认，别把总量当成一个 Key 的额度。"
   }
 ]
