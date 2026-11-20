@@ -24,7 +24,7 @@
 > 免费额度：1GB 存储 + 5GB/月 CDN 流量。页面 36KB，5GB 约等于 **14 万次访问/月**，个人分享完全够。
 > 超出后按量计费（几分钱级别），建议在「费用中心 → 预算告警」设一条 10 元提醒。
 
-## 二、本机装 CLI 并登录
+## 二、装 CLI 并登录
 
 ```powershell
 npm i -g @cloudbase/cli
@@ -32,25 +32,29 @@ tcb login          # 会打开浏览器授权，登录后凭据保存在本机
 tcb env list       # 确认能看到刚才的环境 ID
 ```
 
-## 三、配置镜像并首次部署
-
-1. 打开 `mirror.config.json`，改成：
-
-```json
-{
-  "enabled": true,
-  "envId": "你的环境ID",
-  "provider": "cloudbase"
-}
-```
-
-2. 手动跑一次：
+## 三、一条命令完成配置
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File scripts\deploy-mirror.ps1
+powershell -ExecutionPolicy Bypass -File scripts\setup-mirror.ps1
 ```
 
-3. 到控制台「静态网站托管 → 文件管理」确认根目录有 `index.html`；页面右上角能看到**默认域名**，形如：
+脚本会依次完成：
+
+1. 检查 `tcb` 是否已安装（没有会提示安装命令）；
+2. 检查登录状态，未登录则打开浏览器授权；
+3. 让你粘贴环境 ID；
+4. 写入 `mirror.config.json`（`enabled: true`）；
+5. 立刻执行首次部署。
+
+想跳过交互直接指定环境：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\setup-mirror.ps1 -EnvId <环境ID>
+# 只想写配置、不部署：
+powershell -ExecutionPolicy Bypass -File scripts\setup-mirror.ps1 -EnvId <环境ID> -DryRun
+```
+
+部署完成后到控制台「静态网站托管 → 文件管理」确认根目录有 `index.html`；页面右上角的**默认域名**形如：
 
 ```
 https://<envId>-<随机串>.tcloudbaseapp.com
