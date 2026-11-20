@@ -84,6 +84,16 @@ try {
 
     if ($ok) {
         Write-Log '发布成功：Cloudflare Pages 将在 30~60 秒内自动重建。'
+
+        $mirrorScript = Join-Path $Root 'scripts\deploy-mirror.ps1'
+        if (Test-Path $mirrorScript) {
+            & powershell -NoProfile -ExecutionPolicy Bypass -File $mirrorScript
+            if ($LASTEXITCODE -eq 0) {
+                Write-Log '国内镜像处理完成（未配置时会自动跳过）。'
+            } else {
+                Write-Log '国内镜像同步失败，主站不受影响，详见 logs\mirror.log。'
+            }
+        }
         exit 0
     }
 
