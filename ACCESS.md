@@ -21,6 +21,17 @@
    - Include → **Emails** → 填入允许访问的邮箱（你自己的 + 朋友的，一行一个）
 5. 保存。之后打开 `https://token-daily.pages.dev` 就会先要求登录。
 
+## 路径 A-2：Worker 项目（`*.workers.dev`）
+
+如果站点是 Worker（域名形如 `xxx.workers.dev`，而不是 Pages）：
+
+1. Cloudflare 控制台 → **Workers & Pages** → 选中该 Worker；
+2. **Settings** → **Domains & Routes**；
+3. 在 `workers.dev` 那一行点 **Enable Cloudflare Access**（或 **Manage**）；
+4. 同样在 Zero Trust 里配置白名单邮箱。
+
+注意：Worker 绑定的自定义域名同样要求 DNS 走 Cloudflare 代理（橙色云），否则 Access 不生效。
+
 ## 路径 B：在 Zero Trust 里手动建（推荐，可控性更好）
 
 1. <https://one.dash.cloudflare.com> → **Access** → **Applications** → **Add an application** → **Self-hosted**
