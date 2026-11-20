@@ -60,19 +60,34 @@ try {
     (Invoke-Git 'add', '-A') | Out-Null
     $statusText = (Invoke-Git 'status', '--porcelain').Output
     $changes = @($statusText -split "`n" | Where-Object { $_.Trim() -ne '' })
-    if ($changes.Count -eq 0) {
+
+    if ($changes.Count -gt 0) {
+        $commit = Invoke-Git 'commit', '-m', "daily: update token board $updated"
+        if ($commit.ExitCode -ne 0) {
+            Write-Log ('提交失败：' + $commit.Output)
+            exit 1
+        }
+        Write-Log "已提交 $($changes.Count) 个文件变更。"
+    }
+
+    # 关键：上次推送失败时工作区是干净的，但本地仍有未推送提交，必须继续补推
+    $branch = (Invoke-Git 'rev-parse', '--abbrev-ref', 'HEAD').Output.Trim()
+    $upstreamRef = "origin/$branch"
+    $hasUpstream = (Invoke-Git 'rev-parse', '--verify', '--quiet', $upstreamRef).ExitCode -eq 0
+    if ($hasUpstream) {
+        $ahead = [int]((Invoke-Git 'rev-list', '--count', "$upstreamRef..HEAD").Output)
+    } else {
+        $ahead = 1
+    }
+
+    if ($changes.Count -eq 0 -and $ahead -eq 0) {
         Write-Log '无变更，无需发布。'
         exit 0
     }
-
-    $commit = Invoke-Git 'commit', '-m', "daily: update token board $updated"
-    if ($commit.ExitCode -ne 0) {
-        Write-Log ('提交失败：' + $commit.Output)
-        exit 1
+    if ($ahead -gt 0) {
+        Write-Log "检测到 $ahead 个未推送提交（上次发布可能未完成），继续推送。"
     }
-    Write-Log "已提交 $($changes.Count) 个文件变更。"
 
-    $branch = (Invoke-Git 'rev-parse', '--abbrev-ref', 'HEAD').Output.Trim()
     $ok = $false
     for ($i = 1; $i -le 3; $i++) {
         Write-Log "推送尝试 $i/3 → origin/$branch"
