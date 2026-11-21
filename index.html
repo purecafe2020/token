@@ -134,6 +134,11 @@
   .pick .kv{display:flex;gap:14px;flex-wrap:wrap;font-size:12px}
   .pick .kv b{color:var(--red);font-weight:800}
   .pick .kv i{font-style:normal;color:var(--muted)}
+  .pick{transition:border-color .15s,box-shadow .15s}
+  .pick:hover{border-color:#ffc6a8;box-shadow:0 4px 14px rgba(255,90,0,.10)}
+  .pick-links{display:flex;gap:14px;margin-top:10px;font-size:12px}
+  .pick-links a{color:var(--blue)}
+  .pick-links a:hover{text-decoration:underline}
 
   /* ---------- 工具条 ---------- */
   .toolbar{
@@ -736,6 +741,10 @@ function renderPicks(){
         <div class="kv">
           <span><i>力度</i> <b>${d.value}</b></span>
           <span><i>时间</i> <b style="color:#c2410c">${when}</b></span>
+        </div>
+        <div class="pick-links">
+          <a href="#${d.id}">查看详情 ↓</a>
+          <a href="${d.link}" target="_blank" rel="noopener">${d.linkText} ↗</a>
         </div>
       </div>`;
   }).join("");
