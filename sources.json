@@ -11,6 +11,22 @@
       "note": "商家实名入驻、竞价上榜；适合发现新活动，额度与价格需回官方核实"
     },
     {
+      "name": "TokenAPI Scan",
+      "url": "https://tokenscanai.com/",
+      "type": "aggregator",
+      "trust": "medium",
+      "focus": ["免费额度汇总", "每日核实"],
+      "note": "汇总站，带核验日期；数字仍需回官方确认"
+    },
+    {
+      "name": "赛博鸡蛋福利库",
+      "url": "https://saibodan.com/",
+      "type": "aggregator",
+      "trust": "medium",
+      "focus": ["限时福利", "新用户额度"],
+      "note": "福利汇总站，适合发现国内限时活动"
+    },
+    {
       "name": "OpenRouter 免费模型",
       "url": "https://openrouter.ai/collections/free-models",
       "type": "official",
