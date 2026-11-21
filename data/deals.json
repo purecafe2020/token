@@ -642,5 +642,28 @@
       "含语音/音乐"
     ],
     "tip": "这是<b>限速而不是赠送额度</b>，超出即 429；语音识别（ASR）不对免费用户开放，要充值后才能调。"
+  },
+  {
+    "id": "huawei-agentarts",
+    "use": "coding",
+    "type": "credit",
+    "region": "cn",
+    "hot": 3,
+    "platform": "华为云 AgentArts",
+    "title": "开通即送 <span class='hl'>200 万 Tokens</span> 免费额度",
+    "desc": "AgentArts 对接 ModelArts Studio（MaaS）模型服务，开通后默认发放 200 万 Tokens，用于模型调测与智能体试运行，无需额外配置。",
+    "value": "200 万 Token",
+    "valueNote": "开通即得，用于调测",
+    "deadline": null,
+    "deadlineNote": "有效期以控制台账单为准",
+    "link": "https://support.huaweicloud.com/topic/1131517-1-M",
+    "linkText": "官方额度说明",
+    "verify": "official",
+    "tags": [
+      "需实名",
+      "Agent 平台",
+      "含 MaaS 模型"
+    ],
+    "tip": "额度用于<b>平台内模型调测与智能体试运行</b>，不是通用 API Key；底层模型、日志等关联服务可能单独计费，用完前先看账单。"
   }
 ]
