@@ -82,6 +82,30 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>${ORIGIN}/guides/</loc>
+    <lastmod>${updated}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>${ORIGIN}/guides/qiniu-conatus-free-tokens/</loc>
+    <lastmod>${updated}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>${ORIGIN}/guides/aliyun-bailian-free-tokens/</loc>
+    <lastmod>${updated}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>${ORIGIN}/guides/openrouter-free-models/</loc>
+    <lastmod>${updated}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>${ORIGIN}/about/</loc>
     <lastmod>${updated}</lastmod>
     <changefreq>monthly</changefreq>

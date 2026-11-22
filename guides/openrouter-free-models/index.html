@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenRouter 免费模型怎么用：限速、充值与避坑（2026） - Token 日报</title>
+<meta name="description" content="OpenRouter 的 :free 模型有 20+ 个，20 RPM、每天 50 次；累计充值 10 美元后提升到 1000 次。含调用方法、选型建议与四个坑。">
+<link rel="canonical" href="https://token.879879.xyz/guides/openrouter-free-models/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#f4f5f7;color:#1f2329;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif;line-height:1.8;font-size:15px}
+  header{background:linear-gradient(120deg,#ff5a00,#ffb300);color:#fff;padding:16px 0}
+  .wrap{max-width:780px;margin:0 auto;padding:0 20px}
+  header .wrap{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  header a{color:#fff;text-decoration:none;font-weight:800;font-size:15px}
+  header nav a{font-weight:400;font-size:13px;margin-right:12px;opacity:.95}
+  main{background:#fff;margin:20px auto;max-width:780px;padding:30px 26px;border-radius:10px;border:1px solid #ebedf0}
+  h1{font-size:24px;line-height:1.45;margin-bottom:10px}
+  .meta{color:#8a8f99;font-size:12px;margin-bottom:18px}
+  h2{font-size:17px;margin:24px 0 8px;padding-left:10px;border-left:4px solid #ff5a00}
+  h3{font-size:15px;margin:16px 0 6px}
+  p{margin-bottom:12px;color:#3c4149}
+  ul,ol{padding-left:22px;margin-bottom:12px}
+  li{margin-bottom:6px;color:#3c4149}
+  .lead{background:#fff7f0;border-left:4px solid #ffb300;padding:12px 14px;border-radius:0 6px 6px 0;margin-bottom:16px}
+  table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.5px}
+  th,td{border:1px solid #e6e8eb;padding:7px 9px;text-align:left}
+  th{background:#fafbfc}
+  code{background:#f2f3f5;padding:1px 5px;border-radius:3px;font-size:13px}
+  a{color:#2b6de5}
+  .related{margin-top:24px;padding-top:16px;border-top:1px solid #ebedf0;font-size:13.5px}
+  footer{text-align:center;color:#8a8f99;font-size:12px;padding:18px 0 40px}
+  footer a{color:#8a8f99;margin:0 6px}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a href="/">Token 日报</a><nav><a href="/guides/">指南</a><a href="/about/">关于</a><a href="/privacy/">隐私</a><a href="/contact/">联系</a></nav></div></header>
+<main><h1>OpenRouter 免费模型怎么用：限速、充值与避坑（2026）</h1>
+<div class="meta">2026-11-22 · 已核实：官方文档 · 名单会变动</div>
+<div class="lead">结论先说：一个 Key 就能调 20+ 个 <code>:free</code> 模型，限制是 <strong>20 RPM</strong>、每天 <strong>50 次</strong>；累计充值满 <strong>10 美元</strong>后，每日上限永久提升到 <strong>1000 次</strong>。</div>
+
+<h2>免费额度规则</h2>
+<table>
+<tr><th>项目</th><th>说明</th></tr>
+<tr><td>可用模型</td><td>模型 ID 以 <code>:free</code> 结尾，当前约 20+ 个</td></tr>
+<tr><td>速率</td><td>20 请求/分钟</td></tr>
+<tr><td>每日上限</td><td>50 次；累计充值满 $10 后 1000 次（永久）</td></tr>
+<tr><td>失败请求</td><td>计入每日上限</td></tr>
+<tr><td>名单变动</td><td>上游停止补贴时会下架</td></tr>
+</table>
+
+<h2>怎么用（4 步）</h2>
+<ol>
+<li>注册 OpenRouter，创建 API Key；</li>
+<li>在模型列表按「免费」筛选，或直接用 <code>openrouter/free</code> 让平台自动选可用模型；</li>
+<li>用 OpenAI SDK，把 <code>base_url</code> 设为 <code>https://openrouter.ai/api/v1</code>；</li>
+<li>给请求加 fallback 链（两三个 <code>:free</code> 模型），避免单个模型 429 就整条任务失败。</li>
+</ol>
+
+<h2>四个坑</h2>
+<h3>1. 失败的请求也扣次数</h3>
+<p>超时、上游 429 都算一次。别写紧密重试循环，用指数退避。</p>
+<h3>2. 免费名单随时会变</h3>
+<p>DeepSeek R1、Qwen3 Coder 480B、Llama 3.3 70B 都已从免费名单下架。把模型 ID 写死在代码里，迟早 404。</p>
+<h3>3. $10 是一次性门槛，不是每月充值</h3>
+<p>累计充值满 $10 后即使余额花光，1000 次/天的上限也永久保留，不需要续费。</p>
+<h3>4. 免费模型的数据可能被上游使用</h3>
+<p>不同提供方策略不同，敏感数据别走免费档。</p>
+
+<h2>适合谁</h2>
+<ul>
+<li>想低成本试多个模型效果的开发者；</li>
+<li>做原型、跑低频 Agent 任务的个人项目。</li>
+</ul>
+
+<h2>FAQ</h2>
+<h3>50 次/天够干什么？</h3>
+<p>够日常调试和轻量问答。要做批量任务，建议先充 $10 拿到 1000 次/天，成本约 70 元人民币。</p>
+<h3>免费模型能商用吗？</h3>
+<p>多数可以，但要逐一确认上游模型的许可证；部分模型禁止商业用途。</p>
+<h3>怎么处理 429？</h3>
+<p>先切 fallback 模型，再退避重试；不要在 1 分钟内反复打同一个模型。</p>
+
+<div class="related">相关：<a href="/#openrouter-free">清单里的 OpenRouter 条目</a> · <a href="/guides/qiniu-conatus-free-tokens/">七牛每天 1 亿 Token</a> · <a href="/guides/aliyun-bailian-free-tokens/">阿里云百炼 100 万 Token</a></div></main>
+<footer><div>最后更新：2026-11-22 · <a href="/">返回首页</a> · <a href="/en/">English</a></div></footer>
+</body>
+</html>

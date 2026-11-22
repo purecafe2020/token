@@ -43,6 +43,8 @@ try {
         'index.html', 'en/index.html', 'og-image.png', 'og-image-en.png', 'sitemap.xml', 'robots.txt', 'ads.txt',
         'about/index.html', 'privacy/index.html', 'contact/index.html',
         'en/about/index.html', 'en/privacy/index.html', 'en/contact/index.html',
+        'guides/index.html', 'guides/qiniu-conatus-free-tokens/index.html',
+        'guides/aliyun-bailian-free-tokens/index.html', 'guides/openrouter-free-models/index.html',
         'favicon.svg', 'favicon-32.png', 'favicon-192.png', 'apple-touch-icon.png'
     ) | Where-Object { Test-Path (Join-Path $Root $_) }
 

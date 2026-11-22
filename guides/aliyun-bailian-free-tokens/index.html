@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>阿里云百炼 100 万 Token 领取全流程（2026） - Token 日报</title>
+<meta name="description" content="阿里云百炼新用户每个模型 100 万 Token，90 天有效。含开通步骤、按模型计算的规则、北京地域限制与四个常见坑。">
+<link rel="canonical" href="https://token.879879.xyz/guides/aliyun-bailian-free-tokens/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#f4f5f7;color:#1f2329;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif;line-height:1.8;font-size:15px}
+  header{background:linear-gradient(120deg,#ff5a00,#ffb300);color:#fff;padding:16px 0}
+  .wrap{max-width:780px;margin:0 auto;padding:0 20px}
+  header .wrap{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  header a{color:#fff;text-decoration:none;font-weight:800;font-size:15px}
+  header nav a{font-weight:400;font-size:13px;margin-right:12px;opacity:.95}
+  main{background:#fff;margin:20px auto;max-width:780px;padding:30px 26px;border-radius:10px;border:1px solid #ebedf0}
+  h1{font-size:24px;line-height:1.45;margin-bottom:10px}
+  .meta{color:#8a8f99;font-size:12px;margin-bottom:18px}
+  h2{font-size:17px;margin:24px 0 8px;padding-left:10px;border-left:4px solid #ff5a00}
+  h3{font-size:15px;margin:16px 0 6px}
+  p{margin-bottom:12px;color:#3c4149}
+  ul,ol{padding-left:22px;margin-bottom:12px}
+  li{margin-bottom:6px;color:#3c4149}
+  .lead{background:#fff7f0;border-left:4px solid #ffb300;padding:12px 14px;border-radius:0 6px 6px 0;margin-bottom:16px}
+  table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.5px}
+  th,td{border:1px solid #e6e8eb;padding:7px 9px;text-align:left}
+  th{background:#fafbfc}
+  code{background:#f2f3f5;padding:1px 5px;border-radius:3px;font-size:13px}
+  a{color:#2b6de5}
+  .related{margin-top:24px;padding-top:16px;border-top:1px solid #ebedf0;font-size:13.5px}
+  footer{text-align:center;color:#8a8f99;font-size:12px;padding:18px 0 40px}
+  footer a{color:#8a8f99;margin:0 6px}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a href="/">Token 日报</a><nav><a href="/guides/">指南</a><a href="/about/">关于</a><a href="/privacy/">隐私</a><a href="/contact/">联系</a></nav></div></header>
+<main><h1>阿里云百炼 100 万 Token 领取全流程（2026）</h1>
+<div class="meta">2026-11-22 · 已核实：官方文档 · 有效期 90 天</div>
+<div class="lead">结论先说：首次开通百炼，<strong>每个在售文本模型</strong>各送 100 万 Token，从开通（或模型发布/申请通过，取较晚者）起算 <strong>90 天</strong>。不是共享池，是逐模型发放。</div>
+
+<h2>额度规则</h2>
+<table>
+<tr><th>项目</th><th>说明</th></tr>
+<tr><td>额度</td><td>每个模型 100 万 Token（Qwen3.8-Flash、Qwen3.7-Flash、MiniMax-M2.5 等）</td></tr>
+<tr><td>有效期</td><td>90 天，到期不补发、不延期</td></tr>
+<tr><td>地域</td><td>仅华北 2（北京）实时推理</td></tr>
+<tr><td>不适用</td><td>Batch 调用、模型微调、部署</td></tr>
+<tr><td>其他</td><td>图像类另有人物实例分割 500 张体验额度</td></tr>
+</table>
+
+<h2>怎么领（4 步）</h2>
+<ol>
+<li>注册阿里云并完成实名认证；</li>
+<li>开通「百炼」服务，额度会自动发放，无需申请；</li>
+<li>在控制台创建 API Key，记下 Key；</li>
+<li>在「模型广场」选模型，按 OpenAI 兼容格式调用，<code>base_url</code> 使用百炼的地址。</li>
+</ol>
+
+<h2>四个坑</h2>
+<h3>1. 不是「总共 100 万」，是「每个模型 100 万」</h3>
+<p>换模型会换一套额度，所以多模型横评很划算；但也意味着别把一个模型的额度当成全平台通用。</p>
+<h3>2. 90 天从「较晚者」起算</h3>
+<p>开通早、模型上线晚的，从模型发布日算。看不到额度时先查有效期，很可能已过期。</p>
+<h3>3. 只在华北 2 生效</h3>
+<p>其他地域调用会走按量计费，账单出来才发现没抵扣，是常见事故。</p>
+<h3>4. Batch、微调、部署不吃免费额度</h3>
+<p>想用免费额度跑批量任务，只能走实时推理接口。</p>
+
+<h2>适合谁</h2>
+<ul>
+<li>想横向比较 Qwen 系列不同档位效果的开发者；</li>
+<li>短周期原型验证（90 天足够）。</li>
+</ul>
+
+<h2>FAQ</h2>
+<h3>多个模型共享 100 万吗？</h3>
+<p>不共享。每个模型独立 100 万，按模型 ID 分别计算。</p>
+<h3>到期会直接扣费吗？</h3>
+<p>额度耗尽或到期后继续调用会产生计费。建议在费用中心设置预算告警。</p>
+<h3>怎么查剩余额度？</h3>
+<p>控制台的「资源包 / 额度管理」里能看到每个模型的剩余量与到期日。</p>
+
+<div class="related">相关：<a href="/#aliyun-bailian">清单里的百炼条目</a> · <a href="/guides/qiniu-conatus-free-tokens/">七牛每天 1 亿 Token</a> · <a href="/guides/openrouter-free-models/">OpenRouter 免费模型</a></div></main>
+<footer><div>最后更新：2026-11-22 · <a href="/">返回首页</a> · <a href="/en/">English</a></div></footer>
+</body>
+</html>

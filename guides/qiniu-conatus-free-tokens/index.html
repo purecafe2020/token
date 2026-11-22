@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>七牛云 Conatus 每天 1 亿 Token 怎么领（2026 黑五） - Token 日报</title>
+<meta name="description" content="七牛云 Conatus 黑五活动：qiniu/conatus-free 每天 1 亿 Token，单次充值满 100 元后每天 10 亿，含领取步骤、额度规则与三个坑。">
+<link rel="canonical" href="https://token.879879.xyz/guides/qiniu-conatus-free-tokens/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#f4f5f7;color:#1f2329;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif;line-height:1.8;font-size:15px}
+  header{background:linear-gradient(120deg,#ff5a00,#ffb300);color:#fff;padding:16px 0}
+  .wrap{max-width:780px;margin:0 auto;padding:0 20px}
+  header .wrap{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  header a{color:#fff;text-decoration:none;font-weight:800;font-size:15px}
+  header nav a{font-weight:400;font-size:13px;margin-right:12px;opacity:.95}
+  main{background:#fff;margin:20px auto;max-width:780px;padding:30px 26px;border-radius:10px;border:1px solid #ebedf0}
+  h1{font-size:24px;line-height:1.45;margin-bottom:10px}
+  .meta{color:#8a8f99;font-size:12px;margin-bottom:18px}
+  h2{font-size:17px;margin:24px 0 8px;padding-left:10px;border-left:4px solid #ff5a00}
+  h3{font-size:15px;margin:16px 0 6px}
+  p{margin-bottom:12px;color:#3c4149}
+  ul,ol{padding-left:22px;margin-bottom:12px}
+  li{margin-bottom:6px;color:#3c4149}
+  .lead{background:#fff7f0;border-left:4px solid #ffb300;padding:12px 14px;border-radius:0 6px 6px 0;margin-bottom:16px}
+  table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.5px}
+  th,td{border:1px solid #e6e8eb;padding:7px 9px;text-align:left}
+  th{background:#fafbfc}
+  code{background:#f2f3f5;padding:1px 5px;border-radius:3px;font-size:13px}
+  a{color:#2b6de5}
+  .related{margin-top:24px;padding-top:16px;border-top:1px solid #ebedf0;font-size:13.5px}
+  footer{text-align:center;color:#8a8f99;font-size:12px;padding:18px 0 40px}
+  footer a{color:#8a8f99;margin:0 6px}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a href="/">Token 日报</a><nav><a href="/guides/">指南</a><a href="/about/">关于</a><a href="/privacy/">隐私</a><a href="/contact/">联系</a></nav></div></header>
+<main><h1>七牛云 Conatus 每天 1 亿 Token 怎么领（2026 黑五）</h1>
+<div class="meta">2026-11-22 · 已核实：部分 · 活动截止 11-30</div>
+<div class="lead">结论先说：活动期内 <code>qiniu/conatus-free</code> 模型每天免费 1 亿 Token，实名后即可用；<strong>单次</strong>充值满 100 元提升到每天 10 亿。额度每天 0 点清零，不结转。</div>
+
+<h2>这条额度到底是什么</h2>
+<table>
+<tr><th>项目</th><th>说明</th></tr>
+<tr><td>免费模型</td><td><code>qiniu/conatus-free</code></td></tr>
+<tr><td>每日额度</td><td>1 亿 Token（未充值）；单次充值满 100 元后 10 亿</td></tr>
+<tr><td>重置时间</td><td>每天 00:00（北京时间）</td></tr>
+<tr><td>是否结转</td><td>不结转，当天没用完就作废</td></tr>
+<tr><td>前置条件</td><td>七牛云账号 + 实名认证</td></tr>
+<tr><td>截止时间</td><td>2026-11-30 23:59（北京时间）</td></tr>
+</table>
+
+<h2>怎么领（5 步）</h2>
+<ol>
+<li>注册七牛云账号，完成<strong>实名认证</strong>（个人证件即可）；</li>
+<li>进入控制台的 AI 推理 / 大模型服务，开通对应服务；</li>
+<li>创建 API Key，记下 Key 与调用地址；</li>
+<li>把模型名填为 <code>qiniu/conatus-free</code>，用 OpenAI 兼容格式发起请求；</li>
+<li>在控制台的用量页面确认额度是否到账，再开始跑任务。</li>
+</ol>
+
+<h2>三个容易踩的坑</h2>
+<h3>1. 额度不结转，别攒着</h3>
+<p>每日 0 点清零，1 亿 Token 当天不用就没了。适合白天有批处理任务的人，不适合「先攒着以后用」。</p>
+<h3>2. 「充值 10 亿」要求单次满 100 元</h3>
+<p>拆成 5 次 20 元不累计。要提额就一次性充够，充完当天生效，但同样每天清零。</p>
+<h3>3. 活动截止后会转按量计费</h3>
+<p>11-30 之后免费模型可能下架或转付费，记得在控制台设置额度告警，避免自动扣费。</p>
+
+<h2>适合谁</h2>
+<ul>
+<li>需要大批量文本处理（摘要、抽取、分类）的个人开发者；</li>
+<li>想跑长文档任务的人——Conatus 支持长上下文，一天额度足够处理几十份文档。</li>
+</ul>
+<p>不适合：需要稳定 SLA 的生产业务，以及需要多模态（图像/语音）的场景。</p>
+
+<h2>FAQ</h2>
+<h3>要绑卡吗？</h3>
+<p>领免费额度通常只需实名，不强制绑卡；但「充值提额」这一步需要支付方式。</p>
+<h3>额度用完会自动扣费吗？</h3>
+<p>取决于是否开通了按量计费。没开通时额度用完直接报错；开通后会转按量。建议先不开通。</p>
+<h3>支持 OpenAI SDK 吗？</h3>
+<p>七牛提供 OpenAI 兼容接口，把 <code>base_url</code> 指向它、模型名改成上面的 ID 即可。</p>
+
+<div class="related">相关：<a href="/#qiniu-conatus">清单里的七牛条目</a> · <a href="/guides/aliyun-bailian-free-tokens/">阿里云百炼 100 万 Token 怎么领</a> · <a href="/guides/openrouter-free-models/">OpenRouter 免费模型怎么用</a></div></main>
+<footer><div>最后更新：2026-11-22 · <a href="/">返回首页</a> · <a href="/en/">English</a></div></footer>
+</body>
+</html>
