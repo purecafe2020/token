@@ -1,27 +1,27 @@
 {
-  "updated": "2026-11-22",
+  "updated": "2026-11-23",
   "note": "编辑精选：标题与点评为人工整理，不是自动抓取；每条都保留来源链接。",
   "items": [
     {
-      "title": "黑五 API 优惠进入最后一周，11-30 集中截止",
-      "source": "HiAPI / OpenModel",
-      "url": "https://hiapi.ai/zh/promotions/black-friday-2026",
-      "note": "HiAPI 从 11-24 起连送 7 天 DeepSeek 免费额度，OpenModel 的充值返赠 11-30 结束。要冲的别等到最后一天，实名和外币卡都需要提前准备。",
-      "date": "2026-11-22"
-    },
-    {
-      "title": "阿里云双 11：新用户累计可领约 7000 万 Token，Token Plan 39 元起",
-      "source": "阿里云开发者社区",
-      "url": "https://developer.aliyun.com/article/1783672",
-      "note": "每模型约 100 万、90 天有效，累计超 7000 万；另推 Token Plan 订阅（Lite 39 元/月 2 万 Credits）。免费额度只限华北 2，先开「用完即停」再试。",
-      "date": "2026-11-22"
-    },
-    {
-      "title": "Qwen4-Max 限时免费明天结束",
-      "source": "Nous Portal",
+      "title": "黑五倒计时：今天只剩 Qwen4-Max，11-30 才是集中截止",
+      "source": "Nous Portal / OpenModel",
       "url": "https://portal.nousresearch.com/",
-      "note": "输入输出全 0 元、100 万上下文、支持图像输入，11-23 截止。适合今天就把想试的长文档任务跑完，别留到明天。",
-      "date": "2026-11-22"
+      "note": "Qwen4-Max 的免费窗口今天结束，想试长文档任务就趁现在。真正的截止高峰是 11-30：HiAPI、OpenModel、七牛都在那天，而且时区各不相同。",
+      "date": "2026-11-23"
+    },
+    {
+      "title": "七牛 Conatus 每天 1 亿 Token：本周是最后完整一周",
+      "source": "七牛云",
+      "url": "https://www.qiniu.com/",
+      "note": "活动 11-30 结束，额度每天 0 点清零不结转。如果要做批量摘要或抽取，这周把任务排满比攒额度有意义。",
+      "date": "2026-11-23"
+    },
+    {
+      "title": "11 月开通的百炼额度，2 月前要用完",
+      "source": "阿里云百炼",
+      "url": "https://help.aliyun.com/zh/model-studio/new-free-quota",
+      "note": "每个模型 100 万 Token、90 天有效。很多人 11 月开通后忘了，等想起来额度已经过期——先看控制台剩余量和到期日。",
+      "date": "2026-11-23"
     }
   ]
 }
