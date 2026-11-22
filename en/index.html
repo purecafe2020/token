@@ -224,6 +224,12 @@
   .deal h3{font-size:14.5px;font-weight:700;line-height:1.45}
   .deal h3 .hl{color:var(--red);font-weight:800}
   .deal .desc{font-size:12.5px;color:var(--sub);margin-top:4px}
+  .tipd{margin-top:7px;font-size:12px}
+  .tipd summary{cursor:pointer;color:#9a6b00;font-weight:700;list-style:none;width:fit-content}
+  .tipd summary::-webkit-details-marker{display:none}
+  .tipd summary:before{content:"▸ ";color:#c2410c}
+  .tipd[open] summary:before{content:"▾ "}
+  .tipd .tip{margin-top:6px}
   .deal .tip{
     margin-top:7px;font-size:12px;color:#9a6b00;background:#fff8e6;
     border-left:3px solid #ffc53d;padding:4px 8px;border-radius:0 4px 4px 0;
@@ -896,7 +902,7 @@ function dealCard(d){
   const regionTag = d.region==="cn"
     ? `<span class="mini cn">China</span>`
     : `<span class="mini gl">Overseas</span>`;
-  const tags = d.tags.map(t=>{
+  const tags = d.tags.slice(0,3).map(t=>{
     const warn = /避坑|已下线|过期|限额缩水|政策变更|模型下架|高热度谣言/.test(t);
     return `<span class="mini${warn?" warn":""}">${t}</span>`;
   }).join("");
@@ -912,7 +918,7 @@ function dealCard(d){
     <div class="main">
       <h3><span class="pf">${P(d)}</span>${L(d,"t")}</h3>
       <div class="desc">${L(d,"d")}</div>
-      <div class="tip"><b>${T.tip}</b>${LANG==="en" ? Note(d) : d.tip}</div>
+      <details class="tipd"><summary>${T.tip}</summary><div class="tip">${LANG==="en" ? Note(d) : d.tip}</div></details>
       <div class="tags">${regionTag}${useTag}${tags}</div>
     </div>
     <div class="side">
