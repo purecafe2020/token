@@ -40,7 +40,7 @@ try {
     }
 
     $targets = @(
-        'index.html', 'og-image.png', 'sitemap.xml', 'robots.txt',
+        'index.html', 'en/index.html', 'og-image.png', 'sitemap.xml', 'robots.txt',
         'favicon.svg', 'favicon-32.png', 'favicon-192.png', 'apple-touch-icon.png'
     ) | Where-Object { Test-Path (Join-Path $Root $_) }
 
@@ -48,7 +48,7 @@ try {
     foreach ($file in $targets) {
         $prev = $ErrorActionPreference
         $ErrorActionPreference = 'Continue'
-        $output = & tcb hosting deploy $file -e $config.envId 2>&1
+        $output = & tcb hosting deploy $file $file -e $config.envId 2>&1
         $code = $LASTEXITCODE
         $ErrorActionPreference = $prev
 

@@ -83,6 +83,19 @@ try {
         else { Write-Log ('SEO 生成失败（不影响发布）：' + $seoText) }
     }
 
+    # 生成英文站 en/index.html
+    $enScript = Join-Path $Root 'scripts\build-en.js'
+    if ((Test-Path $enScript) -and (Get-Command node -ErrorAction SilentlyContinue)) {
+        $prevEap = $ErrorActionPreference
+        $ErrorActionPreference = 'Continue'
+        $enOut = & node $enScript 2>&1
+        $enCode = $LASTEXITCODE
+        $ErrorActionPreference = $prevEap
+        $enText = (($enOut | ForEach-Object { "$_" }) -join ' ').Trim()
+        if ($enCode -eq 0) { Write-Log ('EN：' + $enText) }
+        else { Write-Log ('英文站生成失败（不影响发布）：' + $enText) }
+    }
+
     # 刷新分享图（统计数字与日期跟随数据，失败不阻断）
     $ogScript = Join-Path $Root 'scripts\make-og-image.ps1'
     if (Test-Path $ogScript) {

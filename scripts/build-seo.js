@@ -81,6 +81,12 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
+  <url>
+    <loc>${ORIGIN}/en/</loc>
+    <lastmod>${updated}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
 </urlset>
 `;
 if (!fs.existsSync("sitemap.xml") || fs.readFileSync("sitemap.xml", "utf8") !== sitemap) {
