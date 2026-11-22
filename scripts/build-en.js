@@ -3,6 +3,7 @@ const fs = require("fs");
 let h = fs.readFileSync("index.html", "utf8");
 
 const P = [
+  ['content="https://token.879879.xyz/og-image.png"', 'content="https://token.879879.xyz/og-image-en.png"'],
   ['<html lang="zh-CN">', '<html lang="en">'],
   ['<title>Token 日报 · 免费 AI 额度与优惠每日更新</title>',
    '<title>Token Daily - Free AI Credits and API Deals, Updated Daily</title>'],
@@ -53,6 +54,8 @@ const P = [
    '<li>Free tiers are rate-limited (RPM/RPD) and may use your data for model improvement - do not run production traffic or send customer data through them.</li>'],
   ['<li>同一条目一旦官方下线，会移入「避坑 / 已失效」，保留旧记录用于分辨过期教程。</li>',
    '<li>Entries removed by the provider move to Avoid, kept so you can recognise outdated tutorials.</li>'],
+  ['<div style="margin-top:6px">主站：<a href="https://token.879879.xyz" target="_blank" rel="noopener" style="color:#2b6de5">token.879879.xyz</a> · 国内备用：<a href="https://dizzy-roadrunner-d4ecxir07e8ea5d-1251001596.tcloudbaseapp.com/" target="_blank" rel="noopener" style="color:#2b6de5">CloudBase 镜像</a> · <a href="/en/" style="color:#2b6de5">English</a></div>',
+   '<div style="margin-top:6px">Primary: <a href="https://token.879879.xyz" target="_blank" rel="noopener" style="color:#2b6de5">token.879879.xyz</a> · CN mirror: <a href="https://dizzy-roadrunner-d4ecxir07e8ea5d-1251001596.tcloudbaseapp.com/" target="_blank" rel="noopener" style="color:#2b6de5">CloudBase</a> · <a href="/" style="color:#2b6de5">中文</a></div>'],
   ['<div>本页数据由每日检索生成 · 收录标准：可复现的领取入口 + 可追溯的官方来源</div>',
    '<div>Rebuilt from a daily research pass: every entry needs a reproducible claim link and a traceable official source.</div>'],
   ['<div>额度、价格与活动规则可能随时调整，领取前请以官方控制台为准</div>',
@@ -92,7 +95,7 @@ const ld = {
     description: strip(d.en.d),
   })),
 };
-const li = D.map((d) => `    <li><a href="${esc(d.link)}">${esc(strip(d.en.t))}</a><br><span>${esc(d.platform + " | " + d.en.v + " | " + d.en.n)}</span></li>`).join("\n");
+const li = D.map((d) => `    <li><a href="${esc(d.link)}">${esc(strip(d.en.t))}</a><br><span>${esc((d.en.p || d.platform) + " | " + d.en.v + " | " + d.en.n)}</span></li>`).join("\n");
 const block = `
 <script type="application/ld+json">${JSON.stringify(ld)}</script>
 <noscript>

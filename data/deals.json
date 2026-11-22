@@ -2,6 +2,7 @@
   {
     "id": "zhipu-glm47-flash",
     "en": {
+      "p": "Zhipu BigModel",
       "t": "GLM-4.7-Flash is <span class='hl'>free with no quota cap</span> (1 concurrent request)",
       "d": "30B MoE (3B active), 200K context, 128K max output, thinking mode and tool calling; officially positioned as permanently free, replacing the retired GLM-4.5-Flash.",
       "v": "Free · unlimited",
@@ -31,6 +32,7 @@
   {
     "id": "openmodel-bf",
     "en": {
+      "p": "OpenModel",
       "t": "Black Friday top-up bonus: <span class='hl'>10% at $50, 20% at $1,000</span>",
       "d": "Nov 15-30, 2026. Single-order top-ups earn 10% extra at $50-199, 15% at $200-499, 18% at $500-999, 20% at $1,000+; credited automatically.",
       "v": "Up to +20% credits",
@@ -60,6 +62,7 @@
   {
     "id": "gemini-lock",
     "en": {
+      "p": "Google Gemini",
       "t": "Gemini 3.8 Flash price <span class='hl'>locked to Dec 31</span>, doubles on Jan 1",
       "d": "Paid tier $0.75 input / $3.75 output per 1M tokens through 2026-12-31, then $1.50 / $7.50 from 2027-01-01. The free tier still covers 3.8 Flash, 3.6 Flash, 3.5 Flash-Lite and Gemma 4.",
       "v": "50% price window",
@@ -89,6 +92,7 @@
   {
     "id": "aliyun-bailian",
     "en": {
+      "p": "Alibaba Cloud Model Studio",
       "t": "<span class='hl'>1M free tokens per model</span> for new users, valid 90 days",
       "d": "Issued automatically when you activate Model Studio. Covers Qwen3.8-Flash, Qwen3.7-Flash, MiniMax-M2.5 and most text models; image segmentation adds 500 free calls.",
       "v": "1M tokens x N models",
@@ -118,6 +122,7 @@
   {
     "id": "volc-ark",
     "en": {
+      "p": "Volcengine Ark",
       "t": "<span class='hl'>500K free tokens per model</span> on first activation",
       "d": "Volcengine Ark issues quota per model, so multiple Doubao versions can each be claimed; pay-as-you-go is available alongside the free quota.",
       "v": "500K tokens / model",
@@ -147,6 +152,7 @@
   {
     "id": "tencent-hunyuan",
     "en": {
+      "p": "Tencent Hunyuan",
       "t": "<span class='hl'>1M free tokens</span> on first activation, valid 1 year",
       "d": "Hunyuan text models share a 1M-token package and embeddings get another 1M; the 1-year validity is the most generous among CN platforms.",
       "v": "1M tokens / 1 year",
@@ -176,6 +182,7 @@
   {
     "id": "tencent-tokenhub",
     "en": {
+      "p": "Tencent TokenHub",
       "t": "TokenHub starter pack: <span class='hl'>separate quotas for text, vision and multimodal</span>",
       "d": "Tencent Cloud's newer LLM platform issues separate starter quotas by model family, claimable from the model marketplace or the activation page.",
       "v": "Multi-category pack",
@@ -205,6 +212,7 @@
   {
     "id": "baidu-qianfan",
     "en": {
+      "p": "Baidu Qianfan",
       "t": "<span class='hl'>1M free tokens per model</span>, issued automatically",
       "d": "Granted after accepting the terms, per model rather than one shared pool; ERNIE and third-party models are counted separately.",
       "v": "1M tokens / model",
@@ -234,6 +242,7 @@
   {
     "id": "baidu-benefit",
     "en": {
+      "p": "Baidu Qianfan",
       "t": "AI benefit campaign: <span class='hl'>1,500 free calls per month</span>",
       "d": "Oct 30 - Dec 31, 2026, standard and turbo versions, roughly 50 calls per day; pay-as-you-go beyond the quota.",
       "v": "1,500 calls / month",
@@ -263,6 +272,7 @@
   {
     "id": "modelscope",
     "en": {
+      "p": "ModelScope",
       "t": "<span class='hl'>2,000 free API calls per day</span> across 60K+ open models",
       "d": "ModelScope's free inference service covers text, image and speech models without self-hosting; a good fit for prototyping.",
       "v": "2,000 calls / day",
@@ -292,6 +302,7 @@
   {
     "id": "siliconflow",
     "en": {
+      "p": "SiliconFlow",
       "t": "Invite sign-up gives <span class='hl'>20M tokens</span>, plus permanently free small models",
       "d": "New users arriving through an invite link receive a 20M-token grant; several small models remain free to call.",
       "v": "20M tokens",
@@ -321,6 +332,7 @@
   {
     "id": "openrouter-free",
     "en": {
+      "p": "OpenRouter",
       "t": "<span class='hl'>20+ :free models</span> behind a single key",
       "d": "The current free list centers on NVIDIA Nemotron 3 (Ultra 550B / Lightning / Super VL, 1M context), Google Gemma 4, Cohere North Mini Code and Ling 3.2 Flash, plus the openrouter/free router.",
       "v": "20 RPM / 50 RPD",
@@ -350,6 +362,7 @@
   {
     "id": "groq",
     "en": {
+      "p": "Groq",
       "t": "Free tier up to <span class='hl'>14,400 requests/day</span>, very low latency",
       "d": "llama-3.1-8b-instant runs about 30 RPM / 14,400 RPD; larger models (gpt-oss-120b, Kimi K2, Qwen3) sit at 1,000 RPD; Whisper adds 2,000 audio requests/day.",
       "v": "1,000-14,400 RPD",
@@ -379,6 +392,7 @@
   {
     "id": "cloudflare",
     "en": {
+      "p": "Cloudflare Workers AI",
       "t": "<span class='hl'>10,000 free Neurons per day</span>, models at the edge",
       "d": "Included in the Workers free plan and resets at 00:00 UTC; Llama, Qwen, Whisper and Stable Diffusion are billed by Neuron, with overage at $0.011 per 1,000.",
       "v": "10K Neurons / day",
@@ -408,6 +422,7 @@
   {
     "id": "nvidia-nim",
     "en": {
+      "p": "NVIDIA NIM",
       "t": "build.nvidia.com: <span class='hl'>120+ open models free</span>",
       "d": "Nemotron, DeepSeek and Qwen open-weight models are callable online at roughly 40 RPM without a card; positioned for evaluation and prototyping.",
       "v": "40 RPM and up",
@@ -437,6 +452,7 @@
   {
     "id": "mistral",
     "en": {
+      "p": "Mistral",
       "t": "Free experimentation tier <span class='hl'>enabled by default</span>, no card required",
       "d": "New accounts start on the free mode and can call Mistral Medium and Codestral; rate limits are strict and meant for evaluation.",
       "v": "Free tier",
@@ -466,6 +482,7 @@
   {
     "id": "gcp-300",
     "en": {
+      "p": "Google Cloud",
       "t": "<span class='hl'>$300 credit / 91 days</span> for new Google Cloud users",
       "d": "Call Gemini 3 Pro and 3.8 Flash through Vertex AI; the largest compliant free-credit route available.",
       "v": "$300 credit",
@@ -495,6 +512,7 @@
   {
     "id": "azure-200",
     "en": {
+      "p": "Microsoft Azure",
       "t": "<span class='hl'>$200 credit / 30 days</span> plus 55 always-free services",
       "d": "Azure's free account includes $200 for the first month, usable on Azure OpenAI and AI Foundry; 55+ services stay free.",
       "v": "$200 credit",
@@ -524,6 +542,7 @@
   {
     "id": "deepseek-promo",
     "en": {
+      "p": "DeepSeek",
       "t": "Official pricing shows <span class='hl'>limited-time 50% off</span> (speech); text billed at off-peak rates",
       "d": "TTS drops from CNY 3 to 1.5 per 10K chars, ASR from 0.78 to 0.39 per hour; text models moved to off-peak and cache-hit pricing.",
       "v": "From 50% off",
@@ -553,6 +572,7 @@
   {
     "id": "cerebras-trap",
     "en": {
+      "p": "Cerebras",
       "t": "Claimed '1M free tokens per day' - <span class='hl'>officially denied</span>",
       "d": "Cerebras states it does not offer an auto-renewing free tier or a per-model permanent allowance; new accounts get about $5 in trial credit that expires in 30 days.",
       "v": "Only $5 trial credit",
@@ -582,6 +602,7 @@
   {
     "id": "github-models-trap",
     "en": {
+      "p": "GitHub Models",
       "t": "GitHub Models free API is <span class='hl'>retired</span>",
       "d": "The old route of using a GitHub account to call GPT-4o or Llama for free is gone and related tutorials no longer work; use OpenRouter or NVIDIA NIM instead.",
       "v": "Discontinued",
@@ -611,6 +632,7 @@
   {
     "id": "openrouter-gone-trap",
     "en": {
+      "p": "OpenRouter",
       "t": "These models <span class='hl'>left the free list</span>: DeepSeek R1, Qwen3 Coder 480B, Llama 3.3 70B",
       "d": "OpenRouter's :free list follows upstream subsidies, and the models above moved to paid. The current free leaders are Nemotron 3, Gemma 4 and Cohere North Mini Code.",
       "v": "List rotated",
@@ -640,6 +662,7 @@
   {
     "id": "hf-trap",
     "en": {
+      "p": "Hugging Face",
       "t": "Free accounts get <span class='hl'>no monthly inference credit</span>; PRO only $2/month",
       "d": "After the Inference Providers revamp, free accounts are pay-as-you-go; PRO at $9/month includes $2 of monthly credit.",
       "v": "$0 credit",
@@ -669,6 +692,7 @@
   {
     "id": "gemini-rpd-trap",
     "en": {
+      "p": "Google Gemini",
       "t": "'1,500 free requests/day' <span class='hl'>no longer applies to new models</span>",
       "d": "Gemini free-tier limits were tightened repeatedly in late 2026, with the flagship Flash briefly at 20 RPD. The docs only promise to check AI Studio.",
       "v": "Limits fluctuate",
@@ -698,6 +722,7 @@
   {
     "id": "aibotone-hub",
     "en": {
+      "p": "Ai1hao",
       "t": "Beginner compute hub claiming <span class='hl'>130M free tokens</span>",
       "d": "Aggregates free-quota campaigns, tool installers and tutorials in a claim-install-build flow; the 130M figure stacks multiple platforms and is unverified.",
       "v": "Claimed 130M tokens",
@@ -727,6 +752,7 @@
   {
     "id": "iflytek-spark",
     "en": {
+      "p": "iFlytek Spark",
       "t": "Spark-X2.6 gives new users <span class='hl'>1B tokens</span> of trial quota",
       "d": "iFlytek's MaaS platform offers 1B free tokens for Spark-X2.6 (293B-A30B MoE, 1M context) after real-name verification; paid usage is 60% off for a limited time.",
       "v": "1B tokens",
@@ -756,6 +782,7 @@
   {
     "id": "edgeone-makers",
     "en": {
+      "p": "Tencent EdgeOne Makers",
       "t": "<span class='hl'>500K free tokens per month</span> with built-in models",
       "d": "EdgeOne Makers' free plan issues 500K tokens monthly for DeepSeek V4, Kimi K2.6, MiniMax M3 and Hunyuan; BYOK calls do not consume the quota.",
       "v": "500K tokens / month",
@@ -785,6 +812,7 @@
   {
     "id": "minimax-platform",
     "en": {
+      "p": "MiniMax",
       "t": "Free users get <span class='hl'>20 RPM / 1M TPM</span>, no top-up needed",
       "d": "MiniMax language models allow 20 RPM and 1M TPM on the free tier; speech synthesis runs at 10 RPM, music at 3 RPM, images counted by IPM.",
       "v": "20 RPM / 1M TPM",
@@ -814,6 +842,7 @@
   {
     "id": "huawei-agentarts",
     "en": {
+      "p": "Huawei Cloud AgentArts",
       "t": "AgentArts gives <span class='hl'>2M free tokens</span> on activation",
       "d": "AgentArts connects to ModelArts Studio (MaaS) and issues 2M tokens by default for model testing and agent dry runs.",
       "v": "2M tokens",
@@ -863,6 +892,7 @@
     ],
     "tip": "额度<b>不结转</b>，每天 0 点清零；「充值后 10 亿」要求<b>单次</b>充值满 100 元，拆成多次小额不累计。",
     "en": {
+      "p": "Qiniu Cloud Conatus",
       "t": "Qiniu Conatus: <span class='hl'>100M free tokens per day</span> during Black Friday",
       "d": "The qiniu/conatus-free model is free during the campaign for verified users, 100M tokens per day; a single top-up of CNY 100 raises it to 1B per day. Quota resets at 00:00 Beijing time and does not roll over.",
       "v": "100M tokens / day",
@@ -892,6 +922,7 @@
     ],
     "tip": "返现按<b>整周消费总额</b>分档，12-03 才到账且封顶 $100；免费 DeepSeek 要求账号至少成功充值过一次，未充值不生效。",
     "en": {
+      "p": "HiAPI",
       "t": "HiAPI Black Friday: <span class='hl'>$650 for a $500 top-up</span> plus free DeepSeek tokens",
       "d": "Nov 24-30 (PT): a single $500 top-up adds $50 instantly, and image/video/audio spend during the week returns up to $100. Topped-up accounts also get 10M free DeepSeek V4.1 Flash tokens per day.",
       "v": "Up to 30% back",
