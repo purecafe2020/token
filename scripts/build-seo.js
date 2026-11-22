@@ -112,6 +112,12 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>${ORIGIN}/guides/black-friday-ai-credits-calendar/</loc>
+    <lastmod>${updated}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>${ORIGIN}/about/</loc>
     <lastmod>${updated}</lastmod>
     <changefreq>monthly</changefreq>

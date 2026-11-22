@@ -45,6 +45,7 @@ try {
         'en/about/index.html', 'en/privacy/index.html', 'en/contact/index.html',
         'guides/index.html', 'guides/qiniu-conatus-free-tokens/index.html',
         'guides/aliyun-bailian-free-tokens/index.html', 'guides/openrouter-free-models/index.html',
+        'guides/black-friday-ai-credits-calendar/index.html',
         'feed/index.html', 'credits/index.html', 'compute/index.html', 'data/index.html', 'use-cases/index.html',
         'favicon.svg', 'favicon-32.png', 'favicon-192.png', 'apple-touch-icon.png'
     ) | Where-Object { Test-Path (Join-Path $Root $_) }
