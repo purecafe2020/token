@@ -149,6 +149,7 @@
   .pick .kv i{font-style:normal;color:var(--muted)}
   .pick{transition:border-color .15s,box-shadow .15s}
   .pick:hover{border-color:#ffc6a8;box-shadow:0 4px 14px rgba(255,90,0,.10)}
+  a.pick{display:block;text-decoration:none;color:inherit}
   .pick-links{display:flex;gap:14px;margin-top:10px;font-size:12px}
   .pick-links a{color:var(--blue)}
   .pick-links a:hover{text-decoration:underline}
@@ -306,6 +307,27 @@
 
   <div class="sec-title">今日精选 <small>力度最大、最值得现在动手的 3 条</small></div>
   <div class="picks" id="picks"></div>
+
+<!--GUIDES:START-->
+  <div class="sec-title">深度指南 <small>怎么领、额度怎么算、哪里会踩坑</small></div>
+  <div class="picks">
+    <a class="pick" href="/guides/qiniu-conatus-free-tokens/">
+      <h3>七牛云每天 1 亿 Token 怎么领</h3>
+      <p>额度表、5 步领取，以及不结转、单次充值的坑。</p>
+      <div class="kv"><span><i>指南</i> <b>2026 黑五</b></span></div>
+    </a>
+    <a class="pick" href="/guides/aliyun-bailian-free-tokens/">
+      <h3>阿里云百炼 100 万 Token 全流程</h3>
+      <p>按模型发放、90 天怎么算、华北 2 地域限制。</p>
+      <div class="kv"><span><i>指南</i> <b>长期有效</b></span></div>
+    </a>
+    <a class="pick" href="/guides/openrouter-free-models/">
+      <h3>OpenRouter 免费模型怎么用</h3>
+      <p>20 RPM / 50 次的真实限制，充 $10 能换到什么。</p>
+      <div class="kv"><span><i>指南</i> <b>名单常变</b></span></div>
+    </a>
+  </div>
+  <!--GUIDES:END-->
 
   <div class="toolbar">
     <div class="tb-inner">

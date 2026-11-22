@@ -149,6 +149,7 @@
   .pick .kv i{font-style:normal;color:var(--muted)}
   .pick{transition:border-color .15s,box-shadow .15s}
   .pick:hover{border-color:#ffc6a8;box-shadow:0 4px 14px rgba(255,90,0,.10)}
+  a.pick{display:block;text-decoration:none;color:inherit}
   .pick-links{display:flex;gap:14px;margin-top:10px;font-size:12px}
   .pick-links a{color:var(--blue)}
   .pick-links a:hover{text-decoration:underline}
@@ -306,6 +307,15 @@
 
   <div class="sec-title">Top picks <small>Biggest value, worth acting on now</small></div>
   <div class="picks" id="picks"></div>
+
+<!--GUIDES:START-->
+  <div class="sec-title">Guides <small>How to claim, how quotas work, what to avoid</small></div>
+  <div class="picks">
+    <a class="pick" href="/guides/qiniu-conatus-free-tokens/"><h3>Claiming 100M Qiniu tokens per day</h3><p>Quota table, five steps, and the rollover trap.</p></a>
+    <a class="pick" href="/guides/aliyun-bailian-free-tokens/"><h3>Alibaba Cloud Model Studio: 1M tokens per model</h3><p>Per-model issuance, 90-day window, region limits.</p></a>
+    <a class="pick" href="/guides/openrouter-free-models/"><h3>How to use OpenRouter free models</h3><p>20 RPM / 50 per day, and what $10 actually buys.</p></a>
+  </div>
+  <!--GUIDES:END-->
 
   <div class="toolbar">
     <div class="tb-inner">
