@@ -82,6 +82,12 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>${ORIGIN}/feed/</loc>
+    <lastmod>${updated}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>${ORIGIN}/guides/</loc>
     <lastmod>${updated}</lastmod>
     <changefreq>weekly</changefreq>
