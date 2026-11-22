@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 
 const ORIGIN = "https://token.879879.xyz";
-const EMAIL = "contact@879879.xyz"; // TODO: 换成你真实可收信的邮箱
+const EMAIL = "admin@879879.xyz";
 const UPDATED = "2026-11-22";
 
 const css = `
