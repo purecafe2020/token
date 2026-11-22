@@ -42,7 +42,6 @@ function page(name, desc, items) {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>${name} - Token 日报</title>
 <meta name="description" content="${desc}">
-<meta name="robots" content="noindex,follow">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <style>${css}</style>
 </head>
@@ -51,7 +50,6 @@ function page(name, desc, items) {
 <main>
 <h1>${name}</h1>
 <div class="desc">${desc}</div>
-<div class="note-top">本栏目正在建设，内容持续补充中；页面暂不参与搜索收录。</div>
 ${items}
 </main>
 <footer><div><a href="/">返回首页</a><a href="/feed/">情报</a><a href="/en/">English</a></div></footer>

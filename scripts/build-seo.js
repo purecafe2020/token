@@ -82,6 +82,30 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>${ORIGIN}/credits/</loc>
+    <lastmod>${updated}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>${ORIGIN}/compute/</loc>
+    <lastmod>${updated}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>${ORIGIN}/data/</loc>
+    <lastmod>${updated}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>${ORIGIN}/use-cases/</loc>
+    <lastmod>${updated}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>${ORIGIN}/feed/</loc>
     <lastmod>${updated}</lastmod>
     <changefreq>daily</changefreq>
