@@ -65,8 +65,10 @@ for (const [a, b] of P) {
   h = h.split(a).join(b);
 }
 
-h = h.split('href="https://token.879879.xyz/"').join('href="https://token.879879.xyz/en/"');
-h = h.split('content="https://token.879879.xyz/"').join('content="https://token.879879.xyz/en/"');
+h = h.split('<link rel="canonical" href="https://token.879879.xyz/">')
+     .join('<link rel="canonical" href="https://token.879879.xyz/en/">');
+h = h.split('content="https://token.879879.xyz/"')
+     .join('content="https://token.879879.xyz/en/"');
 h = h.split('<a href="/en/" style="color:#2b6de5">English</a>').join('<a href="/" style="color:#2b6de5">中文</a>');
 
 // 用英文数据重建 JSON-LD 与 noscript 文本版，避免英文页混入中文
