@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>数据 - Token 日报</title>
-<meta name="description" content="公开数据集、开放语料与标注工具。只收录明确可获取、许可清晰的数据源。">
+<meta name="description" content="公开数据集、开放语料与基准。只收录许可清晰、可合法获取的数据源。">
 <meta name="robots" content="noindex,follow">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <style>
@@ -34,37 +34,67 @@
 <header><div class="wrap"><a href="/">Token 日报</a><nav><a href="/credits/">额度</a><a href="/compute/">算力</a><a href="/data/">数据</a><a href="/use-cases/">场景</a><a href="/guides/">指南</a></nav></div></header>
 <main>
 <h1>数据</h1>
-<div class="desc">公开数据集、开放语料与标注工具。只收录明确可获取、许可清晰的数据源。</div>
+<div class="desc">公开数据集、开放语料与基准。只收录许可清晰、可合法获取的数据源。</div>
 <div class="note-top">本栏目正在建设，内容持续补充中；页面暂不参与搜索收录。</div>
   <div class="item">
     <h2>Hugging Face Datasets</h2>
     <div class="value">10 万+ 公开数据集</div>
-    <div class="note">按任务与语言筛选，先看 license 字段；商用前务必确认许可，别默认都是开放的。</div>
+    <div class="note">按任务与语言筛选，先看 license；商用前务必确认许可，别默认都开放。</div>
     <div class="src">来源：<a href="https://huggingface.co/datasets" target="_blank" rel="noopener">Hugging Face ↗</a></div>
   </div>
   <div class="item">
     <h2>ModelScope 数据集</h2>
     <div class="value">中文语料与垂域数据集</div>
-    <div class="note">中文数据比 HF 更集中，适合做中文 RAG 与微调实验；下载前看文件大小与授权说明。</div>
+    <div class="note">中文数据比 HF 更集中，适合中文 RAG 与微调；下载前看文件大小与授权。</div>
     <div class="src">来源：<a href="https://www.modelscope.cn/datasets" target="_blank" rel="noopener">ModelScope ↗</a></div>
+  </div>
+  <div class="item">
+    <h2>阿里云天池数据集</h2>
+    <div class="value">行业数据集与竞赛数据</div>
+    <div class="note">电商、金融、医疗等垂域数据较多；比赛数据常有使用限制，商用要单独确认。</div>
+    <div class="src">来源：<a href="https://tianchi.aliyun.com/dataset/" target="_blank" rel="noopener">天池 ↗</a></div>
+  </div>
+  <div class="item">
+    <h2>Kaggle Datasets</h2>
+    <div class="value">数万公开数据集</div>
+    <div class="note">很多带 Notebook 示例，省去清洗前戏；但质量参差，先看更新时间和讨论区。</div>
+    <div class="src">来源：<a href="https://www.kaggle.com/datasets" target="_blank" rel="noopener">Kaggle ↗</a></div>
+  </div>
+  <div class="item">
+    <h2>CLUE 中文基准</h2>
+    <div class="value">中文 NLP 评测集</div>
+    <div class="note">做中文模型对比时的常用基准；数据量不大，适合评估而非训练。</div>
+    <div class="src">来源：<a href="https://www.cluebenchmarks.com/" target="_blank" rel="noopener">CLUE ↗</a></div>
   </div>
   <div class="item">
     <h2>Common Crawl</h2>
     <div class="value">月度网页抓取存档</div>
-    <div class="note">体量极大，不适合直接下载。建议先用索引筛域名再抽样，否则存储成本远超预期。</div>
+    <div class="note">体量极大，别直接下载；先用索引筛域名再抽样，否则存储成本远超预期。</div>
     <div class="src">来源：<a href="https://commoncrawl.org/" target="_blank" rel="noopener">Common Crawl ↗</a></div>
   </div>
   <div class="item">
     <h2>Wikipedia Dumps</h2>
     <div class="value">全量百科离线数据</div>
-    <div class="note">干净、结构化、许可清晰，适合做知识库冷启动；注意定期更新与语言版本选择。</div>
+    <div class="note">干净、结构化、许可清晰，适合知识库冷启动；注意语言版本与更新周期。</div>
     <div class="src">来源：<a href="https://dumps.wikimedia.org/" target="_blank" rel="noopener">Wikimedia ↗</a></div>
   </div>
   <div class="item">
     <h2>国家统计局开放数据</h2>
     <div class="value">官方统计数据</div>
-    <div class="note">做行业分析、图表生成时比爬虫可靠；接口与格式不统一，需要做一次清洗。</div>
+    <div class="note">做行业分析与图表生成时比爬虫可靠；接口与格式不统一，需要一次清洗。</div>
     <div class="src">来源：<a href="https://data.stats.gov.cn/" target="_blank" rel="noopener">国家统计局 ↗</a></div>
+  </div>
+  <div class="item">
+    <h2>Data.gov</h2>
+    <div class="value">美国政府开放数据</div>
+    <div class="note">英文语料与政策数据丰富，适合做英文场景 demo；注意各数据集独立许可。</div>
+    <div class="src">来源：<a href="https://data.gov/" target="_blank" rel="noopener">Data.gov ↗</a></div>
+  </div>
+  <div class="item">
+    <h2>Google Dataset Search</h2>
+    <div class="value">跨站数据集检索</div>
+    <div class="note">找数据的第一站：按主题搜，再回到原始站点确认许可，别直接抓搜索结果。</div>
+    <div class="src">来源：<a href="https://datasetsearch.research.google.com/" target="_blank" rel="noopener">Google ↗</a></div>
   </div>
 </main>
 <footer><div><a href="/">返回首页</a><a href="/feed/">情报</a><a href="/en/">English</a></div></footer>

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>算力 - Token 日报</title>
-<meta name="description" content="免费 GPU 时长、学生计划与算力平台价格。额度以官网为准，标注为「部分核实」的条目请领取前确认。">
+<meta name="description" content="免费 GPU 时长、试用金与按需算力价格。标注「以官网为准」的条目请领取前确认额度。">
 <meta name="robots" content="noindex,follow">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <style>
@@ -34,37 +34,67 @@
 <header><div class="wrap"><a href="/">Token 日报</a><nav><a href="/credits/">额度</a><a href="/compute/">算力</a><a href="/data/">数据</a><a href="/use-cases/">场景</a><a href="/guides/">指南</a></nav></div></header>
 <main>
 <h1>算力</h1>
-<div class="desc">免费 GPU 时长、学生计划与算力平台价格。额度以官网为准，标注为「部分核实」的条目请领取前确认。</div>
+<div class="desc">免费 GPU 时长、试用金与按需算力价格。标注「以官网为准」的条目请领取前确认额度。</div>
 <div class="note-top">本栏目正在建设，内容持续补充中；页面暂不参与搜索收录。</div>
   <div class="item">
-    <h2>Google Colab 免费层</h2>
+    <h2>Google Colab</h2>
     <div class="value">免费 T4 GPU（有时段限制）</div>
-    <div class="note">最省事的零成本试跑环境，适合跑通 Notebook；长时间训练会被断开，别用来跑生产任务。</div>
+    <div class="note">最省事的零成本试跑环境，适合跑通 Notebook；长时间训练会被断开，别用于生产。</div>
     <div class="src">来源：<a href="https://colab.research.google.com/" target="_blank" rel="noopener">Google Colab ↗</a></div>
   </div>
   <div class="item">
     <h2>Kaggle Notebooks</h2>
-    <div class="value">每周约 30 小时 GPU 额度</div>
-    <div class="note">P100/T4 可选，每周配额刷新；数据集与 Notebook 一体，适合做实验和比赛复现。</div>
+    <div class="value">每周约 30 小时 GPU</div>
+    <div class="note">P100/T4 可选，配额每周刷新；数据集与 Notebook 一体，适合实验与比赛复现。</div>
     <div class="src">来源：<a href="https://www.kaggle.com/docs/notebooks" target="_blank" rel="noopener">Kaggle ↗</a></div>
   </div>
   <div class="item">
-    <h2>华为云 ModelArts 免费算力</h2>
+    <h2>百度 AI Studio</h2>
+    <div class="value">每日免费训练额度（实名）</div>
+    <div class="note">国内访问快，适合中文模型微调实验；免费卡时按天发放，超时排队。</div>
+    <div class="src">来源：<a href="https://aistudio.baidu.com/" target="_blank" rel="noopener">百度 AI Studio ↗</a></div>
+  </div>
+  <div class="item">
+    <h2>华为云 ModelArts</h2>
     <div class="value">开发者/学生可申请体验资源</div>
-    <div class="note">需要实名与申请，审批周期不定；适合有明确任务说明的申请，写清用途通过率更高。</div>
+    <div class="note">需实名与申请，审批周期不定；写清任务用途通过率更高。</div>
     <div class="src">来源：<a href="https://www.huaweicloud.com/product/modelarts.html" target="_blank" rel="noopener">华为云 ↗</a></div>
   </div>
   <div class="item">
-    <h2>阿里云 PAI 试用资源</h2>
-    <div class="value">新用户试用额度，按活动变化</div>
-    <div class="note">试用资源常与地域绑定，开通前先看可用区和实例规格，避免申请了用不上。</div>
+    <h2>阿里云 PAI</h2>
+    <div class="value">新用户试用额度</div>
+    <div class="note">试用资源与地域绑定，开通前确认可用区和实例规格，避免申请了用不上。</div>
     <div class="src">来源：<a href="https://www.aliyun.com/product/bigdata/learn" target="_blank" rel="noopener">阿里云 ↗</a></div>
   </div>
   <div class="item">
     <h2>腾讯云 Cloud Studio</h2>
-    <div class="value">在线开发环境，部分模板免费用</div>
-    <div class="note">适合轻量调试与教学演示，重训练仍需本地或云 GPU；注意免费模板的休眠策略。</div>
+    <div class="value">在线开发环境，部分模板免费</div>
+    <div class="note">适合轻量调试与教学演示；重训练仍需 GPU，注意免费模板的休眠策略。</div>
     <div class="src">来源：<a href="https://cloudstudio.net/" target="_blank" rel="noopener">腾讯云 ↗</a></div>
+  </div>
+  <div class="item">
+    <h2>Lightning AI</h2>
+    <div class="value">免费层含少量 GPU 时长</div>
+    <div class="note">Studio 里直接跑 Notebook，免费额度适合验证想法；超出后按小时计费，注意关停。</div>
+    <div class="src">来源：<a href="https://lightning.ai/" target="_blank" rel="noopener">Lightning AI ↗</a></div>
+  </div>
+  <div class="item">
+    <h2>RunPod</h2>
+    <div class="value">按秒计费的按需 GPU</div>
+    <div class="note">没有免费额度，但单价低于大厂，适合短任务；选社区云还是安全云，价格差一倍。</div>
+    <div class="src">来源：<a href="https://www.runpod.io/pricing" target="_blank" rel="noopener">RunPod ↗</a></div>
+  </div>
+  <div class="item">
+    <h2>Google Cloud TPU</h2>
+    <div class="value">$300 试用金可用于 TPU</div>
+    <div class="note">新用户赠金 91 天有效，能跑 Vertex AI 与 TPU；务必设预算告警并关闭自动升级。</div>
+    <div class="src">来源：<a href="https://cloud.google.com/free" target="_blank" rel="noopener">Google Cloud ↗</a></div>
+  </div>
+  <div class="item">
+    <h2>华为昇腾社区</h2>
+    <div class="value">开发者免费算力活动</div>
+    <div class="note">国产卡生态，适合跑昇腾适配的模型；活动按批次开放，需在社区报名。</div>
+    <div class="src">来源：<a href="https://www.hiascend.com/" target="_blank" rel="noopener">华为昇腾 ↗</a></div>
   </div>
 </main>
 <footer><div><a href="/">返回首页</a><a href="/feed/">情报</a><a href="/en/">English</a></div></footer>

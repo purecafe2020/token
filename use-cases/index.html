@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>场景 - Token 日报</title>
-<meta name="description" content="用免费额度能真正跑起来的场景：RAG、Agent、批量处理、内容生成。每条都给出可复现的组合方案。">
+<meta name="description" content="用免费额度真正能跑起来的场景。每条给出可复现的组合方案与一句判断。">
 <meta name="robots" content="noindex,follow">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <style>
@@ -34,37 +34,67 @@
 <header><div class="wrap"><a href="/">Token 日报</a><nav><a href="/credits/">额度</a><a href="/compute/">算力</a><a href="/data/">数据</a><a href="/use-cases/">场景</a><a href="/guides/">指南</a></nav></div></header>
 <main>
 <h1>场景</h1>
-<div class="desc">用免费额度能真正跑起来的场景：RAG、Agent、批量处理、内容生成。每条都给出可复现的组合方案。</div>
+<div class="desc">用免费额度真正能跑起来的场景。每条给出可复现的组合方案与一句判断。</div>
 <div class="note-top">本栏目正在建设，内容持续补充中；页面暂不参与搜索收录。</div>
   <div class="item">
-    <h2>免费额度跑 RAG 知识库</h2>
+    <h2>RAG 知识库问答</h2>
     <div class="value">Qwen3.8-Flash + 本地向量库</div>
-    <div class="note">百炼 100 万 Token 够建几千条文档的索引；先做小规模验证召回率，再扩库。</div>
+    <div class="note">百炼 100 万 Token 够建几千条文档索引；先验证召回率，再扩库。</div>
     <div class="src">来源：<a href="/guides/aliyun-bailian-free-tokens/" target="_blank" rel="noopener">组合方案 ↗</a></div>
   </div>
   <div class="item">
-    <h2>Agent 工具调用工作流</h2>
+    <h2>Agent 工具调用</h2>
     <div class="value">GLM-4.7-Flash（免费、200K 上下文）</div>
-    <div class="note">支持 Function Calling，适合做「先想再做」的多步任务；并发限制为 1，别做高并发服务。</div>
+    <div class="note">支持 Function Calling，适合多步任务；限并发 1，别做高并发服务。</div>
     <div class="src">来源：<a href="/guides/" target="_blank" rel="noopener">组合方案 ↗</a></div>
   </div>
   <div class="item">
     <h2>大批量摘要与抽取</h2>
     <div class="value">七牛 Conatus 每天 1 亿 Token</div>
-    <div class="note">适合每天处理几十份长文档；额度不结转，按天规划任务量，别攒到最后一天。</div>
+    <div class="note">适合每天几十份长文档；额度不结转，按天排任务量。</div>
     <div class="src">来源：<a href="/guides/qiniu-conatus-free-tokens/" target="_blank" rel="noopener">组合方案 ↗</a></div>
   </div>
   <div class="item">
     <h2>多模态内容生成</h2>
     <div class="value">MiniMax（语音/音乐）+ Cloudflare（图像）</div>
-    <div class="note">两个免费档各管一类模态，组合起来能做短视频脚本 + 配音 + 配图的完整链路。</div>
+    <div class="note">两类免费档各管一种模态，能拼出脚本+配音+配图的完整链路。</div>
     <div class="src">来源：<a href="/guides/" target="_blank" rel="noopener">组合方案 ↗</a></div>
   </div>
   <div class="item">
     <h2>代码助手与重构</h2>
     <div class="value">OpenRouter 免费代码模型 + fallback</div>
-    <div class="note">免费模型会下架，务必配两三个 fallback；长上下文任务优先选 1M 上下文的模型。</div>
+    <div class="note">免费模型会下架，务必配 2~3 个 fallback；长上下文任务选 1M 模型。</div>
     <div class="src">来源：<a href="/guides/openrouter-free-models/" target="_blank" rel="noopener">组合方案 ↗</a></div>
+  </div>
+  <div class="item">
+    <h2>批量翻译与本地化</h2>
+    <div class="value">Qwen Flash + 术语表</div>
+    <div class="note">长文档分段翻译，用术语表保证一致性；先用 1000 字样本调提示词再批量跑。</div>
+    <div class="src">来源：<a href="/guides/aliyun-bailian-free-tokens/" target="_blank" rel="noopener">组合方案 ↗</a></div>
+  </div>
+  <div class="item">
+    <h2>会议纪要转写</h2>
+    <div class="value">Groq Whisper + 摘要模型</div>
+    <div class="note">Whisper 每天 2000 次转写额度，配合摘要能出结构化纪要；注意单文件大小上限。</div>
+    <div class="src">来源：<a href="/#groq" target="_blank" rel="noopener">组合方案 ↗</a></div>
+  </div>
+  <div class="item">
+    <h2>电商商品描述</h2>
+    <div class="value">Qwen Flash + 模板约束</div>
+    <div class="note">先固定字段与语气，再批量生成；必须人工抽检，避免夸大宣传。</div>
+    <div class="src">来源：<a href="/guides/aliyun-bailian-free-tokens/" target="_blank" rel="noopener">组合方案 ↗</a></div>
+  </div>
+  <div class="item">
+    <h2>论文与长文档问答</h2>
+    <div class="value">Gemini / Qwen4-Max（1M 上下文）</div>
+    <div class="note">一次塞完整篇论文，省去切分与检索；免费档限速严，先小批量试。</div>
+    <div class="src">来源：<a href="/#gemini-lock" target="_blank" rel="noopener">组合方案 ↗</a></div>
+  </div>
+  <div class="item">
+    <h2>客服 FAQ 生成</h2>
+    <div class="value">历史工单 + 免费模型</div>
+    <div class="note">从真实问答里聚类出高频问题，再写成 FAQ；比凭空生成更贴近用户。</div>
+    <div class="src">来源：<a href="/#tencent-hunyuan" target="_blank" rel="noopener">组合方案 ↗</a></div>
   </div>
 </main>
 <footer><div><a href="/">返回首页</a><a href="/feed/">情报</a><a href="/en/">English</a></div></footer>
