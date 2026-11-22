@@ -40,7 +40,9 @@ try {
     }
 
     $targets = @(
-        'index.html', 'en/index.html', 'og-image.png', 'og-image-en.png', 'sitemap.xml', 'robots.txt',
+        'index.html', 'en/index.html', 'og-image.png', 'og-image-en.png', 'sitemap.xml', 'robots.txt', 'ads.txt',
+        'about/index.html', 'privacy/index.html', 'contact/index.html',
+        'en/about/index.html', 'en/privacy/index.html', 'en/contact/index.html',
         'favicon.svg', 'favicon-32.png', 'favicon-192.png', 'apple-touch-icon.png'
     ) | Where-Object { Test-Path (Join-Path $Root $_) }
 

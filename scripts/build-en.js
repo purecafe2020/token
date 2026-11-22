@@ -58,6 +58,8 @@ const P = [
    '<div style="margin-top:6px">Primary: <a href="https://token.879879.xyz" target="_blank" rel="noopener" style="color:#2b6de5">token.879879.xyz</a> · CN mirror: <a href="https://dizzy-roadrunner-d4ecxir07e8ea5d-1251001596.tcloudbaseapp.com/" target="_blank" rel="noopener" style="color:#2b6de5">CloudBase</a> · <a href="/" style="color:#2b6de5">中文</a></div>'],
   ['<div>本页数据由每日检索生成 · 收录标准：可复现的领取入口 + 可追溯的官方来源</div>',
    '<div>Rebuilt from a daily research pass: every entry needs a reproducible claim link and a traceable official source.</div>'],
+  ['<div style="margin-top:4px"><a href="/about/" style="color:#2b6de5">关于</a> · <a href="/privacy/" style="color:#2b6de5">隐私政策</a> · <a href="/contact/" style="color:#2b6de5">联系</a></div>',
+   '<div style="margin-top:4px"><a href="/en/about/" style="color:#2b6de5">About</a> · <a href="/en/privacy/" style="color:#2b6de5">Privacy</a> · <a href="/en/contact/" style="color:#2b6de5">Contact</a></div>'],
   ['<div>额度、价格与活动规则可能随时调整，领取前请以官方控制台为准</div>',
    '<div>Quotas, prices and rules change; always confirm in the provider console before claiming.</div>'],
 ];
