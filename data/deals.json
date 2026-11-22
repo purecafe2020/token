@@ -928,5 +928,95 @@
       "v": "Up to 30% back",
       "n": "Cashback on Dec 3, capped at $100"
     }
+  },
+  {
+    "id": "qwen4-max-free",
+    "use": "general",
+    "type": "limit",
+    "region": "global",
+    "hot": 5,
+    "platform": "Nous Portal · Qwen4-Max",
+    "title": "Qwen4-Max 限免 5 天，<span class='hl'>输入输出全 0 元</span>",
+    "desc": "Nous Research 与阿里千问联合开放，11 月 23 日结束；原生支持图像输入，100 万 Token 上下文，用免费计划登录 Hermes Agent 后选 qwen/qwen4-max:free 调用。",
+    "value": "0 元 / 5 天",
+    "valueNote": "明天截止，抓紧",
+    "deadline": "2026-11-23",
+    "deadlineNote": "限时 5 天",
+    "link": "https://portal.nousresearch.com/",
+    "linkText": "Nous Portal",
+    "verify": "partial",
+    "tags": [
+      "需注册",
+      "100 万上下文",
+      "图像输入"
+    ],
+    "tip": "活动<b>11-23 结束</b>，额度用完即止；免费档通常有并发与速率限制，别拿它跑长任务。",
+    "en": {
+      "p": "Nous Portal · Qwen4-Max",
+      "t": "Qwen4-Max free for 5 days: <span class='hl'>zero cost in and out</span>",
+      "d": "Opened by Nous Research and Alibaba Qwen until Nov 23; supports image input and a 1M-token context. Pick qwen/qwen4-max:free in Hermes Agent with a free plan.",
+      "v": "Free / 5 days",
+      "n": "Ends Nov 23"
+    }
+  },
+  {
+    "id": "yunzhisheng-uplan",
+    "use": "multimodal",
+    "type": "free",
+    "region": "cn",
+    "hot": 3,
+    "platform": "云知声 Token Hub",
+    "title": "U Plan Free 档 0 元开通，<span class='hl'>每周 2500 Credits</span>",
+    "desc": "可调 U2-Flash、U2-Med，另附语音合成、语音识别与 OCR 额度；Free 档免费，付费档限时七折（最低约 41.3 元/月）。",
+    "value": "2500 Credits / 周",
+    "valueNote": "免费档，需实名",
+    "deadline": null,
+    "deadlineNote": "每周重置，长期",
+    "link": "https://www.unisound.com/",
+    "linkText": "云知声官网",
+    "verify": "partial",
+    "tags": [
+      "需实名",
+      "含语音/OCR",
+      "按周给量"
+    ],
+    "tip": "Credits 与 Token 不是同一口径，<b>不同模型消耗倍率不同</b>；先用小任务试算，再决定是否升付费档。",
+    "en": {
+      "p": "Yunzhisheng Token Hub",
+      "t": "U Plan Free: <span class='hl'>2,500 credits per week</span> at zero cost",
+      "d": "Covers U2-Flash and U2-Med plus speech synthesis, ASR and OCR quotas; the paid tiers are 30% off for a limited time.",
+      "v": "2,500 credits / week",
+      "n": "Free tier, real-name required"
+    }
+  },
+  {
+    "id": "packetai-token-factory",
+    "use": "general",
+    "type": "limit",
+    "region": "global",
+    "hot": 4,
+    "platform": "packet.ai Token Factory",
+    "title": "12-16 前 <span class='hl'>DeepSeek / MiniMax Flash 全免费</span>",
+    "desc": "Token Factory 调用全部免费，覆盖 DeepSeek V4.1 Flash、MiniMax M3.1 Flash 与 Qwen2.5 1.5B；手机号验证即可创建 API Key，不需要信用卡。",
+    "value": "0 元调用",
+    "valueNote": "截止 12-16",
+    "deadline": "2026-12-16",
+    "deadlineNote": "限时免费",
+    "link": "https://packet.ai/",
+    "linkText": "packet.ai",
+    "verify": "partial",
+    "tags": [
+      "需手机号",
+      "无需绑卡",
+      "限时"
+    ],
+    "tip": "第三方聚合平台，<b>稳定性与数据策略需自行评估</b>；敏感数据不要走免费通道。",
+    "en": {
+      "p": "packet.ai Token Factory",
+      "t": "<span class='hl'>DeepSeek and MiniMax Flash free</span> until Dec 16",
+      "d": "All Token Factory calls are free through Dec 16, covering DeepSeek V4.1 Flash, MiniMax M3.1 Flash and Qwen2.5 1.5B; verify a phone number to create a key, no card needed.",
+      "v": "Free calls",
+      "n": "Until Dec 16"
+    }
   }
 ]

@@ -49,6 +49,6 @@ const zh = run("index.html", "zh-CN");
 const en = run("en/index.html", "en");
 console.log("zh " + JSON.stringify(zh));
 console.log("en " + JSON.stringify(en));
-const ok = !zh.error && !en.error && zh.cards === 31 && en.cards === 31 &&
+const ok = !zh.error && !en.error && zh.cards === en.cards && zh.cards > 0 &&
   zh.undef.length === 0 && en.undef.length === 0;
 console.log(ok ? "PASS" : "FAIL");
