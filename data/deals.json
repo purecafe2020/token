@@ -839,5 +839,63 @@
       "含 MaaS 模型"
     ],
     "tip": "额度用于<b>平台内模型调测与智能体试运行</b>，不是通用 API Key；底层模型、日志等关联服务可能单独计费，用完前先看账单。"
+  },
+  {
+    "id": "qiniu-conatus",
+    "use": "general",
+    "type": "limit",
+    "region": "cn",
+    "hot": 5,
+    "platform": "七牛云 Conatus",
+    "title": "黑五期间 <span class='hl'>每天 1 亿 Token 免费</span>（充值后 10 亿）",
+    "desc": "qiniu/conatus-free 模型在活动期免费，实名用户每天 1 亿 tokens；单次充值满 100 元后提升到每天 10 亿；额度每日 0 点重置、不结转。",
+    "value": "1 亿 Token / 天",
+    "valueNote": "充值 100 元后 10 亿/天",
+    "deadline": "2026-11-30",
+    "deadlineNote": "黑五活动（北京时间）",
+    "link": "https://www.qiniu.com/",
+    "linkText": "七牛云官网",
+    "verify": "partial",
+    "tags": [
+      "需实名",
+      "每日重置",
+      "国内直连"
+    ],
+    "tip": "额度<b>不结转</b>，每天 0 点清零；「充值后 10 亿」要求<b>单次</b>充值满 100 元，拆成多次小额不累计。",
+    "en": {
+      "t": "Qiniu Conatus: <span class='hl'>100M free tokens per day</span> during Black Friday",
+      "d": "The qiniu/conatus-free model is free during the campaign for verified users, 100M tokens per day; a single top-up of CNY 100 raises it to 1B per day. Quota resets at 00:00 Beijing time and does not roll over.",
+      "v": "100M tokens / day",
+      "n": "1B/day after a CNY 100 top-up"
+    }
+  },
+  {
+    "id": "hiapi-bf",
+    "use": "deal",
+    "type": "limit",
+    "region": "global",
+    "hot": 4,
+    "platform": "HiAPI",
+    "title": "黑五充 $500 得 <span class='hl'>$650</span>，另送 DeepSeek 免费额度",
+    "desc": "11-24 至 11-30（PT），单笔充 $500 即时送 $50，活动周内用于图像/视频/音频的消费再返 $100；充值用户每天可免费用 1000 万 DeepSeek V4.1 Flash tokens。",
+    "value": "最高 30% 返",
+    "valueNote": "返现 12-03 到账，上限 $100",
+    "deadline": "2026-11-30",
+    "deadlineNote": "黑五活动（PT）",
+    "link": "https://hiapi.ai/en/blog/hiapi-black-friday-2026-ai-api-deals",
+    "linkText": "官方活动说明",
+    "verify": "partial",
+    "tags": [
+      "需充值",
+      "返现上限 $100",
+      "需外币卡"
+    ],
+    "tip": "返现按<b>整周消费总额</b>分档，12-03 才到账且封顶 $100；免费 DeepSeek 要求账号至少成功充值过一次，未充值不生效。",
+    "en": {
+      "t": "HiAPI Black Friday: <span class='hl'>$650 for a $500 top-up</span> plus free DeepSeek tokens",
+      "d": "Nov 24-30 (PT): a single $500 top-up adds $50 instantly, and image/video/audio spend during the week returns up to $100. Topped-up accounts also get 10M free DeepSeek V4.1 Flash tokens per day.",
+      "v": "Up to 30% back",
+      "n": "Cashback on Dec 3, capped at $100"
+    }
   }
 ]
