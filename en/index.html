@@ -121,6 +121,8 @@
   .top-nav:after{content:" →"}
   .lang-switch:hover{background:rgba(255,255,255,.3)}
   .subtitle{margin-top:8px;font-size:13px;opacity:.95}
+  .site-nav{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px}
+  .site-nav a{color:#fff;font-size:13px;opacity:.95;text-decoration:underline;text-underline-offset:3px}
   .stats{display:flex;gap:26px;margin-top:16px;flex-wrap:wrap}
   .stat b{font-size:24px;font-weight:800;line-height:1.1}
   .stat span{font-size:12px;opacity:.92;display:block}
@@ -312,8 +314,11 @@
       <a class="lang-switch" href="/">中文</a>
     </div>
     <div class="subtitle">
-      Free tokens, limited-time offers and trial credits from LLM API providers - every entry verified against an official source, with deadlines and caveats.
+Free tokens, limited-time offers and trial credits from LLM API providers - every entry verified against an official source, with deadlines and caveats.
     </div>
+    <nav class="site-nav">
+      <a href="/credits/">Credits</a><a href="/compute/">Compute</a><a href="/data/">Data</a><a href="/use-cases/">Use cases</a><a href="/guides/">Guides</a>
+    </nav>
     <div class="stats" id="stats"></div>
   </div>
 </header>

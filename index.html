@@ -121,6 +121,8 @@
   .top-nav:after{content:" →"}
   .lang-switch:hover{background:rgba(255,255,255,.3)}
   .subtitle{margin-top:8px;font-size:13px;opacity:.95}
+  .site-nav{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px}
+  .site-nav a{color:#fff;font-size:13px;opacity:.95;text-decoration:underline;text-underline-offset:3px}
   .stats{display:flex;gap:26px;margin-top:16px;flex-wrap:wrap}
   .stat b{font-size:24px;font-weight:800;line-height:1.1}
   .stat span{font-size:12px;opacity:.92;display:block}
@@ -312,8 +314,11 @@
       <a class="lang-switch" href="/en/">EN</a>
     </div>
     <div class="subtitle">
-      国内外大模型 API 的免费 Token、限时优惠与新用户试用金 —— 只收录能对上官方文档的，附带截止时间与坑点。
+国内外大模型 API 的免费 Token、限时优惠与新用户试用金 —— 只收录能对上官方文档的，附带截止时间与坑点。
     </div>
+    <nav class="site-nav">
+      <a href="/credits/">额度</a><a href="/compute/">算力</a><a href="/data/">数据</a><a href="/use-cases/">场景</a><a href="/guides/">指南</a>
+    </nav>
     <div class="stats" id="stats"></div>
   </div>
 </header>
