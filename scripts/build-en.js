@@ -3,6 +3,7 @@ const fs = require("fs");
 let h = fs.readFileSync("index.html", "utf8");
 
 const P = [
+  ['<a class="top-nav" href="/guides/">指南</a>', '<a class="top-nav" href="/guides/">Guides</a>'],
   ['content="https://token.879879.xyz/og-image.png"', 'content="https://token.879879.xyz/og-image-en.png"'],
   ['<html lang="zh-CN">', '<html lang="en">'],
   ['<title>Token 日报 · 免费 AI 额度与优惠每日更新</title>',
