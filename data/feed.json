@@ -1,0 +1,27 @@
+{
+  "updated": "2026-11-22",
+  "note": "编辑精选：标题与点评为人工整理，不是自动抓取；每条都保留来源链接。",
+  "items": [
+    {
+      "title": "GitHub Trending：AI Agent 与推理框架仍是主线",
+      "source": "GitHub Trending",
+      "url": "https://github.com/trending",
+      "note": "看榜单时先看当日新增 star 的速度，再看总量。很多项目靠一次发布冲榜，能否持续维护比总 star 更值得关注。",
+      "date": "2026-11-22"
+    },
+    {
+      "title": "Hugging Face 热门模型：小参数模型更适合先用免费额度试跑",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/models?sort=trending",
+      "note": "7B~30B 的模型更容易在免费额度内跑完整流程。先用小模型验证效果，再决定要不要为大模型付费。",
+      "date": "2026-11-22"
+    },
+    {
+      "title": "linux.do 热门讨论：免费额度的稳定性比额度大小更值得关注",
+      "source": "linux.do",
+      "url": "https://linux.do/",
+      "note": "社区里反复出现的问题是「今天能用、明天失效」。选平台时先看它的免费政策是否长期，而不是只看单次额度。",
+      "date": "2026-11-22"
+    }
+  ]
+}

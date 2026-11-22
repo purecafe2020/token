@@ -75,14 +75,8 @@ h = h.split('<link rel="canonical" href="https://token.879879.xyz/">')
      .join('<link rel="canonical" href="https://token.879879.xyz/en/">');
 h = h.split('content="https://token.879879.xyz/"')
      .join('content="https://token.879879.xyz/en/"');
-h = h.replace(/<!--GUIDES:START-->[\s\S]*?<!--GUIDES:END-->/, () => `<!--GUIDES:START-->
-  <div class="sec-title">Guides <small>How to claim, how quotas work, what to avoid</small></div>
-  <div class="picks">
-    <a class="pick" href="/guides/qiniu-conatus-free-tokens/"><h3>Claiming 100M Qiniu tokens per day</h3><p>Quota table, five steps, and the rollover trap.</p></a>
-    <a class="pick" href="/guides/aliyun-bailian-free-tokens/"><h3>Alibaba Cloud Model Studio: 1M tokens per model</h3><p>Per-model issuance, 90-day window, region limits.</p></a>
-    <a class="pick" href="/guides/openrouter-free-models/"><h3>How to use OpenRouter free models</h3><p>20 RPM / 50 per day, and what $10 actually buys.</p></a>
-  </div>
-  <!--GUIDES:END-->`);
+h = h.replace(/<!--FEED:START-->[\s\S]*?<!--FEED:END-->/, () => `<!--FEED:START--><div class="feed-bar"><a href="/feed/">Today's feed →</a><span>GitHub trending / Hugging Face models / linux.do picks, with editor notes</span></div><!--FEED:END-->`);
+h = h.replace(/<!--GUIDES:START-->[\s\S]*?<!--GUIDES:END-->/, () => `<!--GUIDES:START-->`);
 h = h.split('<div style="margin-top:4px"><a href="/guides/" style="color:#2b6de5">指南</a>').join('<div style="margin-top:4px"><a href="/guides/" style="color:#2b6de5">Guides</a>');
 
 // 用英文数据重建 JSON-LD 与 noscript 文本版，避免英文页混入中文

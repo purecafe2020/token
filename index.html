@@ -161,6 +161,13 @@
   .pick-links a{color:var(--blue)}
   .pick-links a:hover{text-decoration:underline}
 
+  .feed-bar{
+    display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+    background:#fff;border:1px solid #ffe0cc;border-left:4px solid var(--brand);
+    border-radius:8px;padding:10px 14px;margin:6px 0 14px;font-size:13px;
+  }
+  .feed-bar a{color:var(--brand);font-weight:800}
+  .feed-bar span{color:var(--muted);font-size:12px}
   /* ---------- 工具条 ---------- */
   .toolbar{
     position:sticky;top:0;z-index:20;background:rgba(244,245,247,.96);
@@ -315,6 +322,8 @@
 
   <div class="sec-title">今日精选 <small>力度最大、最值得现在动手的 3 条</small></div>
   <div class="picks" id="picks"></div>
+
+  <!--FEED:START--><div class="feed-bar"><a href="/feed/">今日情报 3 条 →</a><span>GitHub 热榜 / HF 模型 / linux.do 讨论，附编辑点评</span></div><!--FEED:END-->
 
   <div class="toolbar">
     <div class="tb-inner">
