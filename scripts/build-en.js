@@ -76,7 +76,7 @@ h = h.split('<link rel="canonical" href="https://token.879879.xyz/">')
 h = h.split('content="https://token.879879.xyz/"')
      .join('content="https://token.879879.xyz/en/"');
 h = h.replace(/(<nav class="site-nav">)[\s\S]*?(<\/nav>)/, (m, a, b) => `${a}
-      <a href="/credits/">Credits</a><a href="/compute/">Compute</a><a href="/data/">Data</a><a href="/use-cases/">Use cases</a><a href="/guides/">Guides</a>
+      <a href="/credits/">Credits</a><a href="/compute/">Compute</a><a href="/data/">Data</a><a href="/use-cases/">Use cases</a>
     ${b}`);
 h = h.replace(/<!--FEED:START-->[\s\S]*?<!--FEED:END-->/, () => `<!--FEED:START--><div class="feed-bar"><a href="/feed/">Today's feed →</a><span>GitHub trending / Hugging Face models / linux.do picks, with editor notes</span></div><!--FEED:END-->`);
 h = h.replace(/<!--GUIDES:START-->[\s\S]*?<!--GUIDES:END-->/, () => `<!--GUIDES:START-->`);
