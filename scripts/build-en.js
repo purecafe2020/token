@@ -20,6 +20,7 @@ const P = [
   ['content="Token 日报：已核实的免费额度与优惠"',
    'content="Token Daily: verified free credits and deals"'],
   ['<h1>Token 日报</h1>', '<h1>Token Daily</h1>'],
+  ['<a class="lang-switch" href="/en/">EN</a>', '<a class="lang-switch" href="/">中文</a>'],
   ['<span class="badge-ver">免费额度 · 限时优惠 · 每日核实</span>',
    '<span class="badge-ver">Free credits · Limited deals · Verified daily</span>'],
   ['国内外大模型 API 的免费 Token、限时优惠与新用户试用金 —— 只收录能对上官方文档的，附带截止时间与坑点。',

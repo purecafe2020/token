@@ -106,6 +106,12 @@
     font-size:11px;font-weight:600;background:rgba(255,255,255,.24);
     border:1px solid rgba(255,255,255,.45);padding:2px 8px;border-radius:20px;
   }
+  .lang-switch{
+    margin-left:auto;font-size:12px;font-weight:700;color:#fff;
+    background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.5);
+    padding:3px 12px;border-radius:20px;transition:.15s;
+  }
+  .lang-switch:hover{background:rgba(255,255,255,.3)}
   .subtitle{margin-top:8px;font-size:13px;opacity:.95}
   .stats{display:flex;gap:26px;margin-top:16px;flex-wrap:wrap}
   .stat b{font-size:24px;font-weight:800;line-height:1.1}
@@ -286,6 +292,7 @@
       <div class="logo">TK</div>
       <h1>Token 日报</h1>
       <span class="badge-ver">免费额度 · 限时优惠 · 每日核实</span>
+      <a class="lang-switch" href="/en/">EN</a>
     </div>
     <div class="subtitle">
       国内外大模型 API 的免费 Token、限时优惠与新用户试用金 —— 只收录能对上官方文档的，附带截止时间与坑点。
@@ -761,9 +768,10 @@ const TYPE_LABEL = T.typeLabel;
 const USE_LABEL  = T.useLabel;
 const TYPE_NOTE  = T.typeNote;
 const VERIFY_TXT = T.verify;
+const ZH_KEY = { t:"title", d:"desc", v:"value" };
 function L(d, k){
   if (LANG === "en" && d.en && d.en[k]) return d.en[k];
-  return d[k];
+  return d[ZH_KEY[k] || k];
 }
 function Note(d){
   return (LANG === "en" && d.en && d.en.n) ? d.en.n : d.deadlineNote;
