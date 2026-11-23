@@ -273,6 +273,66 @@ const blackFriday = shell(
 );
 write("black-friday-ai-credits-calendar", blackFriday);
 
+// ---------- 免费 GPU 额度对比 ----------
+const gpuCompare = shell(
+  "免费 GPU 额度怎么选：Colab、Kaggle、AI Studio 对比（2026）",
+  "四家免费 GPU 的额度、单次时长与适用场景横向对比，附组合用法与断点续训的坑。",
+  `<h1>免费 GPU 额度怎么选：Colab、Kaggle、AI Studio 对比</h1>
+<div class="meta">2026-11-23 · 每周更新</div>
+<div class="lead">结论先说：当天就要跑通 Notebook，用 Google Colab；要长期免费跑训练，用 Kaggle；国内网络优先，用百度 AI Studio；正式项目要合规与发票，走华为云 ModelArts 申请。四家都不是「无限免费」，真正的约束是单次时长和配额重置。</div>
+
+<h2>一张表看清差异</h2>
+<table>
+<tr><th>平台</th><th>免费额度</th><th>单次时长</th><th>最适合</th><th>主要限制</th></tr>
+<tr><td>Google Colab</td><td>T4 免费档，按需分配</td><td>约 12 小时，闲置会断开</td><td>调通代码、小模型微调</td><td>高峰期排队，资源不保证</td></tr>
+<tr><td>Kaggle Notebooks</td><td>约 30 小时 GPU/周</td><td>约 9 小时</td><td>比赛复现、全量训练</td><td>需要手机验证，数据集要上传</td></tr>
+<tr><td>百度 AI Studio</td><td>每日发放卡时</td><td>视任务而定</td><td>国内访问、中文模型</td><td>需实名，高峰排队</td></tr>
+<tr><td>华为云 ModelArts</td><td>申请制试用</td><td>按审批额度</td><td>企业/毕设等正式项目</td><td>审批周期不定，不是当天可用</td></tr>
+</table>
+
+<h2>为什么免费额度都卡「单次时长」</h2>
+<p>免费 GPU 的成本是按卡时算的，平台愿意送时长，但不愿意让一个会话长期占卡。所以几乎所有免费额度都做了两件事：限制单次运行时长、闲置一段时间自动断开。理解了这一点，用法就清楚了——<b>把长任务拆成能续跑的短任务</b>，而不是赌会话不断。</p>
+
+<h2>Google Colab：最快的上手路径</h2>
+<p>打开就能用，T4 对 7B 以下的模型微调够用。真正的坑在存储：<code>/content</code> 是临时的，会话一断全部丢失。训练前把数据集放到 Drive 或 Hugging Face，脚本里每次先检查缓存是否存在。<a href="/compute/google-colab/">Colab 的详细说明</a></p>
+
+<h2>Kaggle：免费额度里最接近「能跑完」的</h2>
+<p>每周约 30 小时 GPU，单次约 9 小时，P100 16GB。适合把 Colab 上调通的脚本搬过来跑全量。注意它默认没有外网持久存储，输出要保存为 Notebook 产物或数据集，否则会话结束就没了。<a href="/compute/kaggle-notebooks/">Kaggle 的详细说明</a></p>
+
+<h2>百度 AI Studio：国内网络的最优解</h2>
+<p>国内直连速度快，实名后按天发放卡时。适合中文模型微调与教学演示。高峰期需要排队，长任务建议放到夜间；平台对脚本有审计，别跑与学习无关的负载。<a href="/compute/baidu-aistudio/">AI Studio 的详细说明</a></p>
+
+<h2>华为云 ModelArts：申请制，别当救急</h2>
+<p>它不是自动发放，需要在表单里写清用途与项目背景。适合毕设、企业 PoC 这类能等审批的场景。如果你今天就要跑，别指望它。<a href="/compute/huawei-modelarts/">ModelArts 的详细说明</a></p>
+
+<h2>推荐的组合用法</h2>
+<ol>
+<li><b>本地写代码</b>：用 VS Code 或 Cursor 写训练脚本，靠配置文件控制路径，不依赖某个平台的目录结构。</li>
+<li><b>Colab 调通</b>：先用几百条样本跑通全流程，确认显存和依赖没问题。</li>
+<li><b>Kaggle 跑全量</b>：把脚本搬过去，开 9 小时档，输出存成产物。</li>
+<li><b>不够再上按需</b>：真要连跑几天，用按秒计费的服务（如 <a href="/compute/runpod/">RunPod</a>）比堆免费额度更省心。</li>
+</ol>
+
+<h2>三个高频坑</h2>
+<ul>
+<li><b>显存对不上</b>：免费档多是 16GB，7B 模型全量微调基本放不下，先算清 batch size 与 LoRA 的显存占用。</li>
+<li><b>没有断点续训</b>：会话一断全部重来。训练循环里每 N 步存一次 checkpoint 到持久存储，是免费额度的必修课。</li>
+<li><b>把免费当生产</b>：免费额度没有 SLA，排队和抢占随时发生。对外提供的服务不要建在免费档上。</li>
+</ul>
+
+<h2>FAQ</h2>
+<h3>免费额度需要绑卡吗？</h3>
+<p>Colab 与 Kaggle 免费档不需要绑卡；Google Cloud 的 $300 赠金需要绑卡，用完会自动扣费，务必设预算告警。</p>
+<h3>一周 30 小时够训练吗？</h3>
+<p>够跑中小模型的全量微调与比赛复现，不够长时间预训练。真需要更大算力，按需租比攒额度更现实。</p>
+<h3>国内还有别的免费 GPU 吗？</h3>
+<p>阿里云 PAI、腾讯云 Cloud Studio、华为昇腾社区都有试用或活动额度，但多为限时或申请制，见<a href="/compute/">算力栏目</a>的完整清单。</p>
+
+<div class="related">相关：<a href="/compute/">算力栏目全部条目</a> · <a href="/guides/qiniu-conatus-free-tokens/">七牛每天 1 亿 Token</a> · <a href="/guides/aliyun-bailian-free-tokens/">阿里云百炼 100 万 Token</a></div>`,
+  "free-gpu-quota-comparison"
+);
+write("free-gpu-quota-comparison", gpuCompare);
+
 // ---------- 指南索引 ----------
 const index = shell(
   "免费 AI 额度指南",
@@ -281,6 +341,7 @@ const index = shell(
 <div class="meta">2026-11-22 · 每周更新</div>
 <p>这里是把清单里的条目拆开写清楚的深度指南：怎么领、额度怎么算、哪些地方会踩坑。</p>
 <ul>
+<li><a href="/guides/free-gpu-quota-comparison/">免费 GPU 额度怎么选：Colab、Kaggle、AI Studio 对比（2026）</a></li>
 <li><a href="/guides/qiniu-conatus-free-tokens/">七牛云 Conatus 每天 1 亿 Token 怎么领（2026 黑五）</a></li>
 <li><a href="/guides/aliyun-bailian-free-tokens/">阿里云百炼 100 万 Token 领取全流程（2026）</a></li>
 <li><a href="/guides/openrouter-free-models/">OpenRouter 免费模型怎么用：限速、充值与避坑（2026）</a></li>

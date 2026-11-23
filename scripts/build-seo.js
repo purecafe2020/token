@@ -72,6 +72,31 @@ if (next === html) {
   console.log("SEO 已更新（" + DEALS.length + " 条）");
 }
 
+// 栏目详情页（有 detail 的条目）自动进 sitemap
+const slugit = (s) =>
+  String(s)
+    .toLowerCase()
+    .replace(/[^a-z0-9\u4e00-\u9fa5]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+let detailUrls = "";
+try {
+  const secs = JSON.parse(fs.readFileSync("data/sections.json", "utf8")).sections;
+  for (const [k, sec] of Object.entries(secs)) {
+    for (const it of sec.items || []) {
+      if (!it.detail) continue;
+      detailUrls += `  <url>
+    <loc>${ORIGIN}/${k}/${it.slug || slugit(it.title)}/</loc>
+    <lastmod>${updated}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+`;
+    }
+  }
+} catch (e) {
+  console.log("跳过详情页 sitemap：" + e.message);
+}
+
 // sitemap 的 lastmod 跟随页面最后核实日期
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -93,6 +118,7 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
+${detailUrls}
   <url>
     <loc>${ORIGIN}/data/</loc>
     <lastmod>${updated}</lastmod>
@@ -115,6 +141,12 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     <loc>${ORIGIN}/guides/</loc>
     <lastmod>${updated}</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>${ORIGIN}/guides/free-gpu-quota-comparison/</loc>
+    <lastmod>${updated}</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>

@@ -57,22 +57,90 @@ ${items}
 </html>`;
 }
 
-function itemHtml(it) {
+function slugit(s) {
+  return String(s)
+    .toLowerCase()
+    .replace(/[^a-z0-9\u4e00-\u9fa5]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+const slugOf = (it) => it.slug || slugit(it.title);
+
+function itemHtml(it, secSlug) {
+  const href = it.detail ? `/${secSlug}/${slugOf(it)}/` : it.url;
+  const t = it.detail
+    ? `<a href="${href}">${it.title}</a>`
+    : it.title;
   return `  <div class="item">
-    <h2>${it.title}</h2>
+    <h2>${t}</h2>
     <div class="value">${it.value}</div>
     <div class="note">${it.note}</div>
     <div class="src">来源：<a href="${it.url}" target="_blank" rel="noopener">${it.source} ↗</a></div>
   </div>`;
 }
 
+function detailPage(secSlug, sec, it, siblings) {
+  const url = `${ORIGIN}/${secSlug}/${slugOf(it)}/`;
+  const rel = siblings
+    .filter((s) => s !== it)
+    .slice(0, 3)
+    .map((s) => `      <li><a href="/${secSlug}/${slugOf(s)}/">${s.title}</a></li>`)
+    .join("\n");
+  return `<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>${it.title} - ${sec.name} - Token 日报</title>
+<meta name="description" content="${it.note.replace(/"/g, "&quot;")}">
+<link rel="canonical" href="${url}">
+<link rel="alternate" hreflang="zh-CN" href="${url}">
+<link rel="alternate" hreflang="x-default" href="${url}">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<style>${css}
+  .crumb{font-size:12.5px;color:#8a8f99;margin-bottom:10px}
+  .crumb a{color:#2b6de5}
+  .lead{background:#fffaf0;border:1px solid #ffe1a8;border-radius:8px;padding:12px 14px;margin:14px 0 18px}
+  .lead b{color:#e4393c}
+  .body{font-size:14.5px;color:#2f343b;margin-bottom:16px}
+  .rel{margin-top:22px;border-top:1px solid #f0f1f3;padding-top:14px;font-size:13.5px}
+  .rel ul{margin:8px 0 0 18px}
+  .rel li{margin-bottom:4px}
+  .rel a{color:#2b6de5}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a href="/">Token 日报</a><nav><a href="/credits/">额度</a><a href="/compute/">算力</a><a href="/data/">数据</a><a href="/use-cases/">场景</a><a href="/guides/">指南</a></nav></div></header>
+<main>
+<div class="crumb"><a href="/">首页</a> / <a href="/${secSlug}/">${sec.name}</a> / ${it.title}</div>
+<h1>${it.title}</h1>
+<div class="desc">${it.value}</div>
+<div class="lead">一句话判断：<b>${it.detail}</b></div>
+<div class="body">${it.note}</div>
+<div class="src">官方来源：<a href="${it.url}" target="_blank" rel="noopener">${it.source} ↗</a></div>
+${rel ? `<div class="rel">同类资源<ul>\n${rel}\n</ul></div>` : ""}
+</main>
+<footer><div><a href="/">返回首页</a><a href="/${secSlug}/">返回${sec.name}</a><a href="/feed/">情报</a><a href="/en/">English</a></div></footer>
+</body>
+</html>`;
+}
+
 // compute / data / use-cases
 for (const [slug, sec] of Object.entries(data.sections)) {
-  const items = sec.items.map(itemHtml).join("\n");
+  const items = sec.items.map((it) => itemHtml(it, slug)).join("\n");
   const dir = path.join(Root, slug);
   fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(path.join(dir, "index.html"), page(sec.name, sec.desc, items), "utf8");
   console.log("生成 " + slug + "/index.html（" + sec.items.length + " 条）");
+
+  let n = 0;
+  for (const it of sec.items) {
+    if (!it.detail) continue;
+    const d = path.join(dir, slugOf(it));
+    fs.mkdirSync(d, { recursive: true });
+    fs.writeFileSync(path.join(d, "index.html"), detailPage(slug, sec, it, sec.items), "utf8");
+    n++;
+  }
+  if (n) console.log("  详情页 " + n + " 个");
 }
 
 // credits：从 DEALS 生成
