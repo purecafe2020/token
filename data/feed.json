@@ -3,10 +3,10 @@
   "note": "编辑精选：标题与点评为人工整理，不是自动抓取；每条都保留来源链接。",
   "items": [
     {
-      "title": "黑五倒计时：今天只剩 Qwen4-Max，11-30 才是集中截止",
-      "source": "Nous Portal / OpenModel",
-      "url": "https://portal.nousresearch.com/",
-      "note": "Qwen4-Max 的免费窗口今天结束，想试长文档任务就趁现在。真正的截止高峰是 11-30：HiAPI、OpenModel、七牛都在那天，而且时区各不相同。",
+      "title": "黑五正日子：LinkModel 今天开跑，Qwen4-Max 今天关门",
+      "source": "LinkModel / Nous Portal",
+      "url": "https://www.linkmodel.ai/blog/black-friday-bonus",
+      "note": "LinkModel 11-23 至 12-02：注册自动得 1 美元免费额度，8 个模型最高 55% 折扣。同一天，Nous 的 Qwen4-Max 免费窗口到期，别把两个日子记反。",
       "date": "2026-11-23"
     },
     {

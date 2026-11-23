@@ -930,6 +930,36 @@
     }
   },
   {
+    "id": "linkmodel-bf",
+    "use": "deal",
+    "type": "limit",
+    "region": "global",
+    "hot": 4,
+    "platform": "LinkModel",
+    "title": "黑五新用户 <span class='hl'>$1 免费额度</span>，8 个模型最高 55% 折扣",
+    "desc": "11-23 至 12-02：注册即得 $1 免费 Credits，不需要绑卡或充值；Discord 前 30 名可另领 $2，另有 $50 抽奖。同期 8 个模型按量折扣，官方称比 fal 便宜最多 55%。",
+    "value": "$1 免费 + 最高 55% 折扣",
+    "valueNote": "新人自动到账，一次性",
+    "deadline": "2026-12-02",
+    "deadlineNote": "黑五活动（PT）",
+    "link": "https://www.linkmodel.ai/blog/black-friday-bonus",
+    "linkText": "官方活动说明",
+    "verify": "partial",
+    "tags": [
+      "需注册",
+      "$1 一次性",
+      "折扣不等于免费"
+    ],
+    "tip": "$1 是<b>一次性</b>新人奖励，不能重复领；55% 是相对 fal 的价格折扣，不是免费调用。折扣与免费额度是两件事，别混算。",
+    "en": {
+      "p": "LinkModel",
+      "t": "LinkModel Black Friday: <span class='hl'>$1 free credits</span> plus up to 55% off",
+      "d": "Nov 23 to Dec 2: sign-up grants $1 in free credits with no card or top-up required; the first 30 Discord claimants get $2 more, plus a $50 giveaway. Eight models are discounted up to 55% versus fal.",
+      "v": "$1 free + up to 55% off",
+      "n": "One-time new-user credit"
+    }
+  },
+  {
     "id": "qwen4-max-free",
     "use": "general",
     "type": "limit",
@@ -937,11 +967,11 @@
     "hot": 5,
     "platform": "Nous Portal · Qwen4-Max",
     "title": "Qwen4-Max 限免 5 天，<span class='hl'>输入输出全 0 元</span>",
-    "desc": "Nous Research 与阿里千问联合开放，11 月 23 日结束；原生支持图像输入，100 万 Token 上下文，用免费计划登录 Hermes Agent 后选 qwen/qwen4-max:free 调用。",
+    "desc": "Nous Research 与阿里千问联合开放，11-18 起 5 天，11 月 23 日结束；原生支持图像输入，100 万 Token 上下文，用免费计划登录 Hermes Agent 后选 qwen/qwen4-max:free 调用。",
     "value": "0 元 / 5 天",
-    "valueNote": "明天截止，抓紧",
+    "valueNote": "今日最后一天",
     "deadline": "2026-11-23",
-    "deadlineNote": "限时 5 天",
+    "deadlineNote": "今日截止",
     "link": "https://portal.nousresearch.com/",
     "linkText": "Nous Portal",
     "verify": "partial",
@@ -950,13 +980,13 @@
       "100 万上下文",
       "图像输入"
     ],
-    "tip": "活动<b>11-23 结束</b>，额度用完即止；免费档通常有并发与速率限制，别拿它跑长任务。",
+    "tip": "官方公告是「5 天」，<b>今天到期</b>，暂未见延期；额度用完即止，免费档通常有并发与速率限制，别拿它跑长任务。",
     "en": {
       "p": "Nous Portal · Qwen4-Max",
       "t": "Qwen4-Max free for 5 days: <span class='hl'>zero cost in and out</span>",
-      "d": "Opened by Nous Research and Alibaba Qwen until Nov 23; supports image input and a 1M-token context. Pick qwen/qwen4-max:free in Hermes Agent with a free plan.",
+      "d": "Opened by Nous Research and Alibaba Qwen for five days from Nov 18, ending Nov 23; supports image input and a 1M-token context. Pick qwen/qwen4-max:free in Hermes Agent with a free plan.",
       "v": "Free / 5 days",
-      "n": "Ends Nov 23"
+      "n": "Last day"
     }
   },
   {
