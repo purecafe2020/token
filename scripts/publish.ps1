@@ -96,6 +96,40 @@ try {
         else { Write-Log ('英文站生成失败（不影响发布）：' + $enText) }
     }
 
+    # 重建栏目页 / 详情页 / 指南 / 情报（失败不阻断日报发布）
+    $genScripts = @(
+        @{ Name = '栏目与详情页'; Path = 'scripts\build-sections.js' },
+        @{ Name = '指南'; Path = 'scripts\build-guides.js' },
+        @{ Name = '情报'; Path = 'scripts\build-feed.js' }
+    )
+    if (Get-Command node -ErrorAction SilentlyContinue) {
+        foreach ($gen in $genScripts) {
+            $genPath = Join-Path $Root $gen.Path
+            if (-not (Test-Path $genPath)) { continue }
+            $prevEap = $ErrorActionPreference
+            $ErrorActionPreference = 'Continue'
+            $genOut = & node $genPath 2>&1
+            $genCode = $LASTEXITCODE
+            $ErrorActionPreference = $prevEap
+            $genText = (($genOut | ForEach-Object { "$_" }) -join ' ').Trim()
+            if ($genCode -eq 0) { Write-Log ($gen.Name + '：' + $genText) }
+            else { Write-Log ($gen.Name + ' 生成失败（不影响发布）：' + $genText) }
+        }
+    }
+
+    # 内链自检：只告警，不阻断
+    $linkScript = Join-Path $Root 'scripts\check-links.js'
+    if ((Test-Path $linkScript) -and (Get-Command node -ErrorAction SilentlyContinue)) {
+        $prevEap = $ErrorActionPreference
+        $ErrorActionPreference = 'Continue'
+        $linkOut = & node $linkScript 2>&1
+        $linkCode = $LASTEXITCODE
+        $ErrorActionPreference = $prevEap
+        $linkText = (($linkOut | ForEach-Object { "$_" }) -join ' ').Trim()
+        if ($linkCode -eq 0) { Write-Log ('内链检查：' + $linkText) }
+        else { Write-Log ('内链存在问题（不阻断）：' + $linkText) }
+    }
+
     # 刷新分享图（统计数字与日期跟随数据，失败不阻断）
     $ogScript = Join-Path $Root 'scripts\make-og-image.ps1'
     if (Test-Path $ogScript) {
