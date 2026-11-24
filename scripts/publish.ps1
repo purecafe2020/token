@@ -2,6 +2,12 @@
 # 设计原则：内容由 Agent 在会话中更新，本脚本只负责「发布」，绝不伪造更新
 $ErrorActionPreference = 'Stop'
 
+# node 输出 UTF-8；PowerShell 5.1 默认按 GBK 解码会导致日志里的中文变乱码
+try {
+    [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+    $env:PYTHONIOENCODING = 'utf-8'
+} catch { }
+
 $Root    = Split-Path -Parent $PSScriptRoot
 $LogDir  = Join-Path $Root 'logs'
 $LogFile = Join-Path $LogDir 'publish.log'
@@ -179,7 +185,8 @@ try {
         $push = Invoke-Git 'push', 'origin', "HEAD:$branch"
         if ($push.Output) { Write-Log ('  ' + ($push.Output -replace "`n", "`n  ")) }
         if ($push.ExitCode -eq 0) { $ok = $true; break }
-        if ($i -lt 3) { Start-Sleep -Seconds 60 }
+        # 网络抖动多为瞬时，短退避足够；长时间握在推送上是以前发布"卡住"的主因
+        if ($i -lt 3) { Start-Sleep -Seconds (10 * $i) }
     }
 
     if ($ok) {
@@ -198,6 +205,7 @@ try {
     }
 
     Write-Log '推送失败：请检查网络、git 凭据（PAT / SSH）与仓库写权限。'
+    Write-Log '本地提交已保留，网络恢复后下一次计划任务会自动补推，不需要重新生成内容。'
     exit 1
 }
 catch {
