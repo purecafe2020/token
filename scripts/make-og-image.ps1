@@ -13,9 +13,9 @@ $total = 31; $free = 13; $limit = 6; $trap = 5
 $dealsPath = Join-Path $Root 'data\deals.json'
 if (Test-Path $dealsPath) {
     $deals = Get-Content -Path $dealsPath -Raw -Encoding UTF8 | ConvertFrom-Json
-    $total = @($deals).Count
-    $free  = @($deals | Where-Object { $_.type -eq 'free' }).Count
-    $limit = @($deals | Where-Object { $_.type -eq 'limit' }).Count
+    $total = @($deals | Where-Object { -not $_.expired }).Count
+    $free  = @($deals | Where-Object { $_.type -eq 'free' -and -not $_.expired }).Count
+    $limit = @($deals | Where-Object { $_.type -eq 'limit' -and -not $_.expired }).Count
     $trap  = @($deals | Where-Object { $_.type -eq 'trap' }).Count
 }
 

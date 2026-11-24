@@ -24,14 +24,18 @@ const esc = (s) =>
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
 
+const isExpired = (d) => d.type !== "trap" && !!d.deadline && d.deadline < updated;
+// 有效条目在前、已失效在后，与页面渲染顺序保持一致
+const orderedDeals = [...DEALS.filter((d) => !isExpired(d)), ...DEALS.filter(isExpired)];
+
 const ld = {
   "@context": "https://schema.org",
   "@type": "ItemList",
   name: "Token 日报",
   description: "已核实的免费大模型 API 额度与限时优惠清单",
   url: ORIGIN + "/",
-  numberOfItems: DEALS.length,
-  itemListElement: DEALS.map((d, i) => ({
+  numberOfItems: orderedDeals.length,
+  itemListElement: orderedDeals.map((d, i) => ({
     "@type": "ListItem",
     position: i + 1,
     name: strip(d.title),
@@ -40,8 +44,13 @@ const ld = {
   })),
 };
 
-const items = DEALS.map((d) => {
-  const meta = `${d.platform}｜${d.value}｜${d.deadline ? "截止 " + d.deadline : d.deadlineNote}`;
+const items = orderedDeals.map((d) => {
+  const when = isExpired(d)
+    ? "已失效（截止 " + d.deadline + "）"
+    : d.deadline
+      ? "截止 " + d.deadline
+      : d.deadlineNote;
+  const meta = `${d.platform}｜${d.value}｜${when}`;
   return `    <li><a href="${esc(d.link)}">${esc(strip(d.title))}</a><br><span>${esc(meta)}</span></li>`;
 }).join("\n");
 
@@ -49,7 +58,7 @@ const block = `
 <script type="application/ld+json">${JSON.stringify(ld)}</script>
 <noscript>
 <section>
-<h2>今日收录的 ${DEALS.length} 条免费额度与优惠</h2>
+<h2>每日核实的 ${orderedDeals.filter((d) => !isExpired(d)).length} 条免费额度与优惠</h2>
 <ul>
 ${items}
 </ul>

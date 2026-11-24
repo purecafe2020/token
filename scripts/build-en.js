@@ -88,14 +88,18 @@ const D = eval(dm[1]);
 const strip = (s) => String(s).replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const EN = "https://token.879879.xyz/en";
+const enUm = h.match(/const UPDATED = "(\d{4}-\d{2}-\d{2})/);
+const UPDATED_DATE = enUm ? enUm[1] : new Date().toISOString().slice(0, 10);
+const isExp = (d) => d.type !== "trap" && !!d.deadline && d.deadline < UPDATED_DATE;
+const orderedD = [...D.filter((d) => !isExp(d)), ...D.filter(isExp)];
 const ld = {
   "@context": "https://schema.org",
   "@type": "ItemList",
   name: "Token Daily",
   description: "Verified free LLM API credits and limited-time deals",
   url: EN + "/",
-  numberOfItems: D.length,
-  itemListElement: D.map((d, i) => ({
+  numberOfItems: orderedD.length,
+  itemListElement: orderedD.map((d, i) => ({
     "@type": "ListItem",
     position: i + 1,
     name: strip(d.en.t),
@@ -103,12 +107,15 @@ const ld = {
     description: strip(d.en.d),
   })),
 };
-const li = D.map((d) => `    <li><a href="${esc(d.link)}">${esc(strip(d.en.t))}</a><br><span>${esc((d.en.p || d.platform) + " | " + d.en.v + " | " + d.en.n)}</span></li>`).join("\n");
+const li = orderedD.map((d) => {
+  const tail = isExp(d) ? `Expired (ended ${d.deadline})` : d.en.n;
+  return `    <li><a href="${esc(d.link)}">${esc(strip(d.en.t))}</a><br><span>${esc((d.en.p || d.platform) + " | " + d.en.v + " | " + tail)}</span></li>`;
+}).join("\n");
 const block = `
 <script type="application/ld+json">${JSON.stringify(ld)}</script>
 <noscript>
 <section>
-<h2>${D.length} free credits and deals, verified daily</h2>
+<h2>${orderedD.filter((d) => !isExp(d)).length} free credits and deals, verified daily</h2>
 <ul>
 ${li}
 </ul>

@@ -30,6 +30,10 @@ const css = `
   .note{color:#3c4149;font-size:13.5px;margin-bottom:6px}
   .src{font-size:12px;color:#8a8f99}
   .src a{color:#2b6de5}
+  .item.expired{opacity:.62;filter:grayscale(.4)}
+  .item.expired h2{color:#5f6672}
+  .expmark{display:inline-block;font-size:11px;font-weight:800;color:#fff;background:#9aa3ad;border-radius:4px;padding:1px 6px;margin-right:6px;vertical-align:2px}
+  .expsep{margin:26px 0 8px;font-size:12.5px;color:#8a8f99;border-top:1px dashed #e0e3e7;padding-top:14px}
   footer{text-align:center;color:#8a8f99;font-size:12px;padding:18px 0 40px}
   footer a{color:#8a8f99;margin:0 6px}
 `;
@@ -143,13 +147,24 @@ for (const [slug, sec] of Object.entries(data.sections)) {
   if (n) console.log("  详情页 " + n + " 个");
 }
 
-// credits：从 DEALS 生成
-const creditItems = DEALS.map((d) => `  <div class="item">
-    <h2>${d.platform}｜${strip(d.title)}</h2>
+// credits：从 DEALS 生成（已失效条目保留并标注，排在最后）
+const um = html.match(/const UPDATED = "(\d{4}-\d{2}-\d{2})/);
+const today = um ? um[1] : new Date().toISOString().slice(0, 10);
+const isExp = (d) => d.type !== "trap" && !!d.deadline && d.deadline < today;
+const creditRow = (d) => {
+  const exp = isExp(d);
+  return `  <div class="item${exp ? " expired" : ""}">
+    <h2>${exp ? '<span class="expmark">已失效</span>' : ""}${d.platform}｜${strip(d.title)}</h2>
     <div class="value">${d.value}</div>
     <div class="note">${strip(d.desc)}</div>
-    <div class="src">${d.deadline ? "截止 " + d.deadline : d.deadlineNote} · <a href="${d.link}" target="_blank" rel="noopener">官方来源 ↗</a></div>
-  </div>`).join("\n");
+    <div class="src">${d.deadline ? (exp ? "已于 " + d.deadline + " 截止" : "截止 " + d.deadline) : d.deadlineNote} · <a href="${d.link}" target="_blank" rel="noopener">官方来源 ↗</a></div>
+  </div>`;
+};
+const creditItems = [
+  ...DEALS.filter((d) => !isExp(d)).map(creditRow),
+  ...(DEALS.some(isExp) ? [`  <div class="expsep">以下条目已结束，保留供追溯；官方重启活动后会移回上方。</div>`] : []),
+  ...DEALS.filter(isExp).map(creditRow)
+].join("\n");
 
 fs.mkdirSync(path.join(Root, "credits"), { recursive: true });
 fs.writeFileSync(

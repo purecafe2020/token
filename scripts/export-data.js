@@ -8,7 +8,13 @@ if (!m) {
   process.exit(1);
 }
 const DEALS = eval(m[1]);
-const json = JSON.stringify(DEALS, null, 2);
+const um = html.match(/const UPDATED = "(\d{4}-\d{2}-\d{2})/);
+const today = um ? um[1] : new Date().toISOString().slice(0, 10);
+const withExpired = DEALS.map((d) => ({
+  ...d,
+  expired: d.type !== "trap" && !!d.deadline && d.deadline < today
+}));
+const json = JSON.stringify(withExpired, null, 2);
 const path = "data/deals.json";
 
 const old = fs.existsSync(path) ? fs.readFileSync(path, "utf8") : "";

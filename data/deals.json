@@ -27,7 +27,8 @@
       "OpenAI 兼容",
       "Agentic Coding"
     ],
-    "tip": "模型 ID 必须写 <b>glm-4.7-flash</b>；老教程里的 glm-4.5-flash 已于 2026-01-30 下线，调用会报错。"
+    "tip": "模型 ID 必须写 <b>glm-4.7-flash</b>；老教程里的 glm-4.5-flash 已于 2026-01-30 下线，调用会报错。",
+    "expired": false
   },
   {
     "id": "openmodel-bf",
@@ -57,7 +58,8 @@
       "可叠加档位",
       "美国站"
     ],
-    "tip": "返赠额度<b>不可提现</b>；按「单笔订单」计算档位，拆单会掉档，要凑档就一次充够。"
+    "tip": "返赠额度<b>不可提现</b>；按「单笔订单」计算档位，拆单会掉档，要凑档就一次充够。",
+    "expired": false
   },
   {
     "id": "gemini-lock",
@@ -87,7 +89,8 @@
       "免费档仍在",
       "需外卡"
     ],
-    "tip": "免费档的<b>每日请求数近期反复调整</b>（社区实测 3.8 Flash 曾低至 20 RPD），具体以 AI Studio 控制台显示为准，别照抄博客里的 1500 RPD。"
+    "tip": "免费档的<b>每日请求数近期反复调整</b>（社区实测 3.8 Flash 曾低至 20 RPD），具体以 AI Studio 控制台显示为准，别照抄博客里的 1500 RPD。",
+    "expired": false
   },
   {
     "id": "aliyun-bailian",
@@ -117,7 +120,8 @@
       "仅北京地域",
       "不支持 Batch"
     ],
-    "tip": "90 天从「开通 / 模型发布 / 申请通过」三者中<b>较晚</b>的那天算起；到期不补发、不延期，别忘了用。Batch 调用、微调、部署不占免费额度。"
+    "tip": "90 天从「开通 / 模型发布 / 申请通过」三者中<b>较晚</b>的那天算起；到期不补发、不延期，别忘了用。Batch 调用、微调、部署不占免费额度。",
+    "expired": false
   },
   {
     "id": "volc-ark",
@@ -147,7 +151,8 @@
       "按模型计算",
       "国内直连"
     ],
-    "tip": "额度<b>绑定单个模型 ID</b>，换模型要重新确认是否有免费量；同一账号下的子账号共享额度。"
+    "tip": "额度<b>绑定单个模型 ID</b>，换模型要重新确认是否有免费量；同一账号下的子账号共享额度。",
+    "expired": false
   },
   {
     "id": "tencent-hunyuan",
@@ -177,7 +182,8 @@
       "1 年有效",
       "OpenAI 兼容"
     ],
-    "tip": "资源包<b>过期作废</b>且不与后续活动叠加；先用它跑低频任务，别一上来就压测。"
+    "tip": "资源包<b>过期作废</b>且不与后续活动叠加；先用它跑低频任务，别一上来就压测。",
+    "expired": false
   },
   {
     "id": "tencent-tokenhub",
@@ -207,7 +213,8 @@
       "新平台",
       "分品类领取"
     ],
-    "tip": "官方文档只说明领取路径与有效期规则，<b>各模型的具体 token 数会调整</b>，领之前先在「财务 → 资源包」看实际到账数字。"
+    "tip": "官方文档只说明领取路径与有效期规则，<b>各模型的具体 token 数会调整</b>，领之前先在「财务 → 资源包」看实际到账数字。",
+    "expired": false
   },
   {
     "id": "baidu-qianfan",
@@ -237,7 +244,8 @@
       "按模型计算",
       "自动发放"
     ],
-    "tip": "不同模型的<b>有效期不一致</b>，文档会随版本更新（最近一次更新 2026-11-11），领完先在资源管理里核对到期日。"
+    "tip": "不同模型的<b>有效期不一致</b>，文档会随版本更新（最近一次更新 2026-11-11），领完先在资源管理里核对到期日。",
+    "expired": false
   },
   {
     "id": "baidu-benefit",
@@ -267,7 +275,8 @@
       "按月重置",
       "可后付费"
     ],
-    "tip": "按月给量、<b>不结转到下月</b>；活动结束后自动转纯按量计费，记得设预算告警。"
+    "tip": "按月给量、<b>不结转到下月</b>；活动结束后自动转纯按量计费，记得设预算告警。",
+    "expired": false
   },
   {
     "id": "modelscope",
@@ -297,7 +306,8 @@
       "开源模型",
       "每日重置"
     ],
-    "tip": "定位是<b>免费体验</b>：有并发与单次长度限制，高峰期会排队；不适合当生产网关。"
+    "tip": "定位是<b>免费体验</b>：有并发与单次长度限制，高峰期会排队；不适合当生产网关。",
+    "expired": false
   },
   {
     "id": "siliconflow",
@@ -327,7 +337,8 @@
       "OpenAI 兼容",
       "小模型免费"
     ],
-    "tip": "赠额来自<b>邀请活动</b>，直接注册通常只有少量体验金；免费模型列表会轮换，以模型广场里标「免费」的为准。"
+    "tip": "赠额来自<b>邀请活动</b>，直接注册通常只有少量体验金；免费模型列表会轮换，以模型广场里标「免费」的为准。",
+    "expired": false
   },
   {
     "id": "openrouter-free",
@@ -357,7 +368,8 @@
       "OpenAI 兼容",
       "1M 上下文"
     ],
-    "tip": "<b>失败的请求也计入每日上限</b>，别写死循环重试；充值 $10 是一次性门槛，之后余额花光也永久保留 1000 RPD。"
+    "tip": "<b>失败的请求也计入每日上限</b>，别写死循环重试；充值 $10 是一次性门槛，之后余额花光也永久保留 1000 RPD。",
+    "expired": false
   },
   {
     "id": "groq",
@@ -387,7 +399,8 @@
       "超低延迟",
       "含语音转写"
     ],
-    "tip": "真正的瓶颈是 <b>TPM/TPD</b>（如 gpt-oss-120b 仅 8K TPM），长 prompt 一发就撞限；具体数字随模型变动，以控制台 Rate Limits 页为准。"
+    "tip": "真正的瓶颈是 <b>TPM/TPD</b>（如 gpt-oss-120b 仅 8K TPM），长 prompt 一发就撞限；具体数字随模型变动，以控制台 Rate Limits 页为准。",
+    "expired": false
   },
   {
     "id": "cloudflare",
@@ -417,7 +430,8 @@
       "边缘部署",
       "含图像/语音"
     ],
-    "tip": "Neuron 不是 token，<b>不同模型单价差很多</b>；前沿大模型往往要付费计划才能调。"
+    "tip": "Neuron 不是 token，<b>不同模型单价差很多</b>；前沿大模型往往要付费计划才能调。",
+    "expired": false
   },
   {
     "id": "nvidia-nim",
@@ -447,7 +461,8 @@
       "开源模型",
       "需开发者账号"
     ],
-    "tip": "速率限制<b>官方页面不写死</b>，靠论坛反馈；拿它做压测会被限流，商用前先申请提额。"
+    "tip": "速率限制<b>官方页面不写死</b>，靠论坛反馈；拿它做压测会被限流，商用前先申请提额。",
+    "expired": false
   },
   {
     "id": "mistral",
@@ -477,7 +492,8 @@
       "欧洲合规",
       "含代码模型"
     ],
-    "tip": "官方<b>不公布具体 RPD</b>，实测很快会 429；要跑量得买 La Plateforme 的付费额度。"
+    "tip": "官方<b>不公布具体 RPD</b>，实测很快会 429；要跑量得买 La Plateforme 的付费额度。",
+    "expired": false
   },
   {
     "id": "gcp-300",
@@ -507,7 +523,8 @@
       "需验证",
       "可关自动扣费"
     ],
-    "tip": "注册要<b>外币信用卡验证</b>（会小额预授权）；务必先设预算提醒并关闭自动升级付费账号，否则赠金用完会直接扣卡。"
+    "tip": "注册要<b>外币信用卡验证</b>（会小额预授权）；务必先设预算提醒并关闭自动升级付费账号，否则赠金用完会直接扣卡。",
+    "expired": false
   },
   {
     "id": "azure-200",
@@ -537,7 +554,8 @@
       "需手机验证",
       "含 GPT 系列"
     ],
-    "tip": "Azure OpenAI 需要<b>单独申请开通权限</b>，不是有账号就能调；$200 到期后不结转。"
+    "tip": "Azure OpenAI 需要<b>单独申请开通权限</b>，不是有账号就能调；$200 到期后不结转。",
+    "expired": false
   },
   {
     "id": "deepseek-promo",
@@ -567,7 +585,8 @@
       "缓存命中超便宜",
       "无免费额度"
     ],
-    "tip": "DeepSeek <b>没有新用户免费 token</b>，网传「注册送 500 万」是旧活动；4 月 V4-Pro 的 2.5 折已于 5 月 5 日结束，别按老文章算预算。"
+    "tip": "DeepSeek <b>没有新用户免费 token</b>，网传「注册送 500 万」是旧活动；4 月 V4-Pro 的 2.5 折已于 5 月 5 日结束，别按老文章算预算。",
+    "expired": false
   },
   {
     "id": "cerebras-trap",
@@ -597,7 +616,8 @@
       "过期教程",
       "高热度谣言"
     ],
-    "tip": "大量 2026 年的「免费 API 清单」还在抄这条。<b>以官方 FAQ 原文为准</b>：no permanently free tier。"
+    "tip": "大量 2026 年的「免费 API 清单」还在抄这条。<b>以官方 FAQ 原文为准</b>：no permanently free tier。",
+    "expired": false
   },
   {
     "id": "github-models-trap",
@@ -627,7 +647,8 @@
       "已下线",
       "替代方案见上"
     ],
-    "tip": "凡是让你「GitHub PAT 直接当 OpenAI Key 用」的文章，基本都停在 2025 年，<b>先看发布日期</b>。"
+    "tip": "凡是让你「GitHub PAT 直接当 OpenAI Key 用」的文章，基本都停在 2025 年，<b>先看发布日期</b>。",
+    "expired": false
   },
   {
     "id": "openrouter-gone-trap",
@@ -657,7 +678,8 @@
       "模型下架",
       "需实时查"
     ],
-    "tip": "免费模型<b>随时可能被撤</b>，生产环境务必做 fallback 链（openrouter/free 兜底），别把某个 :free ID 写死。"
+    "tip": "免费模型<b>随时可能被撤</b>，生产环境务必做 fallback 链（openrouter/free 兜底），别把某个 :free ID 写死。",
+    "expired": false
   },
   {
     "id": "hf-trap",
@@ -687,7 +709,8 @@
       "政策变更",
       "别当免费源"
     ],
-    "tip": "老教程里的「HF Serverless 每月免费几百次」已失效；<b>自建 Inference Endpoint 是按小时计费</b>的，别误点。"
+    "tip": "老教程里的「HF Serverless 每月免费几百次」已失效；<b>自建 Inference Endpoint 是按小时计费</b>的，别误点。",
+    "expired": false
   },
   {
     "id": "gemini-rpd-trap",
@@ -717,7 +740,8 @@
       "限额缩水",
       "需实测"
     ],
-    "tip": "做容量规划时<b>不要把免费档算进 SLA</b>；同一项目换模型就会换一套限额，先在小号上试一天再决定。"
+    "tip": "做容量规划时<b>不要把免费档算进 SLA</b>；同一项目换模型就会换一套限额，先在小号上试一天再决定。",
+    "expired": false
   },
   {
     "id": "aibotone-hub",
@@ -747,7 +771,8 @@
       "需拆分核实",
       "新手向"
     ],
-    "tip": "这是<b>线索页而不是官方额度页</b>：1.3 亿由多家平台叠加，实际到手取决于各家规则与限速；领取前回到对应平台官方文档确认，别把总量当成一个 Key 的额度。"
+    "tip": "这是<b>线索页而不是官方额度页</b>：1.3 亿由多家平台叠加，实际到手取决于各家规则与限速；领取前回到对应平台官方文档确认，别把总量当成一个 Key 的额度。",
+    "expired": false
   },
   {
     "id": "iflytek-spark",
@@ -777,7 +802,8 @@
       "限领一次",
       "1M 上下文"
     ],
-    "tip": "需要<b>实名认证</b>且每人只能领一次，31 天到期即失效；官方原文需登录才能读，额度数字来自多个第三方核实站，领取前在控制台确认实际到账。"
+    "tip": "需要<b>实名认证</b>且每人只能领一次，31 天到期即失效；官方原文需登录才能读，额度数字来自多个第三方核实站，领取前在控制台确认实际到账。",
+    "expired": false
   },
   {
     "id": "edgeone-makers",
@@ -807,7 +833,8 @@
       "按月重置",
       "国内直连"
     ],
-    "tip": "额度数字来自第三方核实站（2026-11-18），官方页面未逐项公示；<b>BYOK 调用不占免费额度</b>，两套计费别混着算。"
+    "tip": "额度数字来自第三方核实站（2026-11-18），官方页面未逐项公示；<b>BYOK 调用不占免费额度</b>，两套计费别混着算。",
+    "expired": false
   },
   {
     "id": "minimax-platform",
@@ -837,7 +864,8 @@
       "多模态",
       "含语音/音乐"
     ],
-    "tip": "这是<b>限速而不是赠送额度</b>，超出即 429；语音识别（ASR）不对免费用户开放，要充值后才能调。"
+    "tip": "这是<b>限速而不是赠送额度</b>，超出即 429；语音识别（ASR）不对免费用户开放，要充值后才能调。",
+    "expired": false
   },
   {
     "id": "huawei-agentarts",
@@ -867,7 +895,8 @@
       "Agent 平台",
       "含 MaaS 模型"
     ],
-    "tip": "额度用于<b>平台内模型调测与智能体试运行</b>，不是通用 API Key；底层模型、日志等关联服务可能单独计费，用完前先看账单。"
+    "tip": "额度用于<b>平台内模型调测与智能体试运行</b>，不是通用 API Key；底层模型、日志等关联服务可能单独计费，用完前先看账单。",
+    "expired": false
   },
   {
     "id": "qiniu-conatus",
@@ -897,7 +926,39 @@
       "d": "The qiniu/conatus-free model is free during the campaign for verified users, 100M tokens per day; a single top-up of CNY 100 raises it to 1B per day. Quota resets at 00:00 Beijing time and does not roll over.",
       "v": "100M tokens / day",
       "n": "1B/day after a CNY 100 top-up"
-    }
+    },
+    "expired": false
+  },
+  {
+    "id": "qwen4-max-free",
+    "use": "general",
+    "type": "limit",
+    "region": "global",
+    "hot": 3,
+    "platform": "Nous Portal · Qwen4-Max",
+    "title": "Qwen4-Max 曾限免 5 天，<span class='hl'>已于 11-23 结束</span>",
+    "desc": "Nous Research 与阿里千问联合开放 5 天（11-18 至 11-23），输入输出 0 元；支持图像输入、100 万 Token 上下文，免费计划登录 Hermes Agent 后可调 qwen/qwen4-max:free。窗口已关闭，官方未宣布延期。",
+    "value": "0 元 / 5 天",
+    "valueNote": "已结束，留档参考",
+    "deadline": "2026-11-23",
+    "deadlineNote": "已于 11-23 截止",
+    "link": "https://portal.nousresearch.com/",
+    "linkText": "Nous Portal",
+    "verify": "partial",
+    "tags": [
+      "已结束",
+      "100 万上下文",
+      "图像输入"
+    ],
+    "tip": "官方公告为「5 天」，到期后<b>未见延期</b>；额度用完即止且免费档有并发限制。若之后重启同款限免，会重新移回有效区。",
+    "en": {
+      "p": "Nous Portal · Qwen4-Max",
+      "t": "Qwen4-Max was free for 5 days: <span class='hl'>ended Nov 23</span>",
+      "d": "Nous Research and Alibaba Qwen opened it free for five days (Nov 18-23) with image input and a 1M-token context. The window is closed and no extension has been announced.",
+      "v": "Free / 5 days",
+      "n": "Ended Nov 23"
+    },
+    "expired": true
   },
   {
     "id": "hiapi-bf",
@@ -927,7 +988,8 @@
       "d": "Nov 24-30 (PT): a single $500 top-up adds $50 instantly, and image/video/audio spend during the week returns up to $100. Topped-up accounts also get 10M free DeepSeek V4.1 Flash tokens per day.",
       "v": "Up to 30% back",
       "n": "Starts today; cashback Dec 3"
-    }
+    },
+    "expired": false
   },
   {
     "id": "linkmodel-bf",
@@ -957,7 +1019,8 @@
       "d": "Nov 23 to Dec 2: sign-up grants $1 in free credits with no card or top-up required; the first 30 Discord claimants get $2 more, plus a $50 giveaway. Eight models are discounted up to 55% versus fal.",
       "v": "$1 free + up to 55% off",
       "n": "One-time new-user credit"
-    }
+    },
+    "expired": false
   },
   {
     "id": "yunzhisheng-uplan",
@@ -987,7 +1050,8 @@
       "d": "Covers U2-Flash and U2-Med plus speech synthesis, ASR and OCR quotas; the paid tiers are 30% off for a limited time.",
       "v": "2,500 credits / week",
       "n": "Free tier, real-name required"
-    }
+    },
+    "expired": false
   },
   {
     "id": "packetai-token-factory",
@@ -1017,6 +1081,7 @@
       "d": "All Token Factory calls are free through Dec 16, covering DeepSeek V4.1 Flash, MiniMax M3.1 Flash and Qwen2.5 1.5B; verify a phone number to create a key, no card needed.",
       "v": "Free calls",
       "n": "Until Dec 16"
-    }
+    },
+    "expired": false
   }
 ]
