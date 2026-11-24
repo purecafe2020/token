@@ -1,27 +1,27 @@
 {
-  "updated": "2026-11-23",
+  "updated": "2026-11-24",
   "note": "编辑精选：标题与点评为人工整理，不是自动抓取；每条都保留来源链接。",
   "items": [
     {
-      "title": "黑五正日子：LinkModel 今天开跑，Qwen4-Max 今天关门",
-      "source": "LinkModel / Nous Portal",
-      "url": "https://www.linkmodel.ai/blog/black-friday-bonus",
-      "note": "LinkModel 11-23 至 12-02：注册自动得 1 美元免费额度，8 个模型最高 55% 折扣。同一天，Nous 的 Qwen4-Max 免费窗口到期，别把两个日子记反。",
-      "date": "2026-11-23"
+      "title": "HiAPI 黑五今天开跑：充 $500 得 $650，再送 7 天免费 DeepSeek",
+      "source": "HiAPI",
+      "url": "https://hiapi.ai/en/blog/hiapi-black-friday-2026-ai-api-deals",
+      "note": "11-24 至 11-30（PT）。$50 即时到账，活动周内图像/视频/音频消费再返 $100（12-03 到账、封顶 $100）；免费 DeepSeek 每天 1000 万 tokens，官方估算 7 天约 $92，前提是账号成功充值过一次。",
+      "date": "2026-11-24"
     },
     {
-      "title": "七牛 Conatus 每天 1 亿 Token：本周是最后完整一周",
-      "source": "七牛云",
-      "url": "https://www.qiniu.com/",
-      "note": "活动 11-30 结束，额度每天 0 点清零不结转。如果要做批量摘要或抽取，这周把任务排满比攒额度有意义。",
-      "date": "2026-11-23"
+      "title": "Qwen4-Max 免费窗口已在 11-23 关闭，官方未延期",
+      "source": "Nous Research",
+      "url": "https://portal.nousresearch.com/",
+      "note": "Nous Portal 这轮 5 天限免按公告结束，Nous 与 Inferact 都没有发布延期。现在还能看到「免费」字样的，多半是旧帖转载，别按它排任务。",
+      "date": "2026-11-24"
     },
     {
-      "title": "11 月开通的百炼额度，2 月前要用完",
-      "source": "阿里云百炼",
-      "url": "https://help.aliyun.com/zh/model-studio/new-free-quota",
-      "note": "每个模型 100 万 Token、90 天有效。很多人 11 月开通后忘了，等想起来额度已经过期——先看控制台剩余量和到期日。",
-      "date": "2026-11-23"
+      "title": "11-27 黑五、11-30 网一：三个活动在同一天截止",
+      "source": "OpenModel / HiAPI / 七牛云",
+      "url": "https://www.openmodel.ai/campaigns/black-friday-2026",
+      "note": "OpenModel 返赠、HiAPI 活动、七牛 Conatus 全部 11-30 结束，但分别按 PT 与北京时间计算，别用同一个零点。这周是把批量摘要、抽取任务排满的最后完整窗口。",
+      "date": "2026-11-24"
     }
   ]
 }

@@ -907,9 +907,9 @@
     "hot": 4,
     "platform": "HiAPI",
     "title": "黑五充 $500 得 <span class='hl'>$650</span>，另送 DeepSeek 免费额度",
-    "desc": "11-24 至 11-30（PT），单笔充 $500 即时送 $50，活动周内用于图像/视频/音频的消费再返 $100；充值用户每天可免费用 1000 万 DeepSeek V4.1 Flash tokens。",
+    "desc": "11-24 至 11-30（PT，今天开始），单笔充 $500 即时送 $50，活动周内用于图像/视频/音频的消费再返 $100；另有 7 天免费 DeepSeek V4.1 Flash，每天 1000 万 tokens，官方按量估算约合 $92。",
     "value": "最高 30% 返",
-    "valueNote": "返现 12-03 到账，上限 $100",
+    "valueNote": "今天开跑，返现 12-03 到账",
     "deadline": "2026-11-30",
     "deadlineNote": "黑五活动（PT）",
     "link": "https://hiapi.ai/en/blog/hiapi-black-friday-2026-ai-api-deals",
@@ -926,7 +926,7 @@
       "t": "HiAPI Black Friday: <span class='hl'>$650 for a $500 top-up</span> plus free DeepSeek tokens",
       "d": "Nov 24-30 (PT): a single $500 top-up adds $50 instantly, and image/video/audio spend during the week returns up to $100. Topped-up accounts also get 10M free DeepSeek V4.1 Flash tokens per day.",
       "v": "Up to 30% back",
-      "n": "Cashback on Dec 3, capped at $100"
+      "n": "Starts today; cashback Dec 3"
     }
   },
   {
@@ -957,36 +957,6 @@
       "d": "Nov 23 to Dec 2: sign-up grants $1 in free credits with no card or top-up required; the first 30 Discord claimants get $2 more, plus a $50 giveaway. Eight models are discounted up to 55% versus fal.",
       "v": "$1 free + up to 55% off",
       "n": "One-time new-user credit"
-    }
-  },
-  {
-    "id": "qwen4-max-free",
-    "use": "general",
-    "type": "limit",
-    "region": "global",
-    "hot": 5,
-    "platform": "Nous Portal · Qwen4-Max",
-    "title": "Qwen4-Max 限免 5 天，<span class='hl'>输入输出全 0 元</span>",
-    "desc": "Nous Research 与阿里千问联合开放，11-18 起 5 天，11 月 23 日结束；原生支持图像输入，100 万 Token 上下文，用免费计划登录 Hermes Agent 后选 qwen/qwen4-max:free 调用。",
-    "value": "0 元 / 5 天",
-    "valueNote": "今日最后一天",
-    "deadline": "2026-11-23",
-    "deadlineNote": "今日截止",
-    "link": "https://portal.nousresearch.com/",
-    "linkText": "Nous Portal",
-    "verify": "partial",
-    "tags": [
-      "需注册",
-      "100 万上下文",
-      "图像输入"
-    ],
-    "tip": "官方公告是「5 天」，<b>今天到期</b>，暂未见延期；额度用完即止，免费档通常有并发与速率限制，别拿它跑长任务。",
-    "en": {
-      "p": "Nous Portal · Qwen4-Max",
-      "t": "Qwen4-Max free for 5 days: <span class='hl'>zero cost in and out</span>",
-      "d": "Opened by Nous Research and Alibaba Qwen for five days from Nov 18, ending Nov 23; supports image input and a 1M-token context. Pick qwen/qwen4-max:free in Hermes Agent with a free plan.",
-      "v": "Free / 5 days",
-      "n": "Last day"
     }
   },
   {
