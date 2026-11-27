@@ -75,11 +75,11 @@
         },
         {
           "title": "Google Cloud TPU",
-          "value": "$300 试用金可用于 TPU",
-          "note": "新用户赠金 91 天有效，能跑 Vertex AI 与 TPU；务必设预算告警并关闭自动升级。",
+          "value": "$300 试用金（11-16 后不含 Gemini）",
+          "note": "新用户赠金 91 天有效，可用于 TPU 与多数云服务；2026-11-16 起注册的账号不能再用它抵扣 Gemini 平台。务必设预算告警并关闭自动升级。",
           "source": "Google Cloud",
-          "url": "https://cloud.google.com/free",
-          "detail": "$300 赠金可用于 Vertex AI 与 TPU，91 天有效。务必先设预算告警并关闭自动升级，否则赠金用完会直接扣信用卡。"
+          "url": "https://docs.cloud.google.com/free/docs/free-cloud-features",
+          "detail": "官方文档写明：11-16（含）之后注册或升级付费账号的，$300 不能用于 Gemini 平台（原 Vertex AI）；此前注册的老账号仍可抵扣。跑 TPU 不受影响，但别把它当成「免费跑 Gemini」的路子。"
         },
         {
           "title": "华为昇腾社区",

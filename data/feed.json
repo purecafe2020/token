@@ -1,27 +1,27 @@
 {
-  "updated": "2026-11-26",
+  "updated": "2026-11-27",
   "note": "编辑精选：标题与点评为人工整理，不是自动抓取；每条都保留来源链接。",
   "items": [
     {
-      "title": "明天黑五，离 11-30 只剩 4 天：这周该动手了",
-      "source": "OpenModel / HiAPI / 七牛云",
+      "title": "黑五当天最大的变化不在折扣，在 Google 的 $300",
+      "source": "Google Cloud",
+      "url": "https://docs.cloud.google.com/free/docs/free-cloud-features",
+      "note": "官方免费计划文档写明：2026-11-16（含）之后注册试用或升级付费账号的，$300 赠金不能再用于 Gemini 平台（原 Vertex AI）。11-16 之前注册的老账号不受影响。今天还有教程在教「$300 白跑 Gemini」，先看你账号的注册日期。",
+      "date": "2026-11-27"
+    },
+    {
+      "title": "ZenMux 黑五：充值加赠 20%，单账户上限 $1,000",
+      "source": "ZenMux",
+      "url": "https://zenmux.ai/",
+      "note": "11-21 至 11-30，PAYG 充 $100 到账 $120、充 $500 到账 $600，累计加赠封顶 $1,000。这是加赠不是免费额度，订阅套餐一般不参与；如果本来就有一笔用量，这是本周最实在的一档。",
+      "date": "2026-11-27"
+    },
+    {
+      "title": "今天不是截止日：真正的关闸在 11-30，而且是两个时区",
+      "source": "OpenModel / HiAPI / 七牛云 / ZenMux",
       "url": "https://www.openmodel.ai/campaigns/black-friday-2026",
-      "note": "黑五在 11-27，网一在 11-30。OpenModel、HiAPI、七牛三家都在 11-30 结束，但前两家按 PT、七牛按北京时间。今天开始排批量任务，实际只有 4 天缓冲。",
-      "date": "2026-11-26"
-    },
-    {
-      "title": "订阅折扣不是 API 额度：TypingMind 6 折、ElevenLabs 55% 都别算进来",
-      "source": "TypingMind / ElevenLabs",
-      "url": "https://docs.typingmind.com/resources/ai-black-friday-deals",
-      "note": "今天刷到的黑五榜单大多是订阅制 SaaS：TypingMind 终身 6 折、ElevenLabs 首年 55% off，都是买软件，不是送 Token。要找 API 额度，别被「AI 大促」的标题带走。",
-      "date": "2026-11-26"
-    },
-    {
-      "title": "CometAPI 的 28% 折扣只有一条社媒视频，没有官方活动页",
-      "source": "CometAPI",
-      "url": "https://www.facebook.com/61572184164919/videos/-black-friday-savings-are-coming-to-cometapifrom-november-23-to-december-2-save-/28838469789188598/",
-      "note": "该说法从 11-23 起在传播，但官方站点找不到对应的活动页或公告，能追到的来源只有一条 Facebook 视频。只在社媒发布的折扣，报价以控制台为准，所以没有收进清单。",
-      "date": "2026-11-26"
+      "note": "黑五只是促销起点。OpenModel、HiAPI、ZenMux 按 PT 收尾，七牛按北京时间收尾；PT 的 11-30 23:59 相当于北京时间 12-01 下午。要做批量任务，剩下的是这个周末。",
+      "date": "2026-11-27"
     }
   ]
 }

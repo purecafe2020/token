@@ -499,31 +499,31 @@
     "id": "gcp-300",
     "en": {
       "p": "Google Cloud",
-      "t": "<span class='hl'>$300 credit / 91 days</span> for new Google Cloud users",
-      "d": "Call Gemini 3 Pro and 3.8 Flash through Vertex AI; the largest compliant free-credit route available.",
+      "t": "<span class='hl'>$300 credit / 91 days</span> — but no longer covers Gemini for new signups",
+      "d": "Per the official free-trial docs, accounts that sign up or upgrade on or after Nov 16, 2026 cannot spend the $300 on the Gemini platform (formerly Vertex AI). Older accounts still can.",
       "v": "$300 credit",
-      "n": "Valid 91 days"
+      "n": "Gemini excluded after Nov 16"
     },
     "use": "general",
     "type": "credit",
     "region": "global",
     "hot": 4,
     "platform": "Google Cloud",
-    "title": "新用户 <span class='hl'>$300 试用金 / 91 天</span>，可跑 Vertex AI",
-    "desc": "Google Cloud 新客户赠金，通过 Vertex AI 调用 Gemini 3 Pro / 3.8 Flash 等模型，按量扣减赠金；这也是目前额度最大的合规白嫖路径。",
+    "title": "新用户 <span class='hl'>$300 试用金 / 91 天</span>，<span class='hl'>11-16 后注册不再覆盖 Gemini</span>",
+    "desc": "官方免费计划文档写明：2026-11-16（含）之后注册免费试用或升级付费账号的，$300 赠金不能用于 Gemini 平台（原 Vertex AI）。此前注册的老账号仍可继续抵扣。",
     "value": "$300 ≈ ¥2150",
-    "valueNote": "91 天内有效",
+    "valueNote": "91 天，Gemini 除外",
     "deadline": null,
     "deadlineNote": "注册后 91 天",
-    "link": "https://cloud.google.com/free",
-    "linkText": "官方免费计划",
-    "verify": "partial",
+    "link": "https://docs.cloud.google.com/free/docs/free-cloud-features",
+    "linkText": "官方免费计划文档",
+    "verify": "official",
     "tags": [
       "需外币卡",
-      "需验证",
+      "11-16 后不含 Gemini",
       "可关自动扣费"
     ],
-    "tip": "注册要<b>外币信用卡验证</b>（会小额预授权）；务必先设预算提醒并关闭自动升级付费账号，否则赠金用完会直接扣卡。",
+    "tip": "先看<b>注册日期</b>：11-16 之前注册的账号仍能把赠金用在 Gemini 上，之后不行。文档原文是 <b>can't pay for Gemini platform services</b>；注册照样要外币卡验证，别忘了设预算提醒。",
     "expired": false
   },
   {
@@ -1019,6 +1019,37 @@
       "d": "Nov 23 to Dec 2: sign-up grants $1 in free credits with no card or top-up required; the first 30 Discord claimants get $2 more, plus a $50 giveaway. Eight models are discounted up to 55% versus fal.",
       "v": "$1 free + up to 55% off",
       "n": "One-time new-user credit"
+    },
+    "expired": false
+  },
+  {
+    "id": "zenmux-bf",
+    "use": "deal",
+    "type": "limit",
+    "region": "global",
+    "hot": 4,
+    "platform": "ZenMux",
+    "title": "黑五充值加赠 20%：充 $100 到 <span class='hl'>$120</span>，单账户最高送 $1,000",
+    "desc": "11-21 至 11-30：PAYG 按量充值加赠 20%，充 $100 到账 $120、充 $500 到账 $600，活动期内单账户累计加赠上限 $1,000。同期部分模型另有折扣，官方称最高 7 折，具体参与名单以上线后页面为准。",
+    "value": "最高 20% 加赠",
+    "valueNote": "充值加赠，非免费额度",
+    "deadline": "2026-11-30",
+    "deadlineNote": "黑五活动",
+    "link": "https://zenmux.ai/",
+    "linkText": "ZenMux 官网",
+    "verify": "partial",
+    "tags": [
+      "需充值",
+      "加赠上限 $1,000",
+      "折扣可叠加"
+    ],
+    "tip": "加赠是<b>充值多送额度</b>，不是白给；订阅套餐通常不参与，充值额度也不能提现。先把「本来就会用多少」算清，为赠额而充值大概率是亏的。",
+    "en": {
+      "p": "ZenMux",
+      "t": "Black Friday: <span class='hl'>20% bonus</span> on pay-as-you-go top-ups, up to $1,000",
+      "d": "Nov 21-30: PAYG top-ups get a 20% bonus ($100 in, $120 credited; $500 in, $600 credited), capped at $1,000 bonus per account. Selected models are also discounted during the window.",
+      "v": "Up to 20% bonus",
+      "n": "Top-up bonus, not free quota"
     },
     "expired": false
   },
