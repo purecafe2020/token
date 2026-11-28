@@ -49,7 +49,7 @@
     "value": "最高 +20% 额度",
     "valueNote": "返赠额度仅可用于 API 调用",
     "deadline": "2026-11-30",
-    "deadlineNote": "黑五活动",
+    "deadlineNote": "11-30 23:59 UTC（北京 12-01 07:59）",
     "link": "https://www.openmodel.ai/campaigns/black-friday-2026",
     "linkText": "官方活动页",
     "verify": "official",
@@ -58,7 +58,7 @@
       "可叠加档位",
       "美国站"
     ],
-    "tip": "返赠额度<b>不可提现</b>；按「单笔订单」计算档位，拆单会掉档，要凑档就一次充够。",
+    "tip": "返赠额度<b>不可提现</b>；按「单笔订单」计算档位，拆单会掉档，要凑档就一次充够。注意它是 <b>UTC</b> 截止，北京时间 12-01 早上 7:59 就关了，比 PT 的活动早约 8 小时。",
     "expired": false
   },
   {
@@ -1003,7 +1003,7 @@
     "value": "$1 免费 + 最高 55% 折扣",
     "valueNote": "新人自动到账，一次性",
     "deadline": "2026-12-02",
-    "deadlineNote": "黑五活动（PT）",
+    "deadlineNote": "12-02 23:59 PST（北京 12-03 15:59）",
     "link": "https://www.linkmodel.ai/blog/black-friday-bonus",
     "linkText": "官方活动说明",
     "verify": "partial",
@@ -1050,6 +1050,37 @@
       "d": "Nov 21-30: PAYG top-ups get a 20% bonus ($100 in, $120 credited; $500 in, $600 credited), capped at $1,000 bonus per account. Selected models are also discounted during the window.",
       "v": "Up to 20% bonus",
       "n": "Top-up bonus, not free quota"
+    },
+    "expired": false
+  },
+  {
+    "id": "swarms-bf",
+    "use": "deal",
+    "type": "limit",
+    "region": "global",
+    "hot": 3,
+    "platform": "Swarms Cloud",
+    "title": "黑五：新户 <span class='hl'>$15 起始额度</span>，充值加赠 20%",
+    "desc": "11-27 至 12-02（PT）：新用户 $15 起始 credits，可用于 GPT-5.6、Claude Opus 5、Gemini 3.1 Pro 等 5 个端点；充值 $100 到账 $120，自动续费同样加赠。订阅用户在黑五与网一两天 token 费用 0 元。",
+    "value": "$15 起始 + 充值加赠 20%",
+    "valueNote": "$0 token 仅 11-27 与 11-30 两天",
+    "deadline": "2026-12-02",
+    "deadlineNote": "12-02（PT）",
+    "link": "https://cloud.swarms.world/black-friday",
+    "linkText": "官方活动页",
+    "verify": "partial",
+    "tags": [
+      "需注册",
+      "$15 起始额度",
+      "免费仅两天"
+    ],
+    "tip": "「$0 token」<b>只对 Pro/Premium 订阅用户</b>、且只在 11-27 与 11-30 两天；per-agent、图片与搜索费照收。$15 起始额度只够试用，别把它当成长期免费。",
+    "en": {
+      "p": "Swarms Cloud",
+      "t": "Black Friday: <span class='hl'>$15 starting credits</span> + 20% top-up bonus",
+      "d": "Nov 27 to Dec 2 (PT): new users get $15 starting credits across five premium endpoints; a $100 top-up credits $120, and auto-recharge gets the same bonus. Token fees are $0 for subscribers on Black Friday and Cyber Monday only.",
+      "v": "$15 start + 20% bonus",
+      "n": "$0 tokens only Nov 27 and Nov 30"
     },
     "expired": false
   },

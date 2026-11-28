@@ -228,47 +228,51 @@ write("openrouter-free-models", openrouter);
 
 // ---------- 4. 黑五截止日历 ----------
 const blackFriday = shell(
-  "2026 黑五 AI 额度截止日历：7 个活动的最后期限",
-  "把黑五期间到期或开始的免费额度与充值返赠按截止时间排好，含力度、门槛与三个最常见的时间坑。",
-`<h1>2026 黑五 AI 额度截止日历</h1>
-<div class="meta">2026-11-23 · 每天更新</div>
-<div class="lead">黑五（11-27）到网一（11-30）是集中截止期。这篇把在库的活动按截止时间排好，避免「看到时已经结束」。</div>
+  "2026 黑五 AI 额度截止日历：9 个活动的最后期限（北京时间对照）",
+  "把黑五期间到期或开始的免费额度与充值返赠统一换算成北京时间，按截止先后排好，含力度、门槛与三个最常见的时间坑。",
+  `<h1>2026 黑五 AI 额度截止日历</h1>
+<div class="meta">2026-11-28 · 每天更新</div>
+<div class="lead">黑五（11-27）到网一（11-30）是集中截止期。下面的截止时间<b>一律换算成北京时间</b>，因为同写「11-30 截止」，实际可能差 16 小时。</div>
 
-<h2>按截止时间排序</h2>
+<h2>按北京时间排的截止表</h2>
 <table>
-<tr><th>截止</th><th>平台</th><th>力度</th><th>门槛</th></tr>
-<tr><td>11-23</td><td>Nous Portal · Qwen4-Max</td><td>输入输出 0 元，5 天</td><td>注册，免费计划</td></tr>
-<tr><td>11-30 23:59 PT</td><td>HiAPI</td><td>充 $500 得 $650，另送 DeepSeek 免费额度</td><td>外币卡，至少充值一次</td></tr>
-<tr><td>11-30 23:59 UTC</td><td>OpenModel</td><td>充值返赠 10%~20%</td><td>单笔订单，无需优惠码</td></tr>
-<tr><td>11-30 23:59 北京</td><td>七牛云 Conatus</td><td>每天 1 亿 Token，充值后 10 亿</td><td>实名，单次充值满 100 元</td></tr>
+<tr><th>截止（北京时间）</th><th>平台</th><th>力度</th><th>门槛</th></tr>
+<tr><td>11-30 24:00</td><td>七牛云 Conatus</td><td>每天 1 亿 Token，充值后 10 亿</td><td>实名，单次充 100 元</td></tr>
+<tr><td>12-01 07:59</td><td>OpenModel（UTC 11-30 23:59）</td><td>充值返赠 10%~20%</td><td>单笔订单，无需优惠码</td></tr>
+<tr><td>12-01 15:59</td><td>HiAPI（PT 11-30 23:59）</td><td>充 $500 得 $650，另送 DeepSeek 免费额度</td><td>外币卡，至少充值一次</td></tr>
+<tr><td>12-01（时区待确认）</td><td>ZenMux</td><td>充值加赠 20%，单账户上限 $1,000</td><td>需充值，订阅不参与</td></tr>
+<tr><td>12-03 15:59</td><td>LinkModel（PST 12-02 23:59）</td><td>新户 $1 免费 + 8 个模型最高 55% 折扣</td><td>注册即可</td></tr>
+<tr><td>12-03 15:59</td><td>Swarms Cloud（PT 12-02）</td><td>新户 $15 起始额度 + 充值加赠 20%</td><td>注册；$0 token 仅两天</td></tr>
 <tr><td>12-16</td><td>packet.ai Token Factory</td><td>DeepSeek / MiniMax Flash 免费</td><td>手机号验证</td></tr>
 <tr><td>12-31</td><td>百度千帆普惠专场</td><td>每月 1500 次免费调用</td><td>实名</td></tr>
 <tr><td>12-31</td><td>Gemini 3.8 Flash 锁价</td><td>现价执行到年底，明年翻倍</td><td>付费档</td></tr>
 </table>
 
 <h2>三个时间坑</h2>
-<h3>1. 时区不一致，最后一天差十几小时</h3>
-<p>HiAPI 用美西时间（PT），OpenModel 用 UTC，七牛用北京时间。同写「11-30 截止」，实际差出十几小时。按北京时间换算再排计划。</p>
+<h3>1. 同一天截止，实际差 16 小时</h3>
+<p>七牛按北京时间 11-30 24:00 收；OpenModel 按 UTC，折北京时间 12-01 07:59；HiAPI 按美西 PT，折 12-01 15:59。UTC 与 PT 相差 8 小时，PT 与北京相差 16 小时——只按「11-30」记，会漏掉后两家。</p>
 <h3>2. 实名与绑卡不能当天完成</h3>
 <p>七牛要实名，HiAPI 要外币卡，OpenModel 要外币支付。这些环节卡住就是几小时到一天，别在截止当天才做。</p>
 <h3>3. 返现到账晚于活动结束</h3>
 <p>HiAPI 的消费返还 12-03 才到账。不影响资格，但会影响你对「到手多少」的判断——先按返还前的余额规划用量。</p>
 
-<h2>建议的动手顺序</h2>
+<h2>建议的动手顺序（11-28 起）</h2>
 <ol>
-<li>今天先试 Qwen4-Max（11-23 就结束）；</li>
-<li>本周内完成实名与绑卡，把门槛类事项提前；</li>
-<li>11-27 黑五当天再决定要不要充值，避免冲动消费；</li>
-<li>11-30 前 24 小时核对一次，留出补救时间。</li>
+<li>今天先把实名与外币卡弄好，门槛类事项最耗时；</li>
+<li>这周末（11-28～11-30）跑批量任务，别留到最后一个下午；</li>
+<li>充值类只看「本来就会用多少」，为赠额充值大概率是亏的；</li>
+<li>12-01 早上再核对一次，按 PT 的两家还有半天缓冲。</li>
 </ol>
 
 <h2>FAQ</h2>
 <h3>黑五之后还有活动吗？</h3>
-<p>有。百度普惠与 Gemini 锁价都到 12-31，packet.ai 到 12-16。节日活动结束后，长期额度仍然是主线。</p>
+<p>有。百度普惠与 Gemini 锁价都到 12-31，packet.ai 到 12-16，LinkModel 与 Swarms 到 12-02。节日活动结束后，长期额度仍是主线。</p>
 <h3>充值返赠值得冲吗？</h3>
 <p>取决于你本来就打算花多少。返赠额度只能用于 API 调用、不可提现，为返赠而充值大概率是亏的。</p>
+<h3>Google 的 $300 还能跑 Gemini 吗？</h3>
+<p>11-16 之后注册的账号不行了。官方文档写明 $300 不能用于 Gemini 平台（原 Vertex AI）；此日期前注册的老账号仍可抵扣。</p>
 
-<div class="related">相关：<a href="/#qiniu-conatus">七牛条目</a> · <a href="/#hiapi-bf">HiAPI 条目</a> · <a href="/#openmodel-bf">OpenModel 条目</a> · <a href="/feed/">今日情报</a></div>`,
+<div class="related">相关：<a href="/#qiniu-conatus">七牛条目</a> · <a href="/#hiapi-bf">HiAPI 条目</a> · <a href="/#openmodel-bf">OpenModel 条目</a> · <a href="/#zenmux-bf">ZenMux 条目</a> · <a href="/feed/">今日情报</a></div>`,
   "black-friday-ai-credits-calendar"
 );
 write("black-friday-ai-credits-calendar", blackFriday);
@@ -345,7 +349,7 @@ const index = shell(
 <li><a href="/guides/qiniu-conatus-free-tokens/">七牛云 Conatus 每天 1 亿 Token 怎么领（2026 黑五）</a></li>
 <li><a href="/guides/aliyun-bailian-free-tokens/">阿里云百炼 100 万 Token 领取全流程（2026）</a></li>
 <li><a href="/guides/openrouter-free-models/">OpenRouter 免费模型怎么用：限速、充值与避坑（2026）</a></li>
-<li><a href="/guides/black-friday-ai-credits-calendar/">2026 黑五 AI 额度截止日历：7 个活动的最后期限</a></li>
+<li><a href="/guides/black-friday-ai-credits-calendar/">2026 黑五 AI 额度截止日历：9 个活动按北京时间排的最后期限</a></li>
 </ul>
 <p>更多指南每周补充。遇到活动失效或额度变化，欢迎通过 <a href="/contact/">联系页</a> 告诉我们。</p>`,
   ""
